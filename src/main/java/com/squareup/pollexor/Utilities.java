@@ -2,9 +2,11 @@
 package com.squareup.pollexor;
 
 import java.security.MessageDigest;
-import javax.crypto.Cipher;
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
+
+/*-[
+#import <CommonCrypto/CommonHMAC.h>
+]-*/
+
 
 /** Utility methods for {@link ThumborUrlBuilder}. */
 final class Utilities {
@@ -158,32 +160,21 @@ final class Utilities {
    * @param key Encryption key.
    * @return Encrypted output.
    */
-  static byte[] hmacSha1(StringBuilder message, String key) {
-    try {
-      Mac mac = Mac.getInstance("HmacSHA1");
-      mac.init(new SecretKeySpec(key.getBytes(), "HmacSHA1"));
-      return mac.doFinal(message.toString().getBytes());
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
-  }
+  static native byte[] hmacSha1(StringBuilder message, String key)/*-[
+     NSString *data = [((JavaLangStringBuilder *) nil_chk(message)) description];
 
-  /**
-   * Encrypt a string with AES-128 using the specified key.
-   *
-   * @param message Input string.
-   * @param key Encryption key.
-   * @return Encrypted output.
-   */
-  static byte[] aes128Encrypt(StringBuilder message, String key) {
-    try {
-      key = normalizeString(key, 16);
-      rightPadString(message, '{', 16);
-      Cipher cipher = Cipher.getInstance("AES/ECB/NoPadding");
-      cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(key.getBytes(), "AES"));
-      return cipher.doFinal(message.toString().getBytes());
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
-  }
+     const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];
+     const char *cData = [data cStringUsingEncoding:NSASCIIStringEncoding];
+
+     unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
+
+     CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
+
+     NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC
+     length:sizeof(cHMAC)];
+
+     NSString hash = [HMAC base64Encoding];
+
+     return [((NSString *) nil_chk(hash_)) getBytes];
+  ]-*/;
 }
