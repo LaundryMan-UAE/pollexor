@@ -1,0 +1,7 @@
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/J2ObjC" "${PODS_ROOT}/Headers/Public/Pollexor" "${PODS_ROOT}/Headers/Public/Pollexor/com/squareup/pollexor" "${PODS_ROOT}/J2ObjC/dist/include" "${PODS_ROOT}/J2ObjC/dist/include"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/J2ObjC/dist/lib"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/J2ObjC" -isystem "${PODS_ROOT}/Headers/Public/Pollexor" -isystem "${PODS_ROOT}/Headers/Public/Pollexor/com/squareup/pollexor"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"Pods-Pollexor" -l"jre_emul" -l"z" -framework "Security"
+OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
+PODS_ROOT = ${SRCROOT}/../Pods

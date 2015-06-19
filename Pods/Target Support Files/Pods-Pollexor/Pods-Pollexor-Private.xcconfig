@@ -1,0 +1,6 @@
+#include "Pods-Pollexor.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/Pollexor" "${PODS_ROOT}/Headers/Private/Pollexor/com/squareup/pollexor" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/J2ObjC" "${PODS_ROOT}/Headers/Public/Pollexor" "${PODS_ROOT}/Headers/Public/Pollexor/com/squareup/pollexor" ${PODS_POLLEXOR_HEADER_SEARCH_PATHS}
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

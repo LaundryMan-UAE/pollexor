@@ -1,0 +1,1 @@
+../../../../../../../src/gen/objc/com/squareup/pollexor/ThumborUrlBuilder.h

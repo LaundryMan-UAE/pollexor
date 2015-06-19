@@ -1,0 +1,29 @@
+{
+  "name": "Pollexor",
+  "version": "2.0.2",
+  "authors": {
+    "Marcus Smith": "m_badenochsmith@yahoo.co.uk"
+  },
+  "source": {
+    "git": "https://github.com/hambroperks/pollexor.git"
+  },
+  "summary": "Version 2.0.2 update translated via J2ObjC - no aes256 and native HmacSHA1 impl",
+  "homepage": "http://square.github.io/pollexor/",
+  "license": {
+    "type": "Apache License, Version 2.0",
+    "file": "LICENSE.txt"
+  },
+  "platforms": {
+    "ios": "7.0",
+    "osx": "10.7"
+  },
+  "requires_arc": false,
+  "source_files": "src/gen/objc/**/*.{h,m}",
+  "exclude_files": "src/gen/objc/*Test.{h,m}",
+  "resources": "src/main/resources/*",
+  "public_header_files": "src/gen/objc/**/*.h",
+  "header_mappings_dir": "src/gen/objc",
+  "xcconfig": {
+    "HEADER_SEARCH_PATHS": "\"${PODS_ROOT}/J2ObjC/dist/include\""
+  }
+}
