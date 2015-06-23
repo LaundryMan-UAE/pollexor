@@ -41,7 +41,7 @@ task translateJava(type:Exec) {
 
     // the classpath is built from the runtime dependencies for the sourcesets ...
     executable "${J2OBJC_HOME}/j2objc"
-    //args '--prefixes', file('src/main/resources/prefixes.properties').path
+    args '--prefixes', file('main/resources/prefixes.properties').path
 //    args '--mapping', file('mapping.properties').path
     args '--doc-comments'
     args '-d', file('gen/objc').path

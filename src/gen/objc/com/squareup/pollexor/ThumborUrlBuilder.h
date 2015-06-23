@@ -9,20 +9,20 @@
 #include "J2ObjC_header.h"
 #include "java/lang/Enum.h"
 
-@class ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum;
-@class ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum;
-@class ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum;
-@class ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum;
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
+@class PXRThumborUrlBuilder_HorizontalAlignEnum;
+@class PXRThumborUrlBuilder_ImageFormatEnum;
+@class PXRThumborUrlBuilder_TrimPixelColorEnum;
+@class PXRThumborUrlBuilder_VerticalAlignEnum;
 @protocol JavaUtilList;
 
-#define ComSquareupPollexorThumborUrlBuilder_ORIGINAL_SIZE ((jint) 0x80000000)
+#define PXRThumborUrlBuilder_ORIGINAL_SIZE ((jint) 0x80000000)
 
 /**
  @brief Fluent interface to build a Thumbor URL.
  */
-@interface ComSquareupPollexorThumborUrlBuilder : NSObject {
+@interface PXRThumborUrlBuilder : NSObject {
  @public
   NSString *image_;
   NSString *host_;
@@ -41,9 +41,9 @@
   jint cropBottom_;
   jint cropRight_;
   jint trimColorTolerance_;
-  ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *cropHorizontalAlign_;
-  ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *cropVerticalAlign_;
-  ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *trimPixelColor_;
+  PXRThumborUrlBuilder_HorizontalAlignEnum *cropHorizontalAlign_;
+  PXRThumborUrlBuilder_VerticalAlignEnum *cropVerticalAlign_;
+  PXRThumborUrlBuilder_TrimPixelColorEnum *trimPixelColor_;
   id<JavaUtilList> filters_;
 }
 
@@ -54,14 +54,14 @@
  @param align Horizontal alignment.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)alignWithComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum:(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *)align;
+- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_HorizontalAlignEnum:(PXRThumborUrlBuilder_HorizontalAlignEnum *)align;
 
 /**
  @brief Set the vertical alignment for the image when image gets cropped by resizing.
  @param align Vertical alignment.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)alignWithComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum:(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *)align;
+- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_VerticalAlignEnum:(PXRThumborUrlBuilder_VerticalAlignEnum *)align;
 
 /**
  @brief Set the horizontal and vertical alignment for the image when image gets cropped by resizing.
@@ -69,8 +69,8 @@
  @param halign Horizontal alignment.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)alignWithComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum:(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *)valign
-                                             withComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum:(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *)halign;
+- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_VerticalAlignEnum:(PXRThumborUrlBuilder_VerticalAlignEnum *)valign
+                             withPXRThumborUrlBuilder_HorizontalAlignEnum:(PXRThumborUrlBuilder_HorizontalAlignEnum *)halign;
 
 /**
  @brief This filter adds a blur effect to the image using the specified radius and a default sigma (equal to the radius).
@@ -108,10 +108,10 @@
  @param right Right bound.
  @throws IllegalArgumentException if <code>top</code> or <code>left</code> are less than zero or <code>bottom</code> or <code>right</code> are less than one or less than <code>top</code> or <code>left</code> , respectively.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)cropWithInt:(jint)top
-                                              withInt:(jint)left
-                                              withInt:(jint)bottom
-                                              withInt:(jint)right;
+- (PXRThumborUrlBuilder *)cropWithInt:(jint)top
+                              withInt:(jint)left
+                              withInt:(jint)bottom
+                              withInt:(jint)right;
 
 /**
  @brief This filter equalizes the color distribution in the image.
@@ -131,30 +131,30 @@
  @param filters Filter strings.
  @throws IllegalArgumentException if no arguments supplied or an argument is <code>null</code> .
  */
-- (ComSquareupPollexorThumborUrlBuilder *)filterWithNSStringArray:(IOSObjectArray *)filters;
+- (PXRThumborUrlBuilder *)filterWithNSStringArray:(IOSObjectArray *)filters;
 
 /**
  @brief Contrain the image size inside the resized box, scaling as needed.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)fitIn;
+- (PXRThumborUrlBuilder *)fitIn;
 
 /**
  @brief Flip the image horizontally.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)flipHorizontally;
+- (PXRThumborUrlBuilder *)flipHorizontally;
 
 /**
  @brief Flip the image vertically.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)flipVertically;
+- (PXRThumborUrlBuilder *)flipVertically;
 
 /**
  @brief Specify the output format of the image.
  */
-+ (NSString *)formatWithComSquareupPollexorThumborUrlBuilder_ImageFormatEnum:(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *)format;
++ (NSString *)formatWithPXRThumborUrlBuilder_ImageFormatEnum:(PXRThumborUrlBuilder_ImageFormatEnum *)format;
 
 /**
  @brief This filter uses a 9-patch to overlay the image.
@@ -192,8 +192,8 @@
  @param height Desired height.
  @throws IllegalArgumentException if <code>width</code> or <code>height</code> is less than 0 or both are 0.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)resizeWithInt:(jint)width
-                                                withInt:(jint)height;
+- (PXRThumborUrlBuilder *)resizeWithInt:(jint)width
+                                withInt:(jint)height;
 
 /**
  @brief This filter changes the amount of color in each of the three channels.
@@ -251,7 +251,7 @@
  @brief Use smart cropping for determining the important portion of an image.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)smart;
+- (PXRThumborUrlBuilder *)smart;
 
 /**
  @brief This filter strips the ICC profile from the image.
@@ -297,14 +297,14 @@
 /**
  @brief Removing surrounding space in image.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)trim;
+- (PXRThumborUrlBuilder *)trim;
 
 /**
  @brief Removing surrounding space in image.
  Get trim color from specified pixel.
  @param value orientation from where to get the pixel color.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)trimWithComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum:(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *)value;
+- (PXRThumborUrlBuilder *)trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:(PXRThumborUrlBuilder_TrimPixelColorEnum *)value;
 
 /**
  @brief Removing surrounding space in image.
@@ -312,8 +312,8 @@
  @param value orientation from where to get the pixel color.
  @param colorTolerance 0 - 442. This is the euclidian distance between the colors of the reference pixel and the surrounding pixels is used. If the distance is within the tolerance they'll get trimmed.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)trimWithComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum:(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *)value
-                                                                                                  withInt:(jint)colorTolerance;
+- (PXRThumborUrlBuilder *)trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:(PXRThumborUrlBuilder_TrimPixelColorEnum *)value
+                                                                  withInt:(jint)colorTolerance;
 
 /**
  @brief This filter adds a watermark to the image at (0, 0).
@@ -351,7 +351,7 @@
  @param image Watermark image URL. It is very important to understand that the same image loader that Thumbor uses will be used here.
  @throws IllegalArgumentException if <code>image</code> is null.
  */
-+ (NSString *)watermarkWithComSquareupPollexorThumborUrlBuilder:(ComSquareupPollexorThumborUrlBuilder *)image;
++ (NSString *)watermarkWithPXRThumborUrlBuilder:(PXRThumborUrlBuilder *)image;
 
 /**
  @brief This filter adds a watermark to the image.
@@ -360,9 +360,9 @@
  @param y Vertical position that the watermark will be in. Positive numbers indicate position from the top and negative numbers indicate position from the bottom.
  @throws IllegalArgumentException if <code>image</code> is null.
  */
-+ (NSString *)watermarkWithComSquareupPollexorThumborUrlBuilder:(ComSquareupPollexorThumborUrlBuilder *)image
-                                                        withInt:(jint)x
-                                                        withInt:(jint)y;
++ (NSString *)watermarkWithPXRThumborUrlBuilder:(PXRThumborUrlBuilder *)image
+                                        withInt:(jint)x
+                                        withInt:(jint)y;
 
 /**
  @brief This filter adds a watermark to the image.
@@ -372,10 +372,10 @@
  @param transparency Watermark image transparency. Should be a number between 0 (fully opaque) and 100 (fully transparent).
  @throws IllegalArgumentException if <code>image</code> is null.
  */
-+ (NSString *)watermarkWithComSquareupPollexorThumborUrlBuilder:(ComSquareupPollexorThumborUrlBuilder *)image
-                                                        withInt:(jint)x
-                                                        withInt:(jint)y
-                                                        withInt:(jint)transparency;
++ (NSString *)watermarkWithPXRThumborUrlBuilder:(PXRThumborUrlBuilder *)image
+                                        withInt:(jint)x
+                                        withInt:(jint)y
+                                        withInt:(jint)transparency;
 
 #pragma mark Package-Private
 
@@ -390,84 +390,86 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComSquareupPollexorThumborUrlBuilder)
+J2OBJC_EMPTY_STATIC_INIT(PXRThumborUrlBuilder)
 
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder, image_, NSString *)
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder, host_, NSString *)
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder, key_, NSString *)
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder, cropHorizontalAlign_, ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *)
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder, cropVerticalAlign_, ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *)
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder, trimPixelColor_, ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *)
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder, filters_, id<JavaUtilList>)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, image_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, host_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, key_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropHorizontalAlign_, PXRThumborUrlBuilder_HorizontalAlignEnum *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropVerticalAlign_, PXRThumborUrlBuilder_VerticalAlignEnum *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, trimPixelColor_, PXRThumborUrlBuilder_TrimPixelColorEnum *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, filters_, id<JavaUtilList>)
 
-J2OBJC_STATIC_FIELD_GETTER(ComSquareupPollexorThumborUrlBuilder, ORIGINAL_SIZE, jint)
+J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, ORIGINAL_SIZE, jint)
 
-FOUNDATION_EXPORT void ComSquareupPollexorThumborUrlBuilder_initWithNSString_withNSString_withNSString_(ComSquareupPollexorThumborUrlBuilder *self, NSString *host, NSString *key, NSString *image);
+FOUNDATION_EXPORT void PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(PXRThumborUrlBuilder *self, NSString *host, NSString *key, NSString *image);
 
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder *new_ComSquareupPollexorThumborUrlBuilder_initWithNSString_withNSString_withNSString_(NSString *host, NSString *key, NSString *image) NS_RETURNS_RETAINED;
+FOUNDATION_EXPORT PXRThumborUrlBuilder *new_PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(NSString *host, NSString *key, NSString *image) NS_RETURNS_RETAINED;
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_brightnessWithInt_(jint amount);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_brightnessWithInt_(jint amount);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_contrastWithInt_(jint amount);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_contrastWithInt_(jint amount);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_noiseWithInt_(jint amount);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_noiseWithInt_(jint amount);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_qualityWithInt_(jint amount);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_qualityWithInt_(jint amount);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_rgbWithInt_withInt_withInt_(jint r, jint g, jint b);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_rgbWithInt_withInt_withInt_(jint r, jint g, jint b);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_roundCornerWithInt_(jint radius);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_roundCornerWithInt_(jint radius);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_roundCornerWithInt_withInt_(jint radius, jint color);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_roundCornerWithInt_withInt_(jint radius, jint color);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_roundCornerWithInt_withInt_withInt_(jint radiusInner, jint radiusOuter, jint color);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_roundCornerWithInt_withInt_withInt_(jint radiusInner, jint radiusOuter, jint color);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithNSString_(NSString *imageUrl);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_watermarkWithNSString_(NSString *imageUrl);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithComSquareupPollexorThumborUrlBuilder_(ComSquareupPollexorThumborUrlBuilder *image);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_(PXRThumborUrlBuilder *image);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithNSString_withInt_withInt_(NSString *imageUrl, jint x, jint y);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_(NSString *imageUrl, jint x, jint y);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithComSquareupPollexorThumborUrlBuilder_withInt_withInt_(ComSquareupPollexorThumborUrlBuilder *image, jint x, jint y);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt_(PXRThumborUrlBuilder *image, jint x, jint y);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_(NSString *imageUrl, jint x, jint y, jint transparency);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_(NSString *imageUrl, jint x, jint y, jint transparency);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithComSquareupPollexorThumborUrlBuilder_withInt_withInt_withInt_(ComSquareupPollexorThumborUrlBuilder *image, jint x, jint y, jint transparency);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt_withInt_(PXRThumborUrlBuilder *image, jint x, jint y, jint transparency);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_sharpenWithFloat_withFloat_withBoolean_(jfloat amount, jfloat radius, jboolean luminanceOnly);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_sharpenWithFloat_withFloat_withBoolean_(jfloat amount, jfloat radius, jboolean luminanceOnly);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_fillWithInt_(jint color);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_fillWithInt_(jint color);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_formatWithComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *format);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_formatWithPXRThumborUrlBuilder_ImageFormatEnum_(PXRThumborUrlBuilder_ImageFormatEnum *format);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_frameWithNSString_(NSString *imageUrl);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_frameWithNSString_(NSString *imageUrl);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_stripicc();
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_stripicc();
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_grayscale();
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_grayscale();
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_equalize();
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_equalize();
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_blurWithInt_(jint radius);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_blurWithInt_(jint radius);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_noUpscale();
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_noUpscale();
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorThumborUrlBuilder_rotateWithInt_(jint angle);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_rotateWithInt_(jint angle);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder)
+J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder)
 
-typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_HorizontalAlign) {
-  ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_LEFT = 0,
-  ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_CENTER = 1,
-  ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_RIGHT = 2,
+typedef PXRThumborUrlBuilder ComSquareupPollexorThumborUrlBuilder;
+
+typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_HorizontalAlign) {
+  PXRThumborUrlBuilder_HorizontalAlign_LEFT = 0,
+  PXRThumborUrlBuilder_HorizontalAlign_CENTER = 1,
+  PXRThumborUrlBuilder_HorizontalAlign_RIGHT = 2,
 };
 
 /**
  @brief Horizontal alignment for crop positioning.
  */
-@interface ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum : JavaLangEnum < NSCopying > {
+@interface PXRThumborUrlBuilder_HorizontalAlignEnum : JavaLangEnum < NSCopying > {
  @public
   NSString *value_;
 }
@@ -475,42 +477,42 @@ typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_HorizontalAlign
 #pragma mark Package-Private
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values();
+FOUNDATION_EXPORT IOSObjectArray *PXRThumborUrlBuilder_HorizontalAlignEnum_values();
 
-+ (ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_valueOfWithNSString_(NSString *name);
++ (PXRThumborUrlBuilder_HorizontalAlignEnum *)valueOfWithNSString:(NSString *)name;
+FOUNDATION_EXPORT PXRThumborUrlBuilder_HorizontalAlignEnum *PXRThumborUrlBuilder_HorizontalAlignEnum_valueOfWithNSString_(NSString *name);
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum)
+J2OBJC_STATIC_INIT(PXRThumborUrlBuilder_HorizontalAlignEnum)
 
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values_[];
+FOUNDATION_EXPORT PXRThumborUrlBuilder_HorizontalAlignEnum *PXRThumborUrlBuilder_HorizontalAlignEnum_values_[];
 
-#define ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_LEFT ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values_[ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_LEFT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum, LEFT)
+#define PXRThumborUrlBuilder_HorizontalAlignEnum_LEFT PXRThumborUrlBuilder_HorizontalAlignEnum_values_[PXRThumborUrlBuilder_HorizontalAlign_LEFT]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_HorizontalAlignEnum, LEFT)
 
-#define ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_CENTER ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values_[ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_CENTER]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum, CENTER)
+#define PXRThumborUrlBuilder_HorizontalAlignEnum_CENTER PXRThumborUrlBuilder_HorizontalAlignEnum_values_[PXRThumborUrlBuilder_HorizontalAlign_CENTER]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_HorizontalAlignEnum, CENTER)
 
-#define ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_RIGHT ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values_[ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_RIGHT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum, RIGHT)
+#define PXRThumborUrlBuilder_HorizontalAlignEnum_RIGHT PXRThumborUrlBuilder_HorizontalAlignEnum_values_[PXRThumborUrlBuilder_HorizontalAlign_RIGHT]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_HorizontalAlignEnum, RIGHT)
 
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum, value_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder_HorizontalAlignEnum, value_, NSString *)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum)
+J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_HorizontalAlignEnum)
 
-typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_VerticalAlign) {
-  ComSquareupPollexorThumborUrlBuilder_VerticalAlign_TOP = 0,
-  ComSquareupPollexorThumborUrlBuilder_VerticalAlign_MIDDLE = 1,
-  ComSquareupPollexorThumborUrlBuilder_VerticalAlign_BOTTOM = 2,
+typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_VerticalAlign) {
+  PXRThumborUrlBuilder_VerticalAlign_TOP = 0,
+  PXRThumborUrlBuilder_VerticalAlign_MIDDLE = 1,
+  PXRThumborUrlBuilder_VerticalAlign_BOTTOM = 2,
 };
 
 /**
  @brief Vertical alignment for crop positioning.
  */
-@interface ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum : JavaLangEnum < NSCopying > {
+@interface PXRThumborUrlBuilder_VerticalAlignEnum : JavaLangEnum < NSCopying > {
  @public
   NSString *value_;
 }
@@ -518,41 +520,41 @@ typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_VerticalAlign) 
 #pragma mark Package-Private
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values();
+FOUNDATION_EXPORT IOSObjectArray *PXRThumborUrlBuilder_VerticalAlignEnum_values();
 
-+ (ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_valueOfWithNSString_(NSString *name);
++ (PXRThumborUrlBuilder_VerticalAlignEnum *)valueOfWithNSString:(NSString *)name;
+FOUNDATION_EXPORT PXRThumborUrlBuilder_VerticalAlignEnum *PXRThumborUrlBuilder_VerticalAlignEnum_valueOfWithNSString_(NSString *name);
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum)
+J2OBJC_STATIC_INIT(PXRThumborUrlBuilder_VerticalAlignEnum)
 
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values_[];
+FOUNDATION_EXPORT PXRThumborUrlBuilder_VerticalAlignEnum *PXRThumborUrlBuilder_VerticalAlignEnum_values_[];
 
-#define ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_TOP ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values_[ComSquareupPollexorThumborUrlBuilder_VerticalAlign_TOP]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum, TOP)
+#define PXRThumborUrlBuilder_VerticalAlignEnum_TOP PXRThumborUrlBuilder_VerticalAlignEnum_values_[PXRThumborUrlBuilder_VerticalAlign_TOP]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_VerticalAlignEnum, TOP)
 
-#define ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_MIDDLE ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values_[ComSquareupPollexorThumborUrlBuilder_VerticalAlign_MIDDLE]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum, MIDDLE)
+#define PXRThumborUrlBuilder_VerticalAlignEnum_MIDDLE PXRThumborUrlBuilder_VerticalAlignEnum_values_[PXRThumborUrlBuilder_VerticalAlign_MIDDLE]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_VerticalAlignEnum, MIDDLE)
 
-#define ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_BOTTOM ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values_[ComSquareupPollexorThumborUrlBuilder_VerticalAlign_BOTTOM]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum, BOTTOM)
+#define PXRThumborUrlBuilder_VerticalAlignEnum_BOTTOM PXRThumborUrlBuilder_VerticalAlignEnum_values_[PXRThumborUrlBuilder_VerticalAlign_BOTTOM]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_VerticalAlignEnum, BOTTOM)
 
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum, value_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder_VerticalAlignEnum, value_, NSString *)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum)
+J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_VerticalAlignEnum)
 
-typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_TrimPixelColor) {
-  ComSquareupPollexorThumborUrlBuilder_TrimPixelColor_TOP_LEFT = 0,
-  ComSquareupPollexorThumborUrlBuilder_TrimPixelColor_BOTTOM_RIGHT = 1,
+typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_TrimPixelColor) {
+  PXRThumborUrlBuilder_TrimPixelColor_TOP_LEFT = 0,
+  PXRThumborUrlBuilder_TrimPixelColor_BOTTOM_RIGHT = 1,
 };
 
 /**
  @brief Orientation from where to get the pixel color for trim.
  */
-@interface ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum : JavaLangEnum < NSCopying > {
+@interface PXRThumborUrlBuilder_TrimPixelColorEnum : JavaLangEnum < NSCopying > {
  @public
   NSString *value_;
 }
@@ -560,40 +562,40 @@ typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_TrimPixelColor)
 #pragma mark Package-Private
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_values();
+FOUNDATION_EXPORT IOSObjectArray *PXRThumborUrlBuilder_TrimPixelColorEnum_values();
 
-+ (ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_valueOfWithNSString_(NSString *name);
++ (PXRThumborUrlBuilder_TrimPixelColorEnum *)valueOfWithNSString:(NSString *)name;
+FOUNDATION_EXPORT PXRThumborUrlBuilder_TrimPixelColorEnum *PXRThumborUrlBuilder_TrimPixelColorEnum_valueOfWithNSString_(NSString *name);
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum)
+J2OBJC_STATIC_INIT(PXRThumborUrlBuilder_TrimPixelColorEnum)
 
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_values_[];
+FOUNDATION_EXPORT PXRThumborUrlBuilder_TrimPixelColorEnum *PXRThumborUrlBuilder_TrimPixelColorEnum_values_[];
 
-#define ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_TOP_LEFT ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_values_[ComSquareupPollexorThumborUrlBuilder_TrimPixelColor_TOP_LEFT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum, TOP_LEFT)
+#define PXRThumborUrlBuilder_TrimPixelColorEnum_TOP_LEFT PXRThumborUrlBuilder_TrimPixelColorEnum_values_[PXRThumborUrlBuilder_TrimPixelColor_TOP_LEFT]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_TrimPixelColorEnum, TOP_LEFT)
 
-#define ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_BOTTOM_RIGHT ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_values_[ComSquareupPollexorThumborUrlBuilder_TrimPixelColor_BOTTOM_RIGHT]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum, BOTTOM_RIGHT)
+#define PXRThumborUrlBuilder_TrimPixelColorEnum_BOTTOM_RIGHT PXRThumborUrlBuilder_TrimPixelColorEnum_values_[PXRThumborUrlBuilder_TrimPixelColor_BOTTOM_RIGHT]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_TrimPixelColorEnum, BOTTOM_RIGHT)
 
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum, value_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder_TrimPixelColorEnum, value_, NSString *)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum)
+J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_TrimPixelColorEnum)
 
-typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_ImageFormat) {
-  ComSquareupPollexorThumborUrlBuilder_ImageFormat_GIF = 0,
-  ComSquareupPollexorThumborUrlBuilder_ImageFormat_JPEG = 1,
-  ComSquareupPollexorThumborUrlBuilder_ImageFormat_PNG = 2,
-  ComSquareupPollexorThumborUrlBuilder_ImageFormat_WEBP = 3,
+typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_ImageFormat) {
+  PXRThumborUrlBuilder_ImageFormat_GIF = 0,
+  PXRThumborUrlBuilder_ImageFormat_JPEG = 1,
+  PXRThumborUrlBuilder_ImageFormat_PNG = 2,
+  PXRThumborUrlBuilder_ImageFormat_WEBP = 3,
 };
 
 /**
  @brief Image formats supported by Thumbor.
  */
-@interface ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum : JavaLangEnum < NSCopying > {
+@interface PXRThumborUrlBuilder_ImageFormatEnum : JavaLangEnum < NSCopying > {
  @public
   NSString *value_;
 }
@@ -601,33 +603,33 @@ typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_ImageFormat) {
 #pragma mark Package-Private
 
 + (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values();
+FOUNDATION_EXPORT IOSObjectArray *PXRThumborUrlBuilder_ImageFormatEnum_values();
 
-+ (ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *)valueOfWithNSString:(NSString *)name;
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_valueOfWithNSString_(NSString *name);
++ (PXRThumborUrlBuilder_ImageFormatEnum *)valueOfWithNSString:(NSString *)name;
+FOUNDATION_EXPORT PXRThumborUrlBuilder_ImageFormatEnum *PXRThumborUrlBuilder_ImageFormatEnum_valueOfWithNSString_(NSString *name);
 
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
 
-J2OBJC_STATIC_INIT(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum)
+J2OBJC_STATIC_INIT(PXRThumborUrlBuilder_ImageFormatEnum)
 
-FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values_[];
+FOUNDATION_EXPORT PXRThumborUrlBuilder_ImageFormatEnum *PXRThumborUrlBuilder_ImageFormatEnum_values_[];
 
-#define ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_GIF ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values_[ComSquareupPollexorThumborUrlBuilder_ImageFormat_GIF]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum, GIF)
+#define PXRThumborUrlBuilder_ImageFormatEnum_GIF PXRThumborUrlBuilder_ImageFormatEnum_values_[PXRThumborUrlBuilder_ImageFormat_GIF]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_ImageFormatEnum, GIF)
 
-#define ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_JPEG ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values_[ComSquareupPollexorThumborUrlBuilder_ImageFormat_JPEG]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum, JPEG)
+#define PXRThumborUrlBuilder_ImageFormatEnum_JPEG PXRThumborUrlBuilder_ImageFormatEnum_values_[PXRThumborUrlBuilder_ImageFormat_JPEG]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_ImageFormatEnum, JPEG)
 
-#define ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_PNG ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values_[ComSquareupPollexorThumborUrlBuilder_ImageFormat_PNG]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum, PNG)
+#define PXRThumborUrlBuilder_ImageFormatEnum_PNG PXRThumborUrlBuilder_ImageFormatEnum_values_[PXRThumborUrlBuilder_ImageFormat_PNG]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_ImageFormatEnum, PNG)
 
-#define ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_WEBP ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values_[ComSquareupPollexorThumborUrlBuilder_ImageFormat_WEBP]
-J2OBJC_ENUM_CONSTANT_GETTER(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum, WEBP)
+#define PXRThumborUrlBuilder_ImageFormatEnum_WEBP PXRThumborUrlBuilder_ImageFormatEnum_values_[PXRThumborUrlBuilder_ImageFormat_WEBP]
+J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_ImageFormatEnum, WEBP)
 
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum, value_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder_ImageFormatEnum, value_, NSString *)
 
-J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum)
+J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_ImageFormatEnum)
 
 #endif // _ComSquareupPollexorThumborUrlBuilder_H_

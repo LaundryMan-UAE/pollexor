@@ -14,7 +14,7 @@
 /**
  @brief Utility methods for ThumborUrlBuilder .
  */
-@interface ComSquareupPollexorUtilities : NSObject
+@interface PXRUtilities : NSObject
 
 #pragma mark Public
 
@@ -68,18 +68,20 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComSquareupPollexorUtilities)
+J2OBJC_EMPTY_STATIC_INIT(PXRUtilities)
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorUtilities_base64EncodeWithByteArray_(IOSByteArray *bytes);
+FOUNDATION_EXPORT NSString *PXRUtilities_base64EncodeWithByteArray_(IOSByteArray *bytes);
 
-FOUNDATION_EXPORT void ComSquareupPollexorUtilities_rightPadStringWithJavaLangStringBuilder_withChar_withInt_(JavaLangStringBuilder *builder, jchar padding, jint multipleOf);
+FOUNDATION_EXPORT void PXRUtilities_rightPadStringWithJavaLangStringBuilder_withChar_withInt_(JavaLangStringBuilder *builder, jchar padding, jint multipleOf);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorUtilities_normalizeStringWithNSString_withInt_(NSString *string, jint desiredLength);
+FOUNDATION_EXPORT NSString *PXRUtilities_normalizeStringWithNSString_withInt_(NSString *string, jint desiredLength);
 
-FOUNDATION_EXPORT NSString *ComSquareupPollexorUtilities_md5WithNSString_(NSString *input);
+FOUNDATION_EXPORT NSString *PXRUtilities_md5WithNSString_(NSString *input);
 
-FOUNDATION_EXPORT IOSByteArray *ComSquareupPollexorUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *message, NSString *key);
+FOUNDATION_EXPORT IOSByteArray *PXRUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *message, NSString *key);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorUtilities)
+J2OBJC_TYPE_LITERAL_HEADER(PXRUtilities)
+
+typedef PXRUtilities ComSquareupPollexorUtilities;
 
 #endif // _ComSquareupPollexorUtilities_H_

@@ -8,30 +8,30 @@
 
 #include "J2ObjC_header.h"
 
-@class ComSquareupPollexorThumborUrlBuilder;
+@class PXRThumborUrlBuilder;
 
 /**
  @brief Representation of a remote <a href="https://github.com/globocom/thumbor">thumbor</a> installation.
  */
-@interface ComSquareupPollexorThumbor : NSObject
+@interface PXRThumbor : NSObject
 
 #pragma mark Public
 
 /**
  @brief Begin building a url for this host with the specified image.
  */
-- (ComSquareupPollexorThumborUrlBuilder *)buildImageWithNSString:(NSString *)image;
+- (PXRThumborUrlBuilder *)buildImageWithNSString:(NSString *)image;
 
 /**
  @brief Create a new instance for the specified host.
  */
-+ (ComSquareupPollexorThumbor *)createWithNSString:(NSString *)host;
++ (PXRThumbor *)createWithNSString:(NSString *)host;
 
 /**
  @brief Create a new instance for the specified host and encryption key.
  */
-+ (ComSquareupPollexorThumbor *)createWithNSString:(NSString *)host
-                                      withNSString:(NSString *)key;
++ (PXRThumbor *)createWithNSString:(NSString *)host
+                      withNSString:(NSString *)key;
 
 - (NSString *)getHost;
 
@@ -39,12 +39,14 @@
 
 @end
 
-J2OBJC_EMPTY_STATIC_INIT(ComSquareupPollexorThumbor)
+J2OBJC_EMPTY_STATIC_INIT(PXRThumbor)
 
-FOUNDATION_EXPORT ComSquareupPollexorThumbor *ComSquareupPollexorThumbor_createWithNSString_(NSString *host);
+FOUNDATION_EXPORT PXRThumbor *PXRThumbor_createWithNSString_(NSString *host);
 
-FOUNDATION_EXPORT ComSquareupPollexorThumbor *ComSquareupPollexorThumbor_createWithNSString_withNSString_(NSString *host, NSString *key);
+FOUNDATION_EXPORT PXRThumbor *PXRThumbor_createWithNSString_withNSString_(NSString *host, NSString *key);
 
-J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumbor)
+J2OBJC_TYPE_LITERAL_HEADER(PXRThumbor)
+
+typedef PXRThumbor ComSquareupPollexorThumbor;
 
 #endif // _ComSquareupPollexorThumbor_H_
