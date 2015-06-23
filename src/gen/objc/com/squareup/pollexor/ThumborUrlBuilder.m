@@ -3,7 +3,6 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborUrlBuilder.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
@@ -88,45 +87,17 @@ J2OBJC_STATIC_FIELD_GETTER(ComSquareupPollexorThumborUrlBuilder, FILTER_NO_UPSCA
 static NSString *ComSquareupPollexorThumborUrlBuilder_FILTER_ROTATE_ = @"rotate";
 J2OBJC_STATIC_FIELD_GETTER(ComSquareupPollexorThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 
-@interface ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum ()
-
-- (instancetype)initWithNSString:(NSString *)value
-                    withNSString:(NSString *)__name
-                         withInt:(jint)__ordinal;
-@end
-
 __attribute__((unused)) static void ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal);
 
 __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *new_ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
-
-@interface ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum ()
-
-- (instancetype)initWithNSString:(NSString *)value
-                    withNSString:(NSString *)__name
-                         withInt:(jint)__ordinal;
-@end
 
 __attribute__((unused)) static void ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal);
 
 __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *new_ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
-@interface ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum ()
-
-- (instancetype)initWithNSString:(NSString *)value
-                    withNSString:(NSString *)__name
-                         withInt:(jint)__ordinal;
-@end
-
 __attribute__((unused)) static void ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *self, NSString *value, NSString *__name, jint __ordinal);
 
 __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *new_ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
-
-@interface ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum ()
-
-- (instancetype)initWithNSString:(NSString *)value
-                    withNSString:(NSString *)__name
-                         withInt:(jint)__ordinal;
-@end
 
 __attribute__((unused)) static void ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *self, NSString *value, NSString *__name, jint __ordinal);
 
@@ -144,13 +115,13 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 - (ComSquareupPollexorThumborUrlBuilder *)resizeWithInt:(jint)width
                                                 withInt:(jint)height {
   if (width < 0 && width != ComSquareupPollexorThumborUrlBuilder_ORIGINAL_SIZE) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Width must be a positive number."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Width must be a positive number.") autorelease];
   }
   if (height < 0 && height != ComSquareupPollexorThumborUrlBuilder_ORIGINAL_SIZE) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Height must be a positive number."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Height must be a positive number.") autorelease];
   }
   if (width == 0 && height == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Both width and height must not be zero."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Both width and height must not be zero.") autorelease];
   }
   hasResize_ = YES;
   resizeWidth_ = width;
@@ -160,25 +131,25 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 
 - (ComSquareupPollexorThumborUrlBuilder *)flipHorizontally {
   if (!hasResize_) {
-    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to flip."] autorelease];
+    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to flip.") autorelease];
   }
-  flipHorizontally__ = YES;
+  flipHorizontally_ = YES;
   return self;
 }
 
 - (ComSquareupPollexorThumborUrlBuilder *)flipVertically {
   if (!hasResize_) {
-    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to flip."] autorelease];
+    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to flip.") autorelease];
   }
-  flipVertically__ = YES;
+  flipVertically_ = YES;
   return self;
 }
 
 - (ComSquareupPollexorThumborUrlBuilder *)fitIn {
   if (!hasResize_) {
-    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to apply 'fit-in'."] autorelease];
+    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to apply 'fit-in'.") autorelease];
   }
-  fitIn__ = YES;
+  fitIn_ = YES;
   return self;
 }
 
@@ -187,16 +158,16 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
                                               withInt:(jint)bottom
                                               withInt:(jint)right {
   if (top < 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Top must be greater or equal to zero."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Top must be greater or equal to zero.") autorelease];
   }
   if (left < 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Left must be greater or equal to zero."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Left must be greater or equal to zero.") autorelease];
   }
   if (bottom < 1 || bottom <= top) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Bottom must be greater than zero and top."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Bottom must be greater than zero and top.") autorelease];
   }
   if (right < 1 || right <= left) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Right must be greater than zero and left."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Right must be greater than zero and left.") autorelease];
   }
   hasCrop_ = YES;
   cropTop_ = top;
@@ -208,7 +179,7 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 
 - (ComSquareupPollexorThumborUrlBuilder *)alignWithComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum:(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *)align {
   if (!hasResize_) {
-    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to align."] autorelease];
+    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to align.") autorelease];
   }
   ComSquareupPollexorThumborUrlBuilder_set_cropHorizontalAlign_(self, align);
   return self;
@@ -216,7 +187,7 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 
 - (ComSquareupPollexorThumborUrlBuilder *)alignWithComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum:(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *)align {
   if (!hasResize_) {
-    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to align."] autorelease];
+    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to align.") autorelease];
   }
   ComSquareupPollexorThumborUrlBuilder_set_cropVerticalAlign_(self, align);
   return self;
@@ -229,7 +200,7 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 
 - (ComSquareupPollexorThumborUrlBuilder *)smart {
   if (!hasResize_) {
-    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to smart align."] autorelease];
+    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to smart align.") autorelease];
   }
   isSmart_ = YES;
   return self;
@@ -246,10 +217,10 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 - (ComSquareupPollexorThumborUrlBuilder *)trimWithComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum:(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *)value
                                                                                                   withInt:(jint)colorTolerance {
   if (colorTolerance < 0 || colorTolerance > 442) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Color tolerance must be between 0 and 442."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Color tolerance must be between 0 and 442.") autorelease];
   }
   if (colorTolerance > 0 && value == nil) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Trim pixel color value must not be null."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Trim pixel color value must not be null.") autorelease];
   }
   isTrim_ = YES;
   ComSquareupPollexorThumborUrlBuilder_set_trimPixelColor_(self, value);
@@ -259,10 +230,10 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 
 - (ComSquareupPollexorThumborUrlBuilder *)filterWithNSStringArray:(IOSObjectArray *)filters {
   if (((IOSObjectArray *) nil_chk(filters))->size_ == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"You must provide at least one filter."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"You must provide at least one filter.") autorelease];
   }
   if (self->filters_ == nil) {
-    ComSquareupPollexorThumborUrlBuilder_setAndConsume_filters_(self, [[JavaUtilArrayList alloc] initWithInt:filters->size_]);
+    ComSquareupPollexorThumborUrlBuilder_setAndConsume_filters_(self, new_JavaUtilArrayList_initWithInt_(filters->size_));
   }
   {
     IOSObjectArray *a__ = filters;
@@ -271,7 +242,7 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
     while (b__ < e__) {
       NSString *filter = *b__++;
       if (filter == nil || ((jint) [filter length]) == 0) {
-        @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Filter must not be blank."] autorelease];
+        @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Filter must not be blank.") autorelease];
       }
       [((id<JavaUtilList>) nil_chk(self->filters_)) addWithId:filter];
     }
@@ -289,7 +260,7 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 
 - (NSString *)toUrlSafe {
   if (key_ == nil) {
-    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Cannot build safe URL without a key."] autorelease];
+    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Cannot build safe URL without a key.") autorelease];
   }
   JavaLangStringBuilder *config = [self assembleConfigWithBoolean:NO];
   IOSByteArray *encrypted = ComSquareupPollexorUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(config, key_);
@@ -318,7 +289,7 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
 }
 
 - (JavaLangStringBuilder *)assembleConfigWithBoolean:(jboolean)meta {
-  JavaLangStringBuilder *builder = [[[JavaLangStringBuilder alloc] init] autorelease];
+  JavaLangStringBuilder *builder = [new_JavaLangStringBuilder_init() autorelease];
   if (meta) {
     [builder appendWithNSString:ComSquareupPollexorThumborUrlBuilder_PREFIX_META_];
   }
@@ -337,10 +308,10 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
     [builder appendWithNSString:@"/"];
   }
   if (hasResize_) {
-    if (fitIn__) {
+    if (fitIn_) {
       [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:ComSquareupPollexorThumborUrlBuilder_PART_FIT_IN_])) appendWithNSString:@"/"];
     }
-    if (flipHorizontally__) {
+    if (flipHorizontally_) {
       [builder appendWithNSString:@"-"];
     }
     if (resizeWidth_ == ComSquareupPollexorThumborUrlBuilder_ORIGINAL_SIZE) {
@@ -350,7 +321,7 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
       [builder appendWithInt:resizeWidth_];
     }
     [builder appendWithNSString:@"x"];
-    if (flipVertically__) {
+    if (flipVertically_) {
       [builder appendWithNSString:@"-"];
     }
     if (resizeHeight_ == ComSquareupPollexorThumborUrlBuilder_ORIGINAL_SIZE) {
@@ -586,7 +557,7 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
     { "FILTER_BLUR_", NULL, 0x1a, "Ljava.lang.String;", &ComSquareupPollexorThumborUrlBuilder_FILTER_BLUR_, NULL,  },
     { "FILTER_NO_UPSCALE_", NULL, 0x1a, "Ljava.lang.String;", &ComSquareupPollexorThumborUrlBuilder_FILTER_NO_UPSCALE_, NULL,  },
     { "FILTER_ROTATE_", NULL, 0x1a, "Ljava.lang.String;", &ComSquareupPollexorThumborUrlBuilder_FILTER_ROTATE_, NULL,  },
-    { "ORIGINAL_SIZE_", NULL, 0x19, "I", NULL, NULL, .constantValue.asInt = ComSquareupPollexorThumborUrlBuilder_ORIGINAL_SIZE },
+    { "ORIGINAL_SIZE", "ORIGINAL_SIZE", 0x19, "I", NULL, NULL, .constantValue.asInt = ComSquareupPollexorThumborUrlBuilder_ORIGINAL_SIZE },
     { "image_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
     { "host_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
     { "key_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
@@ -594,9 +565,9 @@ __attribute__((unused)) static ComSquareupPollexorThumborUrlBuilder_ImageFormatE
     { "hasResize_", NULL, 0x0, "Z", NULL, NULL,  },
     { "isSmart_", NULL, 0x0, "Z", NULL, NULL,  },
     { "isTrim_", NULL, 0x0, "Z", NULL, NULL,  },
-    { "flipHorizontally__", "flipHorizontally", 0x0, "Z", NULL, NULL,  },
-    { "flipVertically__", "flipVertically", 0x0, "Z", NULL, NULL,  },
-    { "fitIn__", "fitIn", 0x0, "Z", NULL, NULL,  },
+    { "flipHorizontally_", NULL, 0x0, "Z", NULL, NULL,  },
+    { "flipVertically_", NULL, 0x0, "Z", NULL, NULL,  },
+    { "fitIn_", NULL, 0x0, "Z", NULL, NULL,  },
     { "resizeWidth_", NULL, 0x0, "I", NULL, NULL,  },
     { "resizeHeight_", NULL, 0x0, "I", NULL, NULL,  },
     { "cropTop_", NULL, 0x0, "I", NULL, NULL,  },
@@ -632,7 +603,7 @@ ComSquareupPollexorThumborUrlBuilder *new_ComSquareupPollexorThumborUrlBuilder_i
 NSString *ComSquareupPollexorThumborUrlBuilder_brightnessWithInt_(jint amount) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (amount < -100 || amount > 100) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between -100 and 100, inclusive."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Amount must be between -100 and 100, inclusive.") autorelease];
   }
   return JreStrcat("$CIC", ComSquareupPollexorThumborUrlBuilder_FILTER_BRIGHTNESS_, '(', amount, ')');
 }
@@ -640,7 +611,7 @@ NSString *ComSquareupPollexorThumborUrlBuilder_brightnessWithInt_(jint amount) {
 NSString *ComSquareupPollexorThumborUrlBuilder_contrastWithInt_(jint amount) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (amount < -100 || amount > 100) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between -100 and 100, inclusive."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Amount must be between -100 and 100, inclusive.") autorelease];
   }
   return JreStrcat("$CIC", ComSquareupPollexorThumborUrlBuilder_FILTER_CONTRAST_, '(', amount, ')');
 }
@@ -648,7 +619,7 @@ NSString *ComSquareupPollexorThumborUrlBuilder_contrastWithInt_(jint amount) {
 NSString *ComSquareupPollexorThumborUrlBuilder_noiseWithInt_(jint amount) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (amount < 0 || amount > 100) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between 0 and 100, inclusive"] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Amount must be between 0 and 100, inclusive") autorelease];
   }
   return JreStrcat("$CIC", ComSquareupPollexorThumborUrlBuilder_FILTER_NOISE_, '(', amount, ')');
 }
@@ -656,7 +627,7 @@ NSString *ComSquareupPollexorThumborUrlBuilder_noiseWithInt_(jint amount) {
 NSString *ComSquareupPollexorThumborUrlBuilder_qualityWithInt_(jint amount) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (amount < 0 || amount > 100) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between 0 and 100, inclusive."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Amount must be between 0 and 100, inclusive.") autorelease];
   }
   return JreStrcat("$CIC", ComSquareupPollexorThumborUrlBuilder_FILTER_QUALITY_, '(', amount, ')');
 }
@@ -664,13 +635,13 @@ NSString *ComSquareupPollexorThumborUrlBuilder_qualityWithInt_(jint amount) {
 NSString *ComSquareupPollexorThumborUrlBuilder_rgbWithInt_withInt_withInt_(jint r, jint g, jint b) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (r < -100 || r > 100) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Red value must be between -100 and 100, inclusive."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Red value must be between -100 and 100, inclusive.") autorelease];
   }
   if (g < -100 || g > 100) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Green value must be between -100 and 100, inclusive."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Green value must be between -100 and 100, inclusive.") autorelease];
   }
   if (b < -100 || b > 100) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Blue value must be between -100 and 100, inclusive."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Blue value must be between -100 and 100, inclusive.") autorelease];
   }
   return JreStrcat("$CICICIC", ComSquareupPollexorThumborUrlBuilder_FILTER_RGB_, '(', r, ',', g, ',', b, ')');
 }
@@ -688,12 +659,12 @@ NSString *ComSquareupPollexorThumborUrlBuilder_roundCornerWithInt_withInt_(jint 
 NSString *ComSquareupPollexorThumborUrlBuilder_roundCornerWithInt_withInt_withInt_(jint radiusInner, jint radiusOuter, jint color) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (radiusInner < 1) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Radius must be greater than zero."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Radius must be greater than zero.") autorelease];
   }
   if (radiusOuter < 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Outer radius must be greater than or equal to zero."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Outer radius must be greater than or equal to zero.") autorelease];
   }
-  JavaLangStringBuilder *builder = [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) [[[JavaLangStringBuilder alloc] initWithNSString:ComSquareupPollexorThumborUrlBuilder_FILTER_ROUND_CORNER_] autorelease]) appendWithNSString:@"("])) appendWithInt:radiusInner];
+  JavaLangStringBuilder *builder = [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) [new_JavaLangStringBuilder_initWithNSString_(ComSquareupPollexorThumborUrlBuilder_FILTER_ROUND_CORNER_) autorelease]) appendWithNSString:@"("])) appendWithInt:radiusInner];
   if (radiusOuter > 0) {
     [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(builder)) appendWithNSString:@"|"])) appendWithInt:radiusOuter];
   }
@@ -721,7 +692,7 @@ NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithNSString_withInt_wit
 NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithComSquareupPollexorThumborUrlBuilder_withInt_withInt_(ComSquareupPollexorThumborUrlBuilder *image, jint x, jint y) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (image == nil) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image must not be null."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Image must not be null.") autorelease];
   }
   return ComSquareupPollexorThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_([((ComSquareupPollexorThumborUrlBuilder *) nil_chk(image)) description], x, y, 0);
 }
@@ -729,10 +700,10 @@ NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithComSquareupPollexorT
 NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_(NSString *imageUrl, jint x, jint y, jint transparency) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (imageUrl == nil || ((jint) [imageUrl length]) == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image URL must not be blank."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Image URL must not be blank.") autorelease];
   }
   if (transparency < 0 || transparency > 100) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Transparency must be between 0 and 100, inclusive."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Transparency must be between 0 and 100, inclusive.") autorelease];
   }
   return JreStrcat("$C$CICICIC", ComSquareupPollexorThumborUrlBuilder_FILTER_WATERMARK_, '(', imageUrl, ',', x, ',', y, ',', transparency, ')');
 }
@@ -740,7 +711,7 @@ NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithNSString_withInt_wit
 NSString *ComSquareupPollexorThumborUrlBuilder_watermarkWithComSquareupPollexorThumborUrlBuilder_withInt_withInt_withInt_(ComSquareupPollexorThumborUrlBuilder *image, jint x, jint y, jint transparency) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (image == nil) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image must not be null."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Image must not be null.") autorelease];
   }
   return ComSquareupPollexorThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_([((ComSquareupPollexorThumborUrlBuilder *) nil_chk(image)) description], x, y, transparency);
 }
@@ -759,7 +730,7 @@ NSString *ComSquareupPollexorThumborUrlBuilder_fillWithInt_(jint color) {
 NSString *ComSquareupPollexorThumborUrlBuilder_formatWithComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *format) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (format == nil) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"You must specify an image format."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"You must specify an image format.") autorelease];
   }
   return JreStrcat("$C$C", ComSquareupPollexorThumborUrlBuilder_FILTER_FORMAT_, '(', ((ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *) nil_chk(format))->value_, ')');
 }
@@ -767,7 +738,7 @@ NSString *ComSquareupPollexorThumborUrlBuilder_formatWithComSquareupPollexorThum
 NSString *ComSquareupPollexorThumborUrlBuilder_frameWithNSString_(NSString *imageUrl) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (imageUrl == nil || ((jint) [imageUrl length]) == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image URL must not be blank."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Image URL must not be blank.") autorelease];
   }
   return JreStrcat("$C$C", ComSquareupPollexorThumborUrlBuilder_FILTER_FRAME_, '(', imageUrl, ')');
 }
@@ -795,13 +766,13 @@ NSString *ComSquareupPollexorThumborUrlBuilder_blurWithInt_(jint radius) {
 NSString *ComSquareupPollexorThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (radius < 1) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Radius must be greater than zero."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Radius must be greater than zero.") autorelease];
   }
   if (radius > 150) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Radius must be lower or equal than 150."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Radius must be lower or equal than 150.") autorelease];
   }
   if (sigma < 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Sigma must be greater than zero."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Sigma must be greater than zero.") autorelease];
   }
   return JreStrcat("$CICIC", ComSquareupPollexorThumborUrlBuilder_FILTER_BLUR_, '(', radius, ',', sigma, ')');
 }
@@ -814,7 +785,7 @@ NSString *ComSquareupPollexorThumborUrlBuilder_noUpscale() {
 NSString *ComSquareupPollexorThumborUrlBuilder_rotateWithInt_(jint angle) {
   ComSquareupPollexorThumborUrlBuilder_initialize();
   if (angle % 90 != 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Angle must be multiple of 90\u00b0"] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Angle must be multiple of 90\u00b0") autorelease];
   }
   return JreStrcat("$CIC", ComSquareupPollexorThumborUrlBuilder_FILTER_ROTATE_, '(', angle, ')');
 }
@@ -838,6 +809,7 @@ IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values(
   ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_initialize();
   return [IOSObjectArray arrayWithObjects:ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values_ count:3 type:ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_class_()];
 }
+
 + (IOSObjectArray *)values {
   return ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values();
 }
@@ -864,17 +836,14 @@ ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *ComSquareupPollexorThu
 
 + (void)initialize {
   if (self == [ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum class]) {
-    ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_LEFT = [[ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum alloc] initWithNSString:@"left" withNSString:@"LEFT" withInt:0];
-    ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_CENTER = [[ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum alloc] initWithNSString:@"center" withNSString:@"CENTER" withInt:1];
-    ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_RIGHT = [[ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum alloc] initWithNSString:@"right" withNSString:@"RIGHT" withInt:2];
+    ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_LEFT = new_ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(@"left", @"LEFT", 0);
+    ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_CENTER = new_ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(@"center", @"CENTER", 1);
+    ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_RIGHT = new_ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(@"right", @"RIGHT", 2);
     J2OBJC_SET_INITIALIZED(ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum)
   }
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "HorizontalAlign", NULL, 0x2, NULL, NULL },
-  };
   static const J2ObjcFieldInfo fields[] = {
     { "LEFT", "LEFT", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;", &ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_LEFT, NULL,  },
     { "CENTER", "CENTER", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;", &ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_CENTER, NULL,  },
@@ -882,7 +851,7 @@ ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *ComSquareupPollexorThu
     { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
   };
   static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;"};
-  static const J2ObjcClassInfo _ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum = { 2, "HorizontalAlign", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 1, methods, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$HorizontalAlign;>;" };
+  static const J2ObjcClassInfo _ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum = { 2, "HorizontalAlign", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 0, NULL, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$HorizontalAlign;>;" };
   return &_ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum;
 }
 
@@ -918,6 +887,7 @@ IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values() 
   ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_initialize();
   return [IOSObjectArray arrayWithObjects:ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values_ count:3 type:ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_class_()];
 }
+
 + (IOSObjectArray *)values {
   return ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values();
 }
@@ -944,17 +914,14 @@ ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *ComSquareupPollexorThumb
 
 + (void)initialize {
   if (self == [ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum class]) {
-    ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_TOP = [[ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum alloc] initWithNSString:@"top" withNSString:@"TOP" withInt:0];
-    ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_MIDDLE = [[ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum alloc] initWithNSString:@"middle" withNSString:@"MIDDLE" withInt:1];
-    ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_BOTTOM = [[ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum alloc] initWithNSString:@"bottom" withNSString:@"BOTTOM" withInt:2];
+    ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_TOP = new_ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(@"top", @"TOP", 0);
+    ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_MIDDLE = new_ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(@"middle", @"MIDDLE", 1);
+    ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_BOTTOM = new_ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(@"bottom", @"BOTTOM", 2);
     J2OBJC_SET_INITIALIZED(ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum)
   }
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "VerticalAlign", NULL, 0x2, NULL, NULL },
-  };
   static const J2ObjcFieldInfo fields[] = {
     { "TOP", "TOP", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;", &ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_TOP, NULL,  },
     { "MIDDLE", "MIDDLE", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;", &ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_MIDDLE, NULL,  },
@@ -962,7 +929,7 @@ ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *ComSquareupPollexorThumb
     { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
   };
   static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;"};
-  static const J2ObjcClassInfo _ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum = { 2, "VerticalAlign", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 1, methods, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$VerticalAlign;>;" };
+  static const J2ObjcClassInfo _ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum = { 2, "VerticalAlign", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 0, NULL, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$VerticalAlign;>;" };
   return &_ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum;
 }
 
@@ -998,6 +965,7 @@ IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_values()
   ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_initialize();
   return [IOSObjectArray arrayWithObjects:ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_values_ count:2 type:ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_class_()];
 }
+
 + (IOSObjectArray *)values {
   return ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_values();
 }
@@ -1024,23 +992,20 @@ ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *ComSquareupPollexorThum
 
 + (void)initialize {
   if (self == [ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum class]) {
-    ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_TOP_LEFT = [[ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum alloc] initWithNSString:@"top-left" withNSString:@"TOP_LEFT" withInt:0];
-    ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_BOTTOM_RIGHT = [[ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum alloc] initWithNSString:@"bottom-right" withNSString:@"BOTTOM_RIGHT" withInt:1];
+    ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_TOP_LEFT = new_ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(@"top-left", @"TOP_LEFT", 0);
+    ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_BOTTOM_RIGHT = new_ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(@"bottom-right", @"BOTTOM_RIGHT", 1);
     J2OBJC_SET_INITIALIZED(ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum)
   }
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "TrimPixelColor", NULL, 0x2, NULL, NULL },
-  };
   static const J2ObjcFieldInfo fields[] = {
     { "TOP_LEFT", "TOP_LEFT", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;", &ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_TOP_LEFT, NULL,  },
     { "BOTTOM_RIGHT", "BOTTOM_RIGHT", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;", &ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_BOTTOM_RIGHT, NULL,  },
     { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
   };
   static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;"};
-  static const J2ObjcClassInfo _ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum = { 2, "TrimPixelColor", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 1, methods, 3, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$TrimPixelColor;>;" };
+  static const J2ObjcClassInfo _ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum = { 2, "TrimPixelColor", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 0, NULL, 3, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$TrimPixelColor;>;" };
   return &_ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum;
 }
 
@@ -1076,6 +1041,7 @@ IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values() {
   ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_initialize();
   return [IOSObjectArray arrayWithObjects:ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values_ count:4 type:ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_class_()];
 }
+
 + (IOSObjectArray *)values {
   return ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values();
 }
@@ -1102,18 +1068,15 @@ ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *ComSquareupPollexorThumbor
 
 + (void)initialize {
   if (self == [ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum class]) {
-    ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_GIF = [[ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum alloc] initWithNSString:@"gif" withNSString:@"GIF" withInt:0];
-    ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_JPEG = [[ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum alloc] initWithNSString:@"jpeg" withNSString:@"JPEG" withInt:1];
-    ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_PNG = [[ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum alloc] initWithNSString:@"png" withNSString:@"PNG" withInt:2];
-    ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_WEBP = [[ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum alloc] initWithNSString:@"webp" withNSString:@"WEBP" withInt:3];
+    ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_GIF = new_ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(@"gif", @"GIF", 0);
+    ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_JPEG = new_ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(@"jpeg", @"JPEG", 1);
+    ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_PNG = new_ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(@"png", @"PNG", 2);
+    ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_WEBP = new_ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(@"webp", @"WEBP", 3);
     J2OBJC_SET_INITIALIZED(ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum)
   }
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "ImageFormat", NULL, 0x2, NULL, NULL },
-  };
   static const J2ObjcFieldInfo fields[] = {
     { "GIF", "GIF", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;", &ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_GIF, NULL,  },
     { "JPEG", "JPEG", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;", &ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_JPEG, NULL,  },
@@ -1122,7 +1085,7 @@ ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *ComSquareupPollexorThumbor
     { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
   };
   static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;"};
-  static const J2ObjcClassInfo _ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum = { 2, "ImageFormat", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 1, methods, 5, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$ImageFormat;>;" };
+  static const J2ObjcClassInfo _ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum = { 2, "ImageFormat", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 0, NULL, 5, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$ImageFormat;>;" };
   return &_ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum;
 }
 

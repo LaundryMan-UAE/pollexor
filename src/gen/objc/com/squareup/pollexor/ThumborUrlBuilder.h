@@ -6,6 +6,9 @@
 #ifndef _ComSquareupPollexorThumborUrlBuilder_H_
 #define _ComSquareupPollexorThumborUrlBuilder_H_
 
+#include "J2ObjC_header.h"
+#include "java/lang/Enum.h"
+
 @class ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum;
 @class ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum;
 @class ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum;
@@ -13,9 +16,6 @@
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
 @protocol JavaUtilList;
-
-#include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
 
 #define ComSquareupPollexorThumborUrlBuilder_ORIGINAL_SIZE ((jint) 0x80000000)
 
@@ -31,9 +31,9 @@
   jboolean hasResize_;
   jboolean isSmart_;
   jboolean isTrim_;
-  jboolean flipHorizontally__;
-  jboolean flipVertically__;
-  jboolean fitIn__;
+  jboolean flipHorizontally_;
+  jboolean flipVertically_;
+  jboolean fitIn_;
   jint resizeWidth_;
   jint resizeHeight_;
   jint cropTop_;
@@ -478,8 +478,8 @@ typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_HorizontalAlign
 FOUNDATION_EXPORT IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_values();
 
 + (ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *)valueOfWithNSString:(NSString *)name;
-
 FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum *ComSquareupPollexorThumborUrlBuilder_HorizontalAlignEnum_valueOfWithNSString_(NSString *name);
+
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
@@ -521,8 +521,8 @@ typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_VerticalAlign) 
 FOUNDATION_EXPORT IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_values();
 
 + (ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *)valueOfWithNSString:(NSString *)name;
-
 FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum *ComSquareupPollexorThumborUrlBuilder_VerticalAlignEnum_valueOfWithNSString_(NSString *name);
+
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
@@ -563,8 +563,8 @@ typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_TrimPixelColor)
 FOUNDATION_EXPORT IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_values();
 
 + (ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *)valueOfWithNSString:(NSString *)name;
-
 FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum *ComSquareupPollexorThumborUrlBuilder_TrimPixelColorEnum_valueOfWithNSString_(NSString *name);
+
 - (id)copyWithZone:(NSZone *)zone;
 
 @end
@@ -604,8 +604,8 @@ typedef NS_ENUM(NSUInteger, ComSquareupPollexorThumborUrlBuilder_ImageFormat) {
 FOUNDATION_EXPORT IOSObjectArray *ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_values();
 
 + (ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *)valueOfWithNSString:(NSString *)name;
-
 FOUNDATION_EXPORT ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum *ComSquareupPollexorThumborUrlBuilder_ImageFormatEnum_valueOfWithNSString_(NSString *name);
+
 - (id)copyWithZone:(NSZone *)zone;
 
 @end

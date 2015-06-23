@@ -6,16 +6,15 @@
 #ifndef _ComSquareupPollexorUtilities_H_
 #define _ComSquareupPollexorUtilities_H_
 
+#include "J2ObjC_header.h"
+
 @class IOSByteArray;
 @class JavaLangStringBuilder;
-
-#include "J2ObjC_header.h"
 
 /**
  @brief Utility methods for ThumborUrlBuilder .
  */
-@interface ComSquareupPollexorUtilities : NSObject {
-}
+@interface ComSquareupPollexorUtilities : NSObject
 
 #pragma mark Public
 

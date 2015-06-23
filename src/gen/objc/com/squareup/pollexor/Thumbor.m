@@ -3,7 +3,6 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/Thumbor.java
 //
 
-
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/Thumbor.h"
@@ -18,6 +17,7 @@
 
 - (instancetype)initWithNSString:(NSString *)host
                     withNSString:(NSString *)key;
+
 @end
 
 J2OBJC_FIELD_SETTER(ComSquareupPollexorThumbor, host_, NSString *)
@@ -54,9 +54,9 @@ __attribute__((unused)) static ComSquareupPollexorThumbor *new_ComSquareupPollex
 
 - (ComSquareupPollexorThumborUrlBuilder *)buildImageWithNSString:(NSString *)image {
   if (image == nil || ((jint) [image length]) == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Invalid image."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Invalid image.") autorelease];
   }
-  return [[[ComSquareupPollexorThumborUrlBuilder alloc] initWithNSString:host_ withNSString:key_ withNSString:image] autorelease];
+  return [new_ComSquareupPollexorThumborUrlBuilder_initWithNSString_withNSString_withNSString_(host_, key_, image) autorelease];
 }
 
 - (void)dealloc {
@@ -86,21 +86,21 @@ __attribute__((unused)) static ComSquareupPollexorThumbor *new_ComSquareupPollex
 
 ComSquareupPollexorThumbor *ComSquareupPollexorThumbor_createWithNSString_(NSString *host) {
   ComSquareupPollexorThumbor_initialize();
-  return [[[ComSquareupPollexorThumbor alloc] initWithNSString:host withNSString:nil] autorelease];
+  return [new_ComSquareupPollexorThumbor_initWithNSString_withNSString_(host, nil) autorelease];
 }
 
 ComSquareupPollexorThumbor *ComSquareupPollexorThumbor_createWithNSString_withNSString_(NSString *host, NSString *key) {
   ComSquareupPollexorThumbor_initialize();
   if (key == nil || ((jint) [key length]) == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Key must not be blank."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Key must not be blank.") autorelease];
   }
-  return [[[ComSquareupPollexorThumbor alloc] initWithNSString:host withNSString:key] autorelease];
+  return [new_ComSquareupPollexorThumbor_initWithNSString_withNSString_(host, key) autorelease];
 }
 
 void ComSquareupPollexorThumbor_initWithNSString_withNSString_(ComSquareupPollexorThumbor *self, NSString *host, NSString *key) {
   NSObject_init(self);
   if (host == nil || ((jint) [host length]) == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Host must not be blank."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Host must not be blank.") autorelease];
   }
   if (![((NSString *) nil_chk(host)) hasSuffix:@"/"]) {
     host = JreStrcat("$C", host, '/');

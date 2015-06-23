@@ -6,15 +6,14 @@
 #ifndef _ComSquareupPollexorThumbor_H_
 #define _ComSquareupPollexorThumbor_H_
 
-@class ComSquareupPollexorThumborUrlBuilder;
-
 #include "J2ObjC_header.h"
+
+@class ComSquareupPollexorThumborUrlBuilder;
 
 /**
  @brief Representation of a remote <a href="https://github.com/globocom/thumbor">thumbor</a> installation.
  */
-@interface ComSquareupPollexorThumbor : NSObject {
-}
+@interface ComSquareupPollexorThumbor : NSObject
 
 #pragma mark Public
 
