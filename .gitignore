@@ -6,7 +6,6 @@ eclipsebin
 
 # Ant
 bin
-gen
 build
 out
 lib
