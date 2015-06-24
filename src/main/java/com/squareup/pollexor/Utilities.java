@@ -173,7 +173,7 @@ final class Utilities {
      NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC
      length:sizeof(cHMAC)];
 
-     NSString *base64Hash = [hash base64EncodedStringWithOptions:nil];
+     NSString *base64Hash = [HMAC base64EncodedStringWithOptions:nil];
 
      return [((NSString *) nil_chk(base64Hash)) getBytes];
   ]-*/;
