@@ -6,6 +6,10 @@ import java.util.List;
 
 import static com.squareup.pollexor.Utilities.base64Encode;
 import static com.squareup.pollexor.Utilities.hmacSha1;
+import com.squareup.pollexor.ThumborEnums.HorizontalAlign;
+import com.squareup.pollexor.ThumborEnums.VerticalAlign;
+import com.squareup.pollexor.ThumborEnums.TrimPixelColor;
+import com.squareup.pollexor.ThumborEnums.ImageFormat;
 
 /**
  * Fluent interface to build a Thumbor URL.
@@ -39,50 +43,6 @@ public final class ThumborUrlBuilder {
 
   /** Original size for image width or height. **/
   public static final int ORIGINAL_SIZE = Integer.MIN_VALUE;
-
-  /** Horizontal alignment for crop positioning. */
-  public enum HorizontalAlign {
-    LEFT("left"), CENTER("center"), RIGHT("right");
-
-    final String value;
-
-    private HorizontalAlign(String value) {
-      this.value = value;
-    }
-  }
-
-  /** Vertical alignment for crop positioning. */
-  public enum VerticalAlign {
-    TOP("top"), MIDDLE("middle"), BOTTOM("bottom");
-
-    final String value;
-
-    private VerticalAlign(String value) {
-      this.value = value;
-    }
-  }
-
-  /** Orientation from where to get the pixel color for trim. */
-  public enum TrimPixelColor {
-    TOP_LEFT("top-left"), BOTTOM_RIGHT("bottom-right");
-
-    final String value;
-
-    private TrimPixelColor(String value) {
-      this.value = value;
-    }
-  }
-
-  /** Image formats supported by Thumbor. */
-  public enum ImageFormat {
-    GIF("gif"), JPEG("jpeg"), PNG("png"), WEBP("webp");
-
-    final String value;
-
-    private ImageFormat(String value) {
-      this.value = value;
-    }
-  }
 
   final String image;
   final String host;
