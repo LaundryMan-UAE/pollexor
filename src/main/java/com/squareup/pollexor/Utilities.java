@@ -5,7 +5,6 @@ import java.security.MessageDigest;
 
 /*-[
 #import <CommonCrypto/CommonHMAC.h>
-#import "NSData+Base64.h"
 ]-*/
 
 

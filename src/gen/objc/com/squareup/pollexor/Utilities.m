@@ -14,7 +14,6 @@
 #include "java/security/MessageDigest.h"
 
 #import <CommonCrypto/CommonHMAC.h>
-#import "NSData+Base64.h"
 
 @interface PXRUtilities () {
 }
