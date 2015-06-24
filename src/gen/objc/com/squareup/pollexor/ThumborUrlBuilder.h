@@ -10,10 +10,8 @@
 
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
-@class PXRThumborEnums_HorizontalAlignEnum;
-@class PXRThumborEnums_ImageFormatEnum;
-@class PXRThumborEnums_TrimPixelColorEnum;
-@class PXRThumborEnums_VerticalAlignEnum;
+@class PXRThumborEnumReplacement;
+@class PXRThumborVerticalEnumReplacement;
 @protocol JavaUtilList;
 
 #define PXRThumborUrlBuilder_ORIGINAL_SIZE ((jint) 0x80000000)
@@ -40,9 +38,9 @@
   jint cropBottom_;
   jint cropRight_;
   jint trimColorTolerance_;
-  PXRThumborEnums_HorizontalAlignEnum *cropHorizontalAlign_;
-  PXRThumborEnums_VerticalAlignEnum *cropVerticalAlign_;
-  PXRThumborEnums_TrimPixelColorEnum *trimPixelColor_;
+  PXRThumborEnumReplacement *cropHorizontalAlign_;
+  PXRThumborVerticalEnumReplacement *cropVerticalAlign_;
+  PXRThumborEnumReplacement *trimPixelColor_;
   id<JavaUtilList> filters_;
 }
 
@@ -53,14 +51,7 @@
  @param align Horizontal alignment.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (PXRThumborUrlBuilder *)alignWithPXRThumborEnums_HorizontalAlignEnum:(PXRThumborEnums_HorizontalAlignEnum *)align;
-
-/**
- @brief Set the vertical alignment for the image when image gets cropped by resizing.
- @param align Vertical alignment.
- @throws IllegalStateException if image has not been marked for resize.
- */
-- (PXRThumborUrlBuilder *)alignWithPXRThumborEnums_VerticalAlignEnum:(PXRThumborEnums_VerticalAlignEnum *)align;
+- (PXRThumborUrlBuilder *)alignWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)align;
 
 /**
  @brief Set the horizontal and vertical alignment for the image when image gets cropped by resizing.
@@ -68,8 +59,15 @@
  @param halign Horizontal alignment.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (PXRThumborUrlBuilder *)alignWithPXRThumborEnums_VerticalAlignEnum:(PXRThumborEnums_VerticalAlignEnum *)valign
-                             withPXRThumborEnums_HorizontalAlignEnum:(PXRThumborEnums_HorizontalAlignEnum *)halign;
+- (PXRThumborUrlBuilder *)alignWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)valign
+                               withPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)halign;
+
+/**
+ @brief Set the vertical alignment for the image when image gets cropped by resizing.
+ @param align Vertical alignment.
+ @throws IllegalStateException if image has not been marked for resize.
+ */
+- (PXRThumborUrlBuilder *)alignWithPXRThumborVerticalEnumReplacement:(PXRThumborVerticalEnumReplacement *)align;
 
 /**
  @brief This filter adds a blur effect to the image using the specified radius and a default sigma (equal to the radius).
@@ -153,7 +151,7 @@
 /**
  @brief Specify the output format of the image.
  */
-+ (NSString *)formatWithPXRThumborEnums_ImageFormatEnum:(PXRThumborEnums_ImageFormatEnum *)format;
++ (NSString *)formatWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)format;
 
 /**
  @brief This filter uses a 9-patch to overlay the image.
@@ -303,7 +301,7 @@
  Get trim color from specified pixel.
  @param value orientation from where to get the pixel color.
  */
-- (PXRThumborUrlBuilder *)trimWithPXRThumborEnums_TrimPixelColorEnum:(PXRThumborEnums_TrimPixelColorEnum *)value;
+- (PXRThumborUrlBuilder *)trimWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)value;
 
 /**
  @brief Removing surrounding space in image.
@@ -311,8 +309,8 @@
  @param value orientation from where to get the pixel color.
  @param colorTolerance 0 - 442. This is the euclidian distance between the colors of the reference pixel and the surrounding pixels is used. If the distance is within the tolerance they'll get trimmed.
  */
-- (PXRThumborUrlBuilder *)trimWithPXRThumborEnums_TrimPixelColorEnum:(PXRThumborEnums_TrimPixelColorEnum *)value
-                                                             withInt:(jint)colorTolerance;
+- (PXRThumborUrlBuilder *)trimWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)value
+                                                    withInt:(jint)colorTolerance;
 
 /**
  @brief This filter adds a watermark to the image at (0, 0).
@@ -394,9 +392,9 @@ J2OBJC_EMPTY_STATIC_INIT(PXRThumborUrlBuilder)
 J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, image_, NSString *)
 J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, host_, NSString *)
 J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, key_, NSString *)
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropHorizontalAlign_, PXRThumborEnums_HorizontalAlignEnum *)
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropVerticalAlign_, PXRThumborEnums_VerticalAlignEnum *)
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, trimPixelColor_, PXRThumborEnums_TrimPixelColorEnum *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropHorizontalAlign_, PXRThumborEnumReplacement *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropVerticalAlign_, PXRThumborVerticalEnumReplacement *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, trimPixelColor_, PXRThumborEnumReplacement *)
 J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, filters_, id<JavaUtilList>)
 
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, ORIGINAL_SIZE, jint)
@@ -437,7 +435,7 @@ FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_sharpenWithFloat_withFloat_with
 
 FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_fillWithInt_(jint color);
 
-FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_formatWithPXRThumborEnums_ImageFormatEnum_(PXRThumborEnums_ImageFormatEnum *format);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_formatWithPXRThumborEnumReplacement_(PXRThumborEnumReplacement *format);
 
 FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_frameWithNSString_(NSString *imageUrl);
 

@@ -6,10 +6,6 @@ import java.util.List;
 
 import static com.squareup.pollexor.Utilities.base64Encode;
 import static com.squareup.pollexor.Utilities.hmacSha1;
-import com.squareup.pollexor.ThumborEnums.HorizontalAlign;
-import com.squareup.pollexor.ThumborEnums.VerticalAlign;
-import com.squareup.pollexor.ThumborEnums.TrimPixelColor;
-import com.squareup.pollexor.ThumborEnums.ImageFormat;
 
 /**
  * Fluent interface to build a Thumbor URL.
@@ -61,9 +57,9 @@ public final class ThumborUrlBuilder {
   int cropBottom;
   int cropRight;
   int trimColorTolerance;
-  HorizontalAlign cropHorizontalAlign;
-  VerticalAlign cropVerticalAlign;
-  TrimPixelColor trimPixelColor;
+  ThumborEnumReplacement cropHorizontalAlign;
+  ThumborVerticalEnumReplacement cropVerticalAlign;
+  ThumborEnumReplacement trimPixelColor;
   List<String> filters;
 
   ThumborUrlBuilder(String host, String key, String image) {
@@ -173,7 +169,7 @@ public final class ThumborUrlBuilder {
    * @param align Horizontal alignment.
    * @throws IllegalStateException if image has not been marked for resize.
    */
-  public ThumborUrlBuilder align(HorizontalAlign align) {
+  public ThumborUrlBuilder align(ThumborEnumReplacement align) {
     if (!hasResize) {
       throw new IllegalStateException("Image must be resized first in order to align.");
     }
@@ -187,7 +183,7 @@ public final class ThumborUrlBuilder {
    * @param align Vertical alignment.
    * @throws IllegalStateException if image has not been marked for resize.
    */
-  public ThumborUrlBuilder align(VerticalAlign align) {
+  public ThumborUrlBuilder align(ThumborVerticalEnumReplacement align) {
     if (!hasResize) {
       throw new IllegalStateException("Image must be resized first in order to align.");
     }
@@ -202,7 +198,7 @@ public final class ThumborUrlBuilder {
    * @param halign Horizontal alignment.
    * @throws IllegalStateException if image has not been marked for resize.
    */
-  public ThumborUrlBuilder align(VerticalAlign valign, HorizontalAlign halign) {
+  public ThumborUrlBuilder align(ThumborEnumReplacement valign, ThumborEnumReplacement halign) {
     return align(valign).align(halign);
   }
 
@@ -230,7 +226,7 @@ public final class ThumborUrlBuilder {
    * Removing surrounding space in image. Get trim color from specified pixel.
    * @param value orientation from where to get the pixel color.
    */
-  public ThumborUrlBuilder trim(TrimPixelColor value) {
+  public ThumborUrlBuilder trim(ThumborEnumReplacement value) {
     return trim(value, 0);
   }
 
@@ -241,7 +237,7 @@ public final class ThumborUrlBuilder {
    * between the colors of the reference pixel and the surrounding pixels is used.
    * If the distance is within the tolerance they'll get trimmed.
    */
-  public ThumborUrlBuilder trim(TrimPixelColor value, int colorTolerance) {
+  public ThumborUrlBuilder trim(ThumborEnumReplacement value, int colorTolerance) {
     if (colorTolerance < 0 || colorTolerance > 442) {
       throw new IllegalArgumentException("Color tolerance must be between 0 and 442.");
     }
@@ -364,7 +360,7 @@ public final class ThumborUrlBuilder {
     if (isTrim) {
       builder.append(PART_TRIM);
       if (trimPixelColor != null) {
-        builder.append(":").append(trimPixelColor.value);
+        builder.append(":").append(trimPixelColor.getValue());
         if (trimColorTolerance > 0) {
           builder.append(":").append(trimColorTolerance);
         }
@@ -404,10 +400,10 @@ public final class ThumborUrlBuilder {
         builder.append("/").append(PART_SMART);
       } else {
         if (cropHorizontalAlign != null) {
-          builder.append("/").append(cropHorizontalAlign.value);
+          builder.append("/").append(cropHorizontalAlign.getValue());
         }
         if (cropVerticalAlign != null) {
-          builder.append("/").append(cropVerticalAlign.value);
+          builder.append("/").append(cropVerticalAlign.getValue());
         }
       }
       builder.append("/");
@@ -675,13 +671,13 @@ public final class ThumborUrlBuilder {
   /**
    * Specify the output format of the image.
    *
-   * @see ImageFormat
+   * @see ThumborEnumReplacement
    */
-  public static String format(ImageFormat format) {
+  public static String format(ThumborEnumReplacement format) {
     if (format == null) {
       throw new IllegalArgumentException("You must specify an image format.");
     }
-    return FILTER_FORMAT + "(" + format.value + ")";
+    return FILTER_FORMAT + "(" + format.getValue() + ")";
   }
 
   /**
