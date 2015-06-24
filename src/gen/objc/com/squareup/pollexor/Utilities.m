@@ -180,9 +180,9 @@ IOSByteArray *PXRUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(JavaL
   NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC
   length:sizeof(cHMAC)];
   
-  NSString hash = [HMAC base64Encoding];
+  NSString *hash = [HMAC base64Encoding];
   
-  return [((NSString *) nil_chk(hash_)) getBytes];
+  return [((NSString *) nil_chk(hash)) getBytes];
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRUtilities)
