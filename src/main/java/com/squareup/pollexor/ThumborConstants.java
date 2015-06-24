@@ -3,7 +3,7 @@ package com.squareup.pollexor;
 /**
  * Created by marcussmith on 24/06/15.
  */
-public interface ThumborEnums {
+public interface ThumborConstants {
 
     ThumborEnumReplacement HORIZ_ALIGN_LEFT = new ThumborEnumReplacement("left");
     ThumborEnumReplacement HORIZ_ALIGN_MIDDLE = new ThumborEnumReplacement("middle");
