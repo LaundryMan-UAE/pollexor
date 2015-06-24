@@ -3,6 +3,7 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborTrimPixelColor.java
 //
 
+
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/ThumborTrimPixelColor.h"
 
@@ -11,7 +12,6 @@
   NSString *top_left_;
   NSString *bottom_right_;
 }
-
 @end
 
 J2OBJC_FIELD_SETTER(PXRThumborTrimPixelColor, top_left_, NSString *)

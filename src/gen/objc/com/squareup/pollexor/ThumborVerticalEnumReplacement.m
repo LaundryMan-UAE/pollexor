@@ -3,6 +3,7 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborVerticalEnumReplacement.java
 //
 
+
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/ThumborVerticalEnumReplacement.h"
 
@@ -10,7 +11,6 @@
  @public
   NSString *value_;
 }
-
 @end
 
 J2OBJC_FIELD_SETTER(PXRThumborVerticalEnumReplacement, value_, NSString *)

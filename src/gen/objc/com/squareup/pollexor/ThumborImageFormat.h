@@ -3,15 +3,16 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborImageFormat.java
 //
 
-#ifndef _ComSquareupPollexorThumborImageFormat_H_
-#define _ComSquareupPollexorThumborImageFormat_H_
+#ifndef _PXRThumborImageFormat_H_
+#define _PXRThumborImageFormat_H_
 
 #include "J2ObjC_header.h"
 
 /**
  @brief Created by marcussmith on 24/06/15.
  */
-@interface PXRThumborImageFormat : NSObject
+@interface PXRThumborImageFormat : NSObject {
+}
 
 #pragma mark Public
 
@@ -41,4 +42,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborImageFormat)
 
 typedef PXRThumborImageFormat ComSquareupPollexorThumborImageFormat;
 
-#endif // _ComSquareupPollexorThumborImageFormat_H_
+#endif // _PXRThumborImageFormat_H_

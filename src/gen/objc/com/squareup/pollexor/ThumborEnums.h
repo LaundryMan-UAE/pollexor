@@ -3,21 +3,21 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborEnums.java
 //
 
-#ifndef _ComSquareupPollexorThumborEnums_H_
-#define _ComSquareupPollexorThumborEnums_H_
-
-#include "J2ObjC_header.h"
+#ifndef _PXRThumborEnums_H_
+#define _PXRThumborEnums_H_
 
 @class PXRThumborEnumReplacement;
+
+#include "J2ObjC_header.h"
 
 /**
  @brief Created by marcussmith on 24/06/15.
  */
+@protocol PXRThumborEnums < NSObject, JavaObject >
+
+@end
+
 @interface PXRThumborEnums : NSObject
-
-#pragma mark Public
-
-- (instancetype)init;
 
 @end
 
@@ -25,42 +25,30 @@ J2OBJC_STATIC_INIT(PXRThumborEnums)
 
 FOUNDATION_EXPORT PXRThumborEnumReplacement *PXRThumborEnums_HORIZ_ALIGN_LEFT_;
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborEnums, HORIZ_ALIGN_LEFT_, PXRThumborEnumReplacement *)
-J2OBJC_STATIC_FIELD_SETTER(PXRThumborEnums, HORIZ_ALIGN_LEFT_, PXRThumborEnumReplacement *)
 
 FOUNDATION_EXPORT PXRThumborEnumReplacement *PXRThumborEnums_HORIZ_ALIGN_MIDDLE_;
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborEnums, HORIZ_ALIGN_MIDDLE_, PXRThumborEnumReplacement *)
-J2OBJC_STATIC_FIELD_SETTER(PXRThumborEnums, HORIZ_ALIGN_MIDDLE_, PXRThumborEnumReplacement *)
 
 FOUNDATION_EXPORT PXRThumborEnumReplacement *PXRThumborEnums_HORIZ_ALIGN_RIGHT_;
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborEnums, HORIZ_ALIGN_RIGHT_, PXRThumborEnumReplacement *)
-J2OBJC_STATIC_FIELD_SETTER(PXRThumborEnums, HORIZ_ALIGN_RIGHT_, PXRThumborEnumReplacement *)
 
 FOUNDATION_EXPORT PXRThumborEnumReplacement *PXRThumborEnums_VERT_ALIGN_TOP_;
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborEnums, VERT_ALIGN_TOP_, PXRThumborEnumReplacement *)
-J2OBJC_STATIC_FIELD_SETTER(PXRThumborEnums, VERT_ALIGN_TOP_, PXRThumborEnumReplacement *)
 
 FOUNDATION_EXPORT PXRThumborEnumReplacement *PXRThumborEnums_VERT_ALIGN_CENTER_;
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborEnums, VERT_ALIGN_CENTER_, PXRThumborEnumReplacement *)
-J2OBJC_STATIC_FIELD_SETTER(PXRThumborEnums, VERT_ALIGN_CENTER_, PXRThumborEnumReplacement *)
 
 FOUNDATION_EXPORT PXRThumborEnumReplacement *PXRThumborEnums_VERT_ALIGN_BOTTOM_;
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborEnums, VERT_ALIGN_BOTTOM_, PXRThumborEnumReplacement *)
-J2OBJC_STATIC_FIELD_SETTER(PXRThumborEnums, VERT_ALIGN_BOTTOM_, PXRThumborEnumReplacement *)
 
 FOUNDATION_EXPORT PXRThumborEnumReplacement *PXRThumborEnums_PIXEL_COLOR_TOP_LEFT_;
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborEnums, PIXEL_COLOR_TOP_LEFT_, PXRThumborEnumReplacement *)
-J2OBJC_STATIC_FIELD_SETTER(PXRThumborEnums, PIXEL_COLOR_TOP_LEFT_, PXRThumborEnumReplacement *)
 
 FOUNDATION_EXPORT PXRThumborEnumReplacement *PXRThumborEnums_PIXEL_COLOR_BOTTOM_RIGHT_;
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborEnums, PIXEL_COLOR_BOTTOM_RIGHT_, PXRThumborEnumReplacement *)
-J2OBJC_STATIC_FIELD_SETTER(PXRThumborEnums, PIXEL_COLOR_BOTTOM_RIGHT_, PXRThumborEnumReplacement *)
-
-FOUNDATION_EXPORT void PXRThumborEnums_init(PXRThumborEnums *self);
-
-FOUNDATION_EXPORT PXRThumborEnums *new_PXRThumborEnums_init() NS_RETURNS_RETAINED;
 
 J2OBJC_TYPE_LITERAL_HEADER(PXRThumborEnums)
 
-typedef PXRThumborEnums ComSquareupPollexorThumborEnums;
+#define ComSquareupPollexorThumborEnums PXRThumborEnums
 
-#endif // _ComSquareupPollexorThumborEnums_H_
+#endif // _PXRThumborEnums_H_

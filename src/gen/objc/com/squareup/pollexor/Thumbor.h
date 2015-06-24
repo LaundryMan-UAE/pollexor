@@ -3,17 +3,18 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/Thumbor.java
 //
 
-#ifndef _ComSquareupPollexorThumbor_H_
-#define _ComSquareupPollexorThumbor_H_
-
-#include "J2ObjC_header.h"
+#ifndef _PXRThumbor_H_
+#define _PXRThumbor_H_
 
 @class PXRThumborUrlBuilder;
+
+#include "J2ObjC_header.h"
 
 /**
  @brief Representation of a remote <a href="https://github.com/globocom/thumbor">thumbor</a> installation.
  */
-@interface PXRThumbor : NSObject
+@interface PXRThumbor : NSObject {
+}
 
 #pragma mark Public
 
@@ -49,4 +50,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumbor)
 
 typedef PXRThumbor ComSquareupPollexorThumbor;
 
-#endif // _ComSquareupPollexorThumbor_H_
+#endif // _PXRThumbor_H_

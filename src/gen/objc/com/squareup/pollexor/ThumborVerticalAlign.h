@@ -3,15 +3,16 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborVerticalAlign.java
 //
 
-#ifndef _ComSquareupPollexorThumborVerticalAlign_H_
-#define _ComSquareupPollexorThumborVerticalAlign_H_
+#ifndef _PXRThumborVerticalAlign_H_
+#define _PXRThumborVerticalAlign_H_
 
 #include "J2ObjC_header.h"
 
 /**
  @brief Created by marcussmith on 24/06/15.
  */
-@interface PXRThumborVerticalAlign : NSObject
+@interface PXRThumborVerticalAlign : NSObject {
+}
 
 #pragma mark Public
 
@@ -37,4 +38,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborVerticalAlign)
 
 typedef PXRThumborVerticalAlign ComSquareupPollexorThumborVerticalAlign;
 
-#endif // _ComSquareupPollexorThumborVerticalAlign_H_
+#endif // _PXRThumborVerticalAlign_H_

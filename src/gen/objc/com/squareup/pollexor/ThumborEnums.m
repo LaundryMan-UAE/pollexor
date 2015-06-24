@@ -3,6 +3,7 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborEnums.java
 //
 
+
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/ThumborEnumReplacement.h"
@@ -21,53 +22,35 @@ PXRThumborEnumReplacement *PXRThumborEnums_PIXEL_COLOR_BOTTOM_RIGHT_;
 
 @implementation PXRThumborEnums
 
-- (instancetype)init {
-  PXRThumborEnums_init(self);
-  return self;
-}
-
 + (void)initialize {
   if (self == [PXRThumborEnums class]) {
-    JreStrongAssignAndConsume(&PXRThumborEnums_HORIZ_ALIGN_LEFT_, nil, new_PXRThumborEnumReplacement_initWithNSString_(@"left"));
-    JreStrongAssignAndConsume(&PXRThumborEnums_HORIZ_ALIGN_MIDDLE_, nil, new_PXRThumborEnumReplacement_initWithNSString_(@"middle"));
-    JreStrongAssignAndConsume(&PXRThumborEnums_HORIZ_ALIGN_RIGHT_, nil, new_PXRThumborEnumReplacement_initWithNSString_(@"right"));
-    JreStrongAssignAndConsume(&PXRThumborEnums_VERT_ALIGN_TOP_, nil, new_PXRThumborEnumReplacement_initWithNSString_(@"top"));
-    JreStrongAssignAndConsume(&PXRThumborEnums_VERT_ALIGN_CENTER_, nil, new_PXRThumborEnumReplacement_initWithNSString_(@"center"));
-    JreStrongAssignAndConsume(&PXRThumborEnums_VERT_ALIGN_BOTTOM_, nil, new_PXRThumborEnumReplacement_initWithNSString_(@"bottom"));
-    JreStrongAssignAndConsume(&PXRThumborEnums_PIXEL_COLOR_TOP_LEFT_, nil, new_PXRThumborEnumReplacement_initWithNSString_(@"top-left"));
-    JreStrongAssignAndConsume(&PXRThumborEnums_PIXEL_COLOR_BOTTOM_RIGHT_, nil, new_PXRThumborEnumReplacement_initWithNSString_(@"bottom-right"));
+    JreStrongAssignAndConsume(&PXRThumborEnums_HORIZ_ALIGN_LEFT_, nil, [[PXRThumborEnumReplacement alloc] initWithNSString:@"left"]);
+    JreStrongAssignAndConsume(&PXRThumborEnums_HORIZ_ALIGN_MIDDLE_, nil, [[PXRThumborEnumReplacement alloc] initWithNSString:@"middle"]);
+    JreStrongAssignAndConsume(&PXRThumborEnums_HORIZ_ALIGN_RIGHT_, nil, [[PXRThumborEnumReplacement alloc] initWithNSString:@"right"]);
+    JreStrongAssignAndConsume(&PXRThumborEnums_VERT_ALIGN_TOP_, nil, [[PXRThumborEnumReplacement alloc] initWithNSString:@"top"]);
+    JreStrongAssignAndConsume(&PXRThumborEnums_VERT_ALIGN_CENTER_, nil, [[PXRThumborEnumReplacement alloc] initWithNSString:@"center"]);
+    JreStrongAssignAndConsume(&PXRThumborEnums_VERT_ALIGN_BOTTOM_, nil, [[PXRThumborEnumReplacement alloc] initWithNSString:@"bottom"]);
+    JreStrongAssignAndConsume(&PXRThumborEnums_PIXEL_COLOR_TOP_LEFT_, nil, [[PXRThumborEnumReplacement alloc] initWithNSString:@"top-left"]);
+    JreStrongAssignAndConsume(&PXRThumborEnums_PIXEL_COLOR_BOTTOM_RIGHT_, nil, [[PXRThumborEnumReplacement alloc] initWithNSString:@"bottom-right"]);
     J2OBJC_SET_INITIALIZED(PXRThumborEnums)
   }
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", NULL, NULL, 0x1, NULL, NULL },
-  };
   static const J2ObjcFieldInfo fields[] = {
-    { "HORIZ_ALIGN_LEFT_", NULL, 0x9, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_HORIZ_ALIGN_LEFT_, NULL,  },
-    { "HORIZ_ALIGN_MIDDLE_", NULL, 0x9, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_HORIZ_ALIGN_MIDDLE_, NULL,  },
-    { "HORIZ_ALIGN_RIGHT_", NULL, 0x9, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_HORIZ_ALIGN_RIGHT_, NULL,  },
-    { "VERT_ALIGN_TOP_", NULL, 0x9, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_VERT_ALIGN_TOP_, NULL,  },
-    { "VERT_ALIGN_CENTER_", NULL, 0x9, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_VERT_ALIGN_CENTER_, NULL,  },
-    { "VERT_ALIGN_BOTTOM_", NULL, 0x9, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_VERT_ALIGN_BOTTOM_, NULL,  },
-    { "PIXEL_COLOR_TOP_LEFT_", NULL, 0x9, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_PIXEL_COLOR_TOP_LEFT_, NULL,  },
-    { "PIXEL_COLOR_BOTTOM_RIGHT_", NULL, 0x9, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_PIXEL_COLOR_BOTTOM_RIGHT_, NULL,  },
+    { "HORIZ_ALIGN_LEFT_", NULL, 0x19, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_HORIZ_ALIGN_LEFT_, NULL,  },
+    { "HORIZ_ALIGN_MIDDLE_", NULL, 0x19, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_HORIZ_ALIGN_MIDDLE_, NULL,  },
+    { "HORIZ_ALIGN_RIGHT_", NULL, 0x19, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_HORIZ_ALIGN_RIGHT_, NULL,  },
+    { "VERT_ALIGN_TOP_", NULL, 0x19, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_VERT_ALIGN_TOP_, NULL,  },
+    { "VERT_ALIGN_CENTER_", NULL, 0x19, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_VERT_ALIGN_CENTER_, NULL,  },
+    { "VERT_ALIGN_BOTTOM_", NULL, 0x19, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_VERT_ALIGN_BOTTOM_, NULL,  },
+    { "PIXEL_COLOR_TOP_LEFT_", NULL, 0x19, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_PIXEL_COLOR_TOP_LEFT_, NULL,  },
+    { "PIXEL_COLOR_BOTTOM_RIGHT_", NULL, 0x19, "Lcom.squareup.pollexor.ThumborEnumReplacement;", &PXRThumborEnums_PIXEL_COLOR_BOTTOM_RIGHT_, NULL,  },
   };
-  static const J2ObjcClassInfo _PXRThumborEnums = { 2, "ThumborEnums", "com.squareup.pollexor", NULL, 0x1, 1, methods, 8, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _PXRThumborEnums = { 2, "ThumborEnums", "com.squareup.pollexor", NULL, 0x609, 0, NULL, 8, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_PXRThumborEnums;
 }
 
 @end
 
-void PXRThumborEnums_init(PXRThumborEnums *self) {
-  NSObject_init(self);
-}
-
-PXRThumborEnums *new_PXRThumborEnums_init() {
-  PXRThumborEnums *self = [PXRThumborEnums alloc];
-  PXRThumborEnums_init(self);
-  return self;
-}
-
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumborEnums)
+J2OBJC_INTERFACE_TYPE_LITERAL_SOURCE(PXRThumborEnums)

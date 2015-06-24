@@ -3,15 +3,16 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborVerticalEnumReplacement.java
 //
 
-#ifndef _ComSquareupPollexorThumborVerticalEnumReplacement_H_
-#define _ComSquareupPollexorThumborVerticalEnumReplacement_H_
+#ifndef _PXRThumborVerticalEnumReplacement_H_
+#define _PXRThumborVerticalEnumReplacement_H_
 
 #include "J2ObjC_header.h"
 
 /**
  @brief Created by marcussmith on 24/06/15.
  */
-@interface PXRThumborVerticalEnumReplacement : NSObject
+@interface PXRThumborVerticalEnumReplacement : NSObject {
+}
 
 #pragma mark Public
 
@@ -31,4 +32,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborVerticalEnumReplacement)
 
 typedef PXRThumborVerticalEnumReplacement ComSquareupPollexorThumborVerticalEnumReplacement;
 
-#endif // _ComSquareupPollexorThumborVerticalEnumReplacement_H_
+#endif // _PXRThumborVerticalEnumReplacement_H_

@@ -3,18 +3,19 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/Utilities.java
 //
 
-#ifndef _ComSquareupPollexorUtilities_H_
-#define _ComSquareupPollexorUtilities_H_
-
-#include "J2ObjC_header.h"
+#ifndef _PXRUtilities_H_
+#define _PXRUtilities_H_
 
 @class IOSByteArray;
 @class JavaLangStringBuilder;
 
+#include "J2ObjC_header.h"
+
 /**
  @brief Utility methods for ThumborUrlBuilder .
  */
-@interface PXRUtilities : NSObject
+@interface PXRUtilities : NSObject {
+}
 
 #pragma mark Public
 
@@ -84,4 +85,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRUtilities)
 
 typedef PXRUtilities ComSquareupPollexorUtilities;
 
-#endif // _ComSquareupPollexorUtilities_H_
+#endif // _PXRUtilities_H_

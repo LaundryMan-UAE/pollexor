@@ -3,6 +3,7 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborImageFormat.java
 //
 
+
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/ThumborImageFormat.h"
 

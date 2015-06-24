@@ -3,6 +3,7 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborVerticalAlign.java
 //
 
+
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/ThumborVerticalAlign.h"
 
@@ -12,7 +13,6 @@
   NSString *middle_;
   NSString *bottom_;
 }
-
 @end
 
 J2OBJC_FIELD_SETTER(PXRThumborVerticalAlign, top_, NSString *)

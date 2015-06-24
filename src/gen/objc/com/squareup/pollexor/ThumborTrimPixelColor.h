@@ -3,15 +3,16 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborTrimPixelColor.java
 //
 
-#ifndef _ComSquareupPollexorThumborTrimPixelColor_H_
-#define _ComSquareupPollexorThumborTrimPixelColor_H_
+#ifndef _PXRThumborTrimPixelColor_H_
+#define _PXRThumborTrimPixelColor_H_
 
 #include "J2ObjC_header.h"
 
 /**
  @brief Created by marcussmith on 24/06/15.
  */
-@interface PXRThumborTrimPixelColor : NSObject
+@interface PXRThumborTrimPixelColor : NSObject {
+}
 
 #pragma mark Public
 
@@ -34,4 +35,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborTrimPixelColor)
 
 typedef PXRThumborTrimPixelColor ComSquareupPollexorThumborTrimPixelColor;
 
-#endif // _ComSquareupPollexorThumborTrimPixelColor_H_
+#endif // _PXRThumborTrimPixelColor_H_

@@ -3,16 +3,16 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborUrlBuilder.java
 //
 
-#ifndef _ComSquareupPollexorThumborUrlBuilder_H_
-#define _ComSquareupPollexorThumborUrlBuilder_H_
-
-#include "J2ObjC_header.h"
+#ifndef _PXRThumborUrlBuilder_H_
+#define _PXRThumborUrlBuilder_H_
 
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
 @class PXRThumborEnumReplacement;
 @class PXRThumborVerticalEnumReplacement;
 @protocol JavaUtilList;
+
+#include "J2ObjC_header.h"
 
 #define PXRThumborUrlBuilder_ORIGINAL_SIZE ((jint) 0x80000000)
 
@@ -28,9 +28,9 @@
   jboolean hasResize_;
   jboolean isSmart_;
   jboolean isTrim_;
-  jboolean flipHorizontally_;
-  jboolean flipVertically_;
-  jboolean fitIn_;
+  jboolean flipHorizontally__;
+  jboolean flipVertically__;
+  jboolean fitIn__;
   jint resizeWidth_;
   jint resizeHeight_;
   jint cropTop_;
@@ -457,4 +457,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder)
 
 typedef PXRThumborUrlBuilder ComSquareupPollexorThumborUrlBuilder;
 
-#endif // _ComSquareupPollexorThumborUrlBuilder_H_
+#endif // _PXRThumborUrlBuilder_H_

@@ -3,18 +3,18 @@ package com.squareup.pollexor;
 /**
  * Created by marcussmith on 24/06/15.
  */
-public class ThumborEnums {
+public interface ThumborEnums {
 
-    public static ThumborEnumReplacement HORIZ_ALIGN_LEFT = new ThumborEnumReplacement("left");
-    public static ThumborEnumReplacement HORIZ_ALIGN_MIDDLE = new ThumborEnumReplacement("middle");
-    public static ThumborEnumReplacement HORIZ_ALIGN_RIGHT = new ThumborEnumReplacement("right");
+    ThumborEnumReplacement HORIZ_ALIGN_LEFT = new ThumborEnumReplacement("left");
+    ThumborEnumReplacement HORIZ_ALIGN_MIDDLE = new ThumborEnumReplacement("middle");
+    ThumborEnumReplacement HORIZ_ALIGN_RIGHT = new ThumborEnumReplacement("right");
 
-    public static ThumborEnumReplacement VERT_ALIGN_TOP = new ThumborEnumReplacement("top");
-    public static ThumborEnumReplacement VERT_ALIGN_CENTER = new ThumborEnumReplacement("center");
-    public static ThumborEnumReplacement VERT_ALIGN_BOTTOM = new ThumborEnumReplacement("bottom");
+    ThumborEnumReplacement VERT_ALIGN_TOP = new ThumborEnumReplacement("top");
+    ThumborEnumReplacement VERT_ALIGN_CENTER = new ThumborEnumReplacement("center");
+    ThumborEnumReplacement VERT_ALIGN_BOTTOM = new ThumborEnumReplacement("bottom");
 
-    public static ThumborEnumReplacement PIXEL_COLOR_TOP_LEFT = new ThumborEnumReplacement("top-left");
-    public static ThumborEnumReplacement PIXEL_COLOR_BOTTOM_RIGHT = new ThumborEnumReplacement("bottom-right");
+    ThumborEnumReplacement PIXEL_COLOR_TOP_LEFT = new ThumborEnumReplacement("top-left");
+    ThumborEnumReplacement PIXEL_COLOR_BOTTOM_RIGHT = new ThumborEnumReplacement("bottom-right");
 
 //    /** Horizontal alignment for crop positioning. */
 //    public enum HorizontalAlign {

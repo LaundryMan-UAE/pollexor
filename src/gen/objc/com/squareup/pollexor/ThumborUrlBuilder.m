@@ -3,6 +3,7 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborUrlBuilder.java
 //
 
+
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
@@ -100,13 +101,13 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 - (PXRThumborUrlBuilder *)resizeWithInt:(jint)width
                                 withInt:(jint)height {
   if (width < 0 && width != PXRThumborUrlBuilder_ORIGINAL_SIZE) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Width must be a positive number.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Width must be a positive number."] autorelease];
   }
   if (height < 0 && height != PXRThumborUrlBuilder_ORIGINAL_SIZE) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Height must be a positive number.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Height must be a positive number."] autorelease];
   }
   if (width == 0 && height == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Both width and height must not be zero.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Both width and height must not be zero."] autorelease];
   }
   hasResize_ = YES;
   resizeWidth_ = width;
@@ -116,25 +117,25 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 
 - (PXRThumborUrlBuilder *)flipHorizontally {
   if (!hasResize_) {
-    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to flip.") autorelease];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to flip."] autorelease];
   }
-  flipHorizontally_ = YES;
+  flipHorizontally__ = YES;
   return self;
 }
 
 - (PXRThumborUrlBuilder *)flipVertically {
   if (!hasResize_) {
-    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to flip.") autorelease];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to flip."] autorelease];
   }
-  flipVertically_ = YES;
+  flipVertically__ = YES;
   return self;
 }
 
 - (PXRThumborUrlBuilder *)fitIn {
   if (!hasResize_) {
-    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to apply 'fit-in'.") autorelease];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to apply 'fit-in'."] autorelease];
   }
-  fitIn_ = YES;
+  fitIn__ = YES;
   return self;
 }
 
@@ -143,16 +144,16 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
                               withInt:(jint)bottom
                               withInt:(jint)right {
   if (top < 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Top must be greater or equal to zero.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Top must be greater or equal to zero."] autorelease];
   }
   if (left < 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Left must be greater or equal to zero.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Left must be greater or equal to zero."] autorelease];
   }
   if (bottom < 1 || bottom <= top) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Bottom must be greater than zero and top.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Bottom must be greater than zero and top."] autorelease];
   }
   if (right < 1 || right <= left) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Right must be greater than zero and left.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Right must be greater than zero and left."] autorelease];
   }
   hasCrop_ = YES;
   cropTop_ = top;
@@ -164,7 +165,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 
 - (PXRThumborUrlBuilder *)alignWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)align {
   if (!hasResize_) {
-    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to align.") autorelease];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to align."] autorelease];
   }
   PXRThumborUrlBuilder_set_cropHorizontalAlign_(self, align);
   return self;
@@ -172,7 +173,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 
 - (PXRThumborUrlBuilder *)alignWithPXRThumborVerticalEnumReplacement:(PXRThumborVerticalEnumReplacement *)align {
   if (!hasResize_) {
-    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to align.") autorelease];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to align."] autorelease];
   }
   PXRThumborUrlBuilder_set_cropVerticalAlign_(self, align);
   return self;
@@ -185,7 +186,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 
 - (PXRThumborUrlBuilder *)smart {
   if (!hasResize_) {
-    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Image must be resized first in order to smart align.") autorelease];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to smart align."] autorelease];
   }
   isSmart_ = YES;
   return self;
@@ -202,10 +203,10 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 - (PXRThumborUrlBuilder *)trimWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)value
                                                     withInt:(jint)colorTolerance {
   if (colorTolerance < 0 || colorTolerance > 442) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Color tolerance must be between 0 and 442.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Color tolerance must be between 0 and 442."] autorelease];
   }
   if (colorTolerance > 0 && value == nil) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Trim pixel color value must not be null.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Trim pixel color value must not be null."] autorelease];
   }
   isTrim_ = YES;
   PXRThumborUrlBuilder_set_trimPixelColor_(self, value);
@@ -215,10 +216,10 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 
 - (PXRThumborUrlBuilder *)filterWithNSStringArray:(IOSObjectArray *)filters {
   if (((IOSObjectArray *) nil_chk(filters))->size_ == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"You must provide at least one filter.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"You must provide at least one filter."] autorelease];
   }
   if (self->filters_ == nil) {
-    PXRThumborUrlBuilder_setAndConsume_filters_(self, new_JavaUtilArrayList_initWithInt_(filters->size_));
+    PXRThumborUrlBuilder_setAndConsume_filters_(self, [[JavaUtilArrayList alloc] initWithInt:filters->size_]);
   }
   {
     IOSObjectArray *a__ = filters;
@@ -227,7 +228,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     while (b__ < e__) {
       NSString *filter = *b__++;
       if (filter == nil || ((jint) [filter length]) == 0) {
-        @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Filter must not be blank.") autorelease];
+        @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Filter must not be blank."] autorelease];
       }
       [((id<JavaUtilList>) nil_chk(self->filters_)) addWithId:filter];
     }
@@ -245,7 +246,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 
 - (NSString *)toUrlSafe {
   if (key_ == nil) {
-    @throw [new_JavaLangIllegalStateException_initWithNSString_(@"Cannot build safe URL without a key.") autorelease];
+    @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Cannot build safe URL without a key."] autorelease];
   }
   JavaLangStringBuilder *config = [self assembleConfigWithBoolean:NO];
   IOSByteArray *encrypted = PXRUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(config, key_);
@@ -274,7 +275,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 }
 
 - (JavaLangStringBuilder *)assembleConfigWithBoolean:(jboolean)meta {
-  JavaLangStringBuilder *builder = [new_JavaLangStringBuilder_init() autorelease];
+  JavaLangStringBuilder *builder = [[[JavaLangStringBuilder alloc] init] autorelease];
   if (meta) {
     [builder appendWithNSString:PXRThumborUrlBuilder_PREFIX_META_];
   }
@@ -293,10 +294,10 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     [builder appendWithNSString:@"/"];
   }
   if (hasResize_) {
-    if (fitIn_) {
+    if (fitIn__) {
       [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:PXRThumborUrlBuilder_PART_FIT_IN_])) appendWithNSString:@"/"];
     }
-    if (flipHorizontally_) {
+    if (flipHorizontally__) {
       [builder appendWithNSString:@"-"];
     }
     if (resizeWidth_ == PXRThumborUrlBuilder_ORIGINAL_SIZE) {
@@ -306,7 +307,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
       [builder appendWithInt:resizeWidth_];
     }
     [builder appendWithNSString:@"x"];
-    if (flipVertically_) {
+    if (flipVertically__) {
       [builder appendWithNSString:@"-"];
     }
     if (resizeHeight_ == PXRThumborUrlBuilder_ORIGINAL_SIZE) {
@@ -542,7 +543,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     { "FILTER_BLUR_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_BLUR_, NULL,  },
     { "FILTER_NO_UPSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_NO_UPSCALE_, NULL,  },
     { "FILTER_ROTATE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_ROTATE_, NULL,  },
-    { "ORIGINAL_SIZE", "ORIGINAL_SIZE", 0x19, "I", NULL, NULL, .constantValue.asInt = PXRThumborUrlBuilder_ORIGINAL_SIZE },
+    { "ORIGINAL_SIZE_", NULL, 0x19, "I", NULL, NULL, .constantValue.asInt = PXRThumborUrlBuilder_ORIGINAL_SIZE },
     { "image_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
     { "host_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
     { "key_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
@@ -550,9 +551,9 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     { "hasResize_", NULL, 0x0, "Z", NULL, NULL,  },
     { "isSmart_", NULL, 0x0, "Z", NULL, NULL,  },
     { "isTrim_", NULL, 0x0, "Z", NULL, NULL,  },
-    { "flipHorizontally_", NULL, 0x0, "Z", NULL, NULL,  },
-    { "flipVertically_", NULL, 0x0, "Z", NULL, NULL,  },
-    { "fitIn_", NULL, 0x0, "Z", NULL, NULL,  },
+    { "flipHorizontally__", "flipHorizontally", 0x0, "Z", NULL, NULL,  },
+    { "flipVertically__", "flipVertically", 0x0, "Z", NULL, NULL,  },
+    { "fitIn__", "fitIn", 0x0, "Z", NULL, NULL,  },
     { "resizeWidth_", NULL, 0x0, "I", NULL, NULL,  },
     { "resizeHeight_", NULL, 0x0, "I", NULL, NULL,  },
     { "cropTop_", NULL, 0x0, "I", NULL, NULL,  },
@@ -587,7 +588,7 @@ PXRThumborUrlBuilder *new_PXRThumborUrlBuilder_initWithNSString_withNSString_wit
 NSString *PXRThumborUrlBuilder_brightnessWithInt_(jint amount) {
   PXRThumborUrlBuilder_initialize();
   if (amount < -100 || amount > 100) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Amount must be between -100 and 100, inclusive.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between -100 and 100, inclusive."] autorelease];
   }
   return JreStrcat("$CIC", PXRThumborUrlBuilder_FILTER_BRIGHTNESS_, '(', amount, ')');
 }
@@ -595,7 +596,7 @@ NSString *PXRThumborUrlBuilder_brightnessWithInt_(jint amount) {
 NSString *PXRThumborUrlBuilder_contrastWithInt_(jint amount) {
   PXRThumborUrlBuilder_initialize();
   if (amount < -100 || amount > 100) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Amount must be between -100 and 100, inclusive.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between -100 and 100, inclusive."] autorelease];
   }
   return JreStrcat("$CIC", PXRThumborUrlBuilder_FILTER_CONTRAST_, '(', amount, ')');
 }
@@ -603,7 +604,7 @@ NSString *PXRThumborUrlBuilder_contrastWithInt_(jint amount) {
 NSString *PXRThumborUrlBuilder_noiseWithInt_(jint amount) {
   PXRThumborUrlBuilder_initialize();
   if (amount < 0 || amount > 100) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Amount must be between 0 and 100, inclusive") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between 0 and 100, inclusive"] autorelease];
   }
   return JreStrcat("$CIC", PXRThumborUrlBuilder_FILTER_NOISE_, '(', amount, ')');
 }
@@ -611,7 +612,7 @@ NSString *PXRThumborUrlBuilder_noiseWithInt_(jint amount) {
 NSString *PXRThumborUrlBuilder_qualityWithInt_(jint amount) {
   PXRThumborUrlBuilder_initialize();
   if (amount < 0 || amount > 100) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Amount must be between 0 and 100, inclusive.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between 0 and 100, inclusive."] autorelease];
   }
   return JreStrcat("$CIC", PXRThumborUrlBuilder_FILTER_QUALITY_, '(', amount, ')');
 }
@@ -619,13 +620,13 @@ NSString *PXRThumborUrlBuilder_qualityWithInt_(jint amount) {
 NSString *PXRThumborUrlBuilder_rgbWithInt_withInt_withInt_(jint r, jint g, jint b) {
   PXRThumborUrlBuilder_initialize();
   if (r < -100 || r > 100) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Red value must be between -100 and 100, inclusive.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Red value must be between -100 and 100, inclusive."] autorelease];
   }
   if (g < -100 || g > 100) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Green value must be between -100 and 100, inclusive.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Green value must be between -100 and 100, inclusive."] autorelease];
   }
   if (b < -100 || b > 100) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Blue value must be between -100 and 100, inclusive.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Blue value must be between -100 and 100, inclusive."] autorelease];
   }
   return JreStrcat("$CICICIC", PXRThumborUrlBuilder_FILTER_RGB_, '(', r, ',', g, ',', b, ')');
 }
@@ -643,12 +644,12 @@ NSString *PXRThumborUrlBuilder_roundCornerWithInt_withInt_(jint radius, jint col
 NSString *PXRThumborUrlBuilder_roundCornerWithInt_withInt_withInt_(jint radiusInner, jint radiusOuter, jint color) {
   PXRThumborUrlBuilder_initialize();
   if (radiusInner < 1) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Radius must be greater than zero.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Radius must be greater than zero."] autorelease];
   }
   if (radiusOuter < 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Outer radius must be greater than or equal to zero.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Outer radius must be greater than or equal to zero."] autorelease];
   }
-  JavaLangStringBuilder *builder = [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) [new_JavaLangStringBuilder_initWithNSString_(PXRThumborUrlBuilder_FILTER_ROUND_CORNER_) autorelease]) appendWithNSString:@"("])) appendWithInt:radiusInner];
+  JavaLangStringBuilder *builder = [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) [[[JavaLangStringBuilder alloc] initWithNSString:PXRThumborUrlBuilder_FILTER_ROUND_CORNER_] autorelease]) appendWithNSString:@"("])) appendWithInt:radiusInner];
   if (radiusOuter > 0) {
     [((JavaLangStringBuilder *) nil_chk([((JavaLangStringBuilder *) nil_chk(builder)) appendWithNSString:@"|"])) appendWithInt:radiusOuter];
   }
@@ -676,7 +677,7 @@ NSString *PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_(NSString *
 NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt_(PXRThumborUrlBuilder *image, jint x, jint y) {
   PXRThumborUrlBuilder_initialize();
   if (image == nil) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Image must not be null.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image must not be null."] autorelease];
   }
   return PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_([((PXRThumborUrlBuilder *) nil_chk(image)) description], x, y, 0);
 }
@@ -684,10 +685,10 @@ NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt
 NSString *PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_(NSString *imageUrl, jint x, jint y, jint transparency) {
   PXRThumborUrlBuilder_initialize();
   if (imageUrl == nil || ((jint) [imageUrl length]) == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Image URL must not be blank.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image URL must not be blank."] autorelease];
   }
   if (transparency < 0 || transparency > 100) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Transparency must be between 0 and 100, inclusive.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Transparency must be between 0 and 100, inclusive."] autorelease];
   }
   return JreStrcat("$C$CICICIC", PXRThumborUrlBuilder_FILTER_WATERMARK_, '(', imageUrl, ',', x, ',', y, ',', transparency, ')');
 }
@@ -695,7 +696,7 @@ NSString *PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_(NS
 NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt_withInt_(PXRThumborUrlBuilder *image, jint x, jint y, jint transparency) {
   PXRThumborUrlBuilder_initialize();
   if (image == nil) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Image must not be null.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image must not be null."] autorelease];
   }
   return PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_([((PXRThumborUrlBuilder *) nil_chk(image)) description], x, y, transparency);
 }
@@ -714,7 +715,7 @@ NSString *PXRThumborUrlBuilder_fillWithInt_(jint color) {
 NSString *PXRThumborUrlBuilder_formatWithPXRThumborEnumReplacement_(PXRThumborEnumReplacement *format) {
   PXRThumborUrlBuilder_initialize();
   if (format == nil) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"You must specify an image format.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"You must specify an image format."] autorelease];
   }
   return JreStrcat("$C$C", PXRThumborUrlBuilder_FILTER_FORMAT_, '(', [((PXRThumborEnumReplacement *) nil_chk(format)) getValue], ')');
 }
@@ -722,7 +723,7 @@ NSString *PXRThumborUrlBuilder_formatWithPXRThumborEnumReplacement_(PXRThumborEn
 NSString *PXRThumborUrlBuilder_frameWithNSString_(NSString *imageUrl) {
   PXRThumborUrlBuilder_initialize();
   if (imageUrl == nil || ((jint) [imageUrl length]) == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Image URL must not be blank.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image URL must not be blank."] autorelease];
   }
   return JreStrcat("$C$C", PXRThumborUrlBuilder_FILTER_FRAME_, '(', imageUrl, ')');
 }
@@ -750,13 +751,13 @@ NSString *PXRThumborUrlBuilder_blurWithInt_(jint radius) {
 NSString *PXRThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma) {
   PXRThumborUrlBuilder_initialize();
   if (radius < 1) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Radius must be greater than zero.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Radius must be greater than zero."] autorelease];
   }
   if (radius > 150) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Radius must be lower or equal than 150.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Radius must be lower or equal than 150."] autorelease];
   }
   if (sigma < 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Sigma must be greater than zero.") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Sigma must be greater than zero."] autorelease];
   }
   return JreStrcat("$CICIC", PXRThumborUrlBuilder_FILTER_BLUR_, '(', radius, ',', sigma, ')');
 }
@@ -769,7 +770,7 @@ NSString *PXRThumborUrlBuilder_noUpscale() {
 NSString *PXRThumborUrlBuilder_rotateWithInt_(jint angle) {
   PXRThumborUrlBuilder_initialize();
   if (angle % 90 != 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Angle must be multiple of 90\u00b0") autorelease];
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Angle must be multiple of 90\u00b0"] autorelease];
   }
   return JreStrcat("$CIC", PXRThumborUrlBuilder_FILTER_ROTATE_, '(', angle, ')');
 }
