@@ -14,6 +14,7 @@
 #include "java/security/MessageDigest.h"
 
 #import <CommonCrypto/CommonHMAC.h>
+#import "NSData+Base64.h"
 
 @interface PXRUtilities () {
 }
@@ -180,9 +181,9 @@ IOSByteArray *PXRUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(JavaL
   NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC
   length:sizeof(cHMAC)];
   
-  NSString *hash = [HMAC base64Encoding];
+  NSString *base64Hash = [hash base64EncodedStringWithOptions:nil];
   
-  return [((NSString *) nil_chk(hash)) getBytes];
+  return [((NSString *) nil_chk(base64Hash)) getBytes];
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRUtilities)

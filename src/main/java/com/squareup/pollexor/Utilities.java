@@ -5,6 +5,7 @@ import java.security.MessageDigest;
 
 /*-[
 #import <CommonCrypto/CommonHMAC.h>
+#import "NSData+Base64.h"
 ]-*/
 
 
@@ -173,8 +174,8 @@ final class Utilities {
      NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC
      length:sizeof(cHMAC)];
 
-     NSString *hash = [HMAC base64Encoding];
+     NSString *base64Hash = [hash base64EncodedStringWithOptions:nil];
 
-     return [((NSString *) nil_chk(hash)) getBytes];
+     return [((NSString *) nil_chk(base64Hash)) getBytes];
   ]-*/;
 }
