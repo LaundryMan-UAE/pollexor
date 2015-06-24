@@ -8,14 +8,13 @@
 
 @class IOSObjectArray;
 @class JavaLangStringBuilder;
-@class PXRThumborUrlBuilder_HorizontalAlignEnum;
-@class PXRThumborUrlBuilder_ImageFormatEnum;
-@class PXRThumborUrlBuilder_TrimPixelColorEnum;
-@class PXRThumborUrlBuilder_VerticalAlignEnum;
+@class PXRHorizontalAlignEnum;
+@class PXRImageFormatEnum;
+@class PXRTrimPixelColorEnum;
+@class PXRVerticalAlignEnum;
 @protocol JavaUtilList;
 
 #include "J2ObjC_header.h"
-#include "java/lang/Enum.h"
 
 #define PXRThumborUrlBuilder_ORIGINAL_SIZE ((jint) 0x80000000)
 
@@ -41,9 +40,9 @@
   jint cropBottom_;
   jint cropRight_;
   jint trimColorTolerance_;
-  PXRThumborUrlBuilder_HorizontalAlignEnum *cropHorizontalAlign_;
-  PXRThumborUrlBuilder_VerticalAlignEnum *cropVerticalAlign_;
-  PXRThumborUrlBuilder_TrimPixelColorEnum *trimPixelColor_;
+  PXRHorizontalAlignEnum *cropHorizontalAlign_;
+  PXRVerticalAlignEnum *cropVerticalAlign_;
+  PXRTrimPixelColorEnum *trimPixelColor_;
   id<JavaUtilList> filters_;
 }
 
@@ -54,14 +53,14 @@
  @param align Horizontal alignment.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_HorizontalAlignEnum:(PXRThumborUrlBuilder_HorizontalAlignEnum *)align;
+- (PXRThumborUrlBuilder *)alignWithPXRHorizontalAlignEnum:(PXRHorizontalAlignEnum *)align;
 
 /**
  @brief Set the vertical alignment for the image when image gets cropped by resizing.
  @param align Vertical alignment.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_VerticalAlignEnum:(PXRThumborUrlBuilder_VerticalAlignEnum *)align;
+- (PXRThumborUrlBuilder *)alignWithPXRVerticalAlignEnum:(PXRVerticalAlignEnum *)align;
 
 /**
  @brief Set the horizontal and vertical alignment for the image when image gets cropped by resizing.
@@ -69,8 +68,8 @@
  @param halign Horizontal alignment.
  @throws IllegalStateException if image has not been marked for resize.
  */
-- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_VerticalAlignEnum:(PXRThumborUrlBuilder_VerticalAlignEnum *)valign
-                             withPXRThumborUrlBuilder_HorizontalAlignEnum:(PXRThumborUrlBuilder_HorizontalAlignEnum *)halign;
+- (PXRThumborUrlBuilder *)alignWithPXRVerticalAlignEnum:(PXRVerticalAlignEnum *)valign
+                             withPXRHorizontalAlignEnum:(PXRHorizontalAlignEnum *)halign;
 
 /**
  @brief This filter adds a blur effect to the image using the specified radius and a default sigma (equal to the radius).
@@ -154,7 +153,7 @@
 /**
  @brief Specify the output format of the image.
  */
-+ (NSString *)formatWithPXRThumborUrlBuilder_ImageFormatEnum:(PXRThumborUrlBuilder_ImageFormatEnum *)format;
++ (NSString *)formatWithPXRImageFormatEnum:(PXRImageFormatEnum *)format;
 
 /**
  @brief This filter uses a 9-patch to overlay the image.
@@ -304,7 +303,7 @@
  Get trim color from specified pixel.
  @param value orientation from where to get the pixel color.
  */
-- (PXRThumborUrlBuilder *)trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:(PXRThumborUrlBuilder_TrimPixelColorEnum *)value;
+- (PXRThumborUrlBuilder *)trimWithPXRTrimPixelColorEnum:(PXRTrimPixelColorEnum *)value;
 
 /**
  @brief Removing surrounding space in image.
@@ -312,8 +311,8 @@
  @param value orientation from where to get the pixel color.
  @param colorTolerance 0 - 442. This is the euclidian distance between the colors of the reference pixel and the surrounding pixels is used. If the distance is within the tolerance they'll get trimmed.
  */
-- (PXRThumborUrlBuilder *)trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:(PXRThumborUrlBuilder_TrimPixelColorEnum *)value
-                                                                  withInt:(jint)colorTolerance;
+- (PXRThumborUrlBuilder *)trimWithPXRTrimPixelColorEnum:(PXRTrimPixelColorEnum *)value
+                                                withInt:(jint)colorTolerance;
 
 /**
  @brief This filter adds a watermark to the image at (0, 0).
@@ -395,9 +394,9 @@ J2OBJC_EMPTY_STATIC_INIT(PXRThumborUrlBuilder)
 J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, image_, NSString *)
 J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, host_, NSString *)
 J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, key_, NSString *)
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropHorizontalAlign_, PXRThumborUrlBuilder_HorizontalAlignEnum *)
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropVerticalAlign_, PXRThumborUrlBuilder_VerticalAlignEnum *)
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, trimPixelColor_, PXRThumborUrlBuilder_TrimPixelColorEnum *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropHorizontalAlign_, PXRHorizontalAlignEnum *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, cropVerticalAlign_, PXRVerticalAlignEnum *)
+J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, trimPixelColor_, PXRTrimPixelColorEnum *)
 J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder, filters_, id<JavaUtilList>)
 
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, ORIGINAL_SIZE, jint)
@@ -438,7 +437,7 @@ FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_sharpenWithFloat_withFloat_with
 
 FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_fillWithInt_(jint color);
 
-FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_formatWithPXRThumborUrlBuilder_ImageFormatEnum_(PXRThumborUrlBuilder_ImageFormatEnum *format);
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_formatWithPXRImageFormatEnum_(PXRImageFormatEnum *format);
 
 FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_frameWithNSString_(NSString *imageUrl);
 
@@ -459,177 +458,5 @@ FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_rotateWithInt_(jint angle);
 J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder)
 
 typedef PXRThumborUrlBuilder ComSquareupPollexorThumborUrlBuilder;
-
-typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_HorizontalAlign) {
-  PXRThumborUrlBuilder_HorizontalAlign_LEFT = 0,
-  PXRThumborUrlBuilder_HorizontalAlign_CENTER = 1,
-  PXRThumborUrlBuilder_HorizontalAlign_RIGHT = 2,
-};
-
-/**
- @brief Horizontal alignment for crop positioning.
- */
-@interface PXRThumborUrlBuilder_HorizontalAlignEnum : JavaLangEnum < NSCopying > {
- @public
-  NSString *value_;
-}
-
-#pragma mark Package-Private
-
-+ (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *PXRThumborUrlBuilder_HorizontalAlignEnum_values();
-
-+ (PXRThumborUrlBuilder_HorizontalAlignEnum *)valueOfWithNSString:(NSString *)name;
-
-FOUNDATION_EXPORT PXRThumborUrlBuilder_HorizontalAlignEnum *PXRThumborUrlBuilder_HorizontalAlignEnum_valueOfWithNSString_(NSString *name);
-- (id)copyWithZone:(NSZone *)zone;
-
-@end
-
-J2OBJC_STATIC_INIT(PXRThumborUrlBuilder_HorizontalAlignEnum)
-
-FOUNDATION_EXPORT PXRThumborUrlBuilder_HorizontalAlignEnum *PXRThumborUrlBuilder_HorizontalAlignEnum_values_[];
-
-#define PXRThumborUrlBuilder_HorizontalAlignEnum_LEFT PXRThumborUrlBuilder_HorizontalAlignEnum_values_[PXRThumborUrlBuilder_HorizontalAlign_LEFT]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_HorizontalAlignEnum, LEFT)
-
-#define PXRThumborUrlBuilder_HorizontalAlignEnum_CENTER PXRThumborUrlBuilder_HorizontalAlignEnum_values_[PXRThumborUrlBuilder_HorizontalAlign_CENTER]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_HorizontalAlignEnum, CENTER)
-
-#define PXRThumborUrlBuilder_HorizontalAlignEnum_RIGHT PXRThumborUrlBuilder_HorizontalAlignEnum_values_[PXRThumborUrlBuilder_HorizontalAlign_RIGHT]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_HorizontalAlignEnum, RIGHT)
-
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder_HorizontalAlignEnum, value_, NSString *)
-
-J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_HorizontalAlignEnum)
-
-typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_VerticalAlign) {
-  PXRThumborUrlBuilder_VerticalAlign_TOP = 0,
-  PXRThumborUrlBuilder_VerticalAlign_MIDDLE = 1,
-  PXRThumborUrlBuilder_VerticalAlign_BOTTOM = 2,
-};
-
-/**
- @brief Vertical alignment for crop positioning.
- */
-@interface PXRThumborUrlBuilder_VerticalAlignEnum : JavaLangEnum < NSCopying > {
- @public
-  NSString *value_;
-}
-
-#pragma mark Package-Private
-
-+ (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *PXRThumborUrlBuilder_VerticalAlignEnum_values();
-
-+ (PXRThumborUrlBuilder_VerticalAlignEnum *)valueOfWithNSString:(NSString *)name;
-
-FOUNDATION_EXPORT PXRThumborUrlBuilder_VerticalAlignEnum *PXRThumborUrlBuilder_VerticalAlignEnum_valueOfWithNSString_(NSString *name);
-- (id)copyWithZone:(NSZone *)zone;
-
-@end
-
-J2OBJC_STATIC_INIT(PXRThumborUrlBuilder_VerticalAlignEnum)
-
-FOUNDATION_EXPORT PXRThumborUrlBuilder_VerticalAlignEnum *PXRThumborUrlBuilder_VerticalAlignEnum_values_[];
-
-#define PXRThumborUrlBuilder_VerticalAlignEnum_TOP PXRThumborUrlBuilder_VerticalAlignEnum_values_[PXRThumborUrlBuilder_VerticalAlign_TOP]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_VerticalAlignEnum, TOP)
-
-#define PXRThumborUrlBuilder_VerticalAlignEnum_MIDDLE PXRThumborUrlBuilder_VerticalAlignEnum_values_[PXRThumborUrlBuilder_VerticalAlign_MIDDLE]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_VerticalAlignEnum, MIDDLE)
-
-#define PXRThumborUrlBuilder_VerticalAlignEnum_BOTTOM PXRThumborUrlBuilder_VerticalAlignEnum_values_[PXRThumborUrlBuilder_VerticalAlign_BOTTOM]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_VerticalAlignEnum, BOTTOM)
-
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder_VerticalAlignEnum, value_, NSString *)
-
-J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_VerticalAlignEnum)
-
-typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_TrimPixelColor) {
-  PXRThumborUrlBuilder_TrimPixelColor_TOP_LEFT = 0,
-  PXRThumborUrlBuilder_TrimPixelColor_BOTTOM_RIGHT = 1,
-};
-
-/**
- @brief Orientation from where to get the pixel color for trim.
- */
-@interface PXRThumborUrlBuilder_TrimPixelColorEnum : JavaLangEnum < NSCopying > {
- @public
-  NSString *value_;
-}
-
-#pragma mark Package-Private
-
-+ (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *PXRThumborUrlBuilder_TrimPixelColorEnum_values();
-
-+ (PXRThumborUrlBuilder_TrimPixelColorEnum *)valueOfWithNSString:(NSString *)name;
-
-FOUNDATION_EXPORT PXRThumborUrlBuilder_TrimPixelColorEnum *PXRThumborUrlBuilder_TrimPixelColorEnum_valueOfWithNSString_(NSString *name);
-- (id)copyWithZone:(NSZone *)zone;
-
-@end
-
-J2OBJC_STATIC_INIT(PXRThumborUrlBuilder_TrimPixelColorEnum)
-
-FOUNDATION_EXPORT PXRThumborUrlBuilder_TrimPixelColorEnum *PXRThumborUrlBuilder_TrimPixelColorEnum_values_[];
-
-#define PXRThumborUrlBuilder_TrimPixelColorEnum_TOP_LEFT PXRThumborUrlBuilder_TrimPixelColorEnum_values_[PXRThumborUrlBuilder_TrimPixelColor_TOP_LEFT]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_TrimPixelColorEnum, TOP_LEFT)
-
-#define PXRThumborUrlBuilder_TrimPixelColorEnum_BOTTOM_RIGHT PXRThumborUrlBuilder_TrimPixelColorEnum_values_[PXRThumborUrlBuilder_TrimPixelColor_BOTTOM_RIGHT]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_TrimPixelColorEnum, BOTTOM_RIGHT)
-
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder_TrimPixelColorEnum, value_, NSString *)
-
-J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_TrimPixelColorEnum)
-
-typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_ImageFormat) {
-  PXRThumborUrlBuilder_ImageFormat_GIF = 0,
-  PXRThumborUrlBuilder_ImageFormat_JPEG = 1,
-  PXRThumborUrlBuilder_ImageFormat_PNG = 2,
-  PXRThumborUrlBuilder_ImageFormat_WEBP = 3,
-};
-
-/**
- @brief Image formats supported by Thumbor.
- */
-@interface PXRThumborUrlBuilder_ImageFormatEnum : JavaLangEnum < NSCopying > {
- @public
-  NSString *value_;
-}
-
-#pragma mark Package-Private
-
-+ (IOSObjectArray *)values;
-FOUNDATION_EXPORT IOSObjectArray *PXRThumborUrlBuilder_ImageFormatEnum_values();
-
-+ (PXRThumborUrlBuilder_ImageFormatEnum *)valueOfWithNSString:(NSString *)name;
-
-FOUNDATION_EXPORT PXRThumborUrlBuilder_ImageFormatEnum *PXRThumborUrlBuilder_ImageFormatEnum_valueOfWithNSString_(NSString *name);
-- (id)copyWithZone:(NSZone *)zone;
-
-@end
-
-J2OBJC_STATIC_INIT(PXRThumborUrlBuilder_ImageFormatEnum)
-
-FOUNDATION_EXPORT PXRThumborUrlBuilder_ImageFormatEnum *PXRThumborUrlBuilder_ImageFormatEnum_values_[];
-
-#define PXRThumborUrlBuilder_ImageFormatEnum_GIF PXRThumborUrlBuilder_ImageFormatEnum_values_[PXRThumborUrlBuilder_ImageFormat_GIF]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_ImageFormatEnum, GIF)
-
-#define PXRThumborUrlBuilder_ImageFormatEnum_JPEG PXRThumborUrlBuilder_ImageFormatEnum_values_[PXRThumborUrlBuilder_ImageFormat_JPEG]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_ImageFormatEnum, JPEG)
-
-#define PXRThumborUrlBuilder_ImageFormatEnum_PNG PXRThumborUrlBuilder_ImageFormatEnum_values_[PXRThumborUrlBuilder_ImageFormat_PNG]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_ImageFormatEnum, PNG)
-
-#define PXRThumborUrlBuilder_ImageFormatEnum_WEBP PXRThumborUrlBuilder_ImageFormatEnum_values_[PXRThumborUrlBuilder_ImageFormat_WEBP]
-J2OBJC_ENUM_CONSTANT_GETTER(PXRThumborUrlBuilder_ImageFormatEnum, WEBP)
-
-J2OBJC_FIELD_SETTER(PXRThumborUrlBuilder_ImageFormatEnum, value_, NSString *)
-
-J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_ImageFormatEnum)
 
 #endif // _PXRThumborUrlBuilder_H_
