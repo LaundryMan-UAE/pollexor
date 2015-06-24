@@ -82,6 +82,12 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_EQUALIZE_, NSString *)
 static NSString *PXRThumborUrlBuilder_FILTER_BLUR_ = @"blur";
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_BLUR_, NSString *)
 
+static NSString *PXRThumborUrlBuilder_FILTER_NO_UPSCALE_ = @"no_upscale";
+J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_NO_UPSCALE_, NSString *)
+
+static NSString *PXRThumborUrlBuilder_FILTER_ROTATE_ = @"rotate";
+J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
+
 @interface PXRThumborUrlBuilder_HorizontalAlignEnum ()
 
 - (instancetype)initWithNSString:(NSString *)value
@@ -487,6 +493,14 @@ __attribute__((unused)) static PXRThumborUrlBuilder_ImageFormatEnum *new_PXRThum
   return PXRThumborUrlBuilder_blurWithInt_withInt_(radius, sigma);
 }
 
++ (NSString *)noUpscale {
+  return PXRThumborUrlBuilder_noUpscale();
+}
+
++ (NSString *)rotateWithInt:(jint)angle {
+  return PXRThumborUrlBuilder_rotateWithInt_(angle);
+}
+
 - (void)dealloc {
   RELEASE_(image_);
   RELEASE_(host_);
@@ -545,6 +559,8 @@ __attribute__((unused)) static PXRThumborUrlBuilder_ImageFormatEnum *new_PXRThum
     { "equalize", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
     { "blurWithInt:", "blur", "Ljava.lang.String;", 0x9, NULL, NULL },
     { "blurWithInt:withInt:", "blur", "Ljava.lang.String;", 0x9, NULL, NULL },
+    { "noUpscale", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
+    { "rotateWithInt:", "rotate", "Ljava.lang.String;", 0x9, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "PREFIX_UNSAFE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PREFIX_UNSAFE_, NULL,  },
@@ -568,6 +584,8 @@ __attribute__((unused)) static PXRThumborUrlBuilder_ImageFormatEnum *new_PXRThum
     { "FILTER_GRAYSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_GRAYSCALE_, NULL,  },
     { "FILTER_EQUALIZE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_EQUALIZE_, NULL,  },
     { "FILTER_BLUR_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_BLUR_, NULL,  },
+    { "FILTER_NO_UPSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_NO_UPSCALE_, NULL,  },
+    { "FILTER_ROTATE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_ROTATE_, NULL,  },
     { "ORIGINAL_SIZE_", NULL, 0x19, "I", NULL, NULL, .constantValue.asInt = PXRThumborUrlBuilder_ORIGINAL_SIZE },
     { "image_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
     { "host_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
@@ -592,7 +610,7 @@ __attribute__((unused)) static PXRThumborUrlBuilder_ImageFormatEnum *new_PXRThum
     { "filters_", NULL, 0x0, "Ljava.util.List;", NULL, "Ljava/util/List<Ljava/lang/String;>;",  },
   };
   static const char *inner_classes[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;", "Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;", "Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;", "Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;"};
-  static const J2ObjcClassInfo _PXRThumborUrlBuilder = { 2, "ThumborUrlBuilder", "com.squareup.pollexor", NULL, 0x11, 45, methods, 43, fields, 0, NULL, 4, inner_classes, NULL, NULL };
+  static const J2ObjcClassInfo _PXRThumborUrlBuilder = { 2, "ThumborUrlBuilder", "com.squareup.pollexor", NULL, 0x11, 47, methods, 45, fields, 0, NULL, 4, inner_classes, NULL, NULL };
   return &_PXRThumborUrlBuilder;
 }
 
@@ -786,6 +804,19 @@ NSString *PXRThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Sigma must be greater than zero."] autorelease];
   }
   return JreStrcat("$CICIC", PXRThumborUrlBuilder_FILTER_BLUR_, '(', radius, ',', sigma, ')');
+}
+
+NSString *PXRThumborUrlBuilder_noUpscale() {
+  PXRThumborUrlBuilder_initialize();
+  return JreStrcat("$$", PXRThumborUrlBuilder_FILTER_NO_UPSCALE_, @"()");
+}
+
+NSString *PXRThumborUrlBuilder_rotateWithInt_(jint angle) {
+  PXRThumborUrlBuilder_initialize();
+  if (angle % 90 != 0) {
+    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Angle must be multiple of 90\u00b0"] autorelease];
+  }
+  return JreStrcat("$CIC", PXRThumborUrlBuilder_FILTER_ROTATE_, '(', angle, ')');
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumborUrlBuilder)

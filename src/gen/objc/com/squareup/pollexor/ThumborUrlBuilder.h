@@ -175,6 +175,11 @@
 + (NSString *)noiseWithInt:(jint)amount;
 
 /**
+ @brief This filter tells thumbor not to upscale your images.
+ */
++ (NSString *)noUpscale;
+
+/**
  @brief This filter changes the overall quality of the JPEG image (does nothing for PNGs or GIFs).
  @param amount 0 to 100 - The quality level (in %) that the end image will feature.
  @throws IllegalArgumentException if <code>amount</code> outside bounds.
@@ -200,6 +205,12 @@
 + (NSString *)rgbWithInt:(jint)r
                  withInt:(jint)g
                  withInt:(jint)b;
+
+/**
+ @brief This filter rotates the given image according to the angle passed.
+ @param angle The angle of rotation. Values can be either 0°, 90°, 180° or 270° – multiples of 90°. Angles equal to or greater than 360° will be replaced by their coterminal angle of rotation.
+ */
++ (NSString *)rotateWithInt:(jint)angle;
 
 /**
  @brief This filter adds rounded corners to the image using the white as the background.
@@ -440,6 +451,10 @@ FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_equalize();
 FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_blurWithInt_(jint radius);
 
 FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma);
+
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_noUpscale();
+
+FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_rotateWithInt_(jint angle);
 
 J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder)
 

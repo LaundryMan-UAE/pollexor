@@ -40,6 +40,50 @@ public final class ThumborUrlBuilder {
   /** Original size for image width or height. **/
   public static final int ORIGINAL_SIZE = Integer.MIN_VALUE;
 
+  /** Horizontal alignment for crop positioning. */
+  public enum HorizontalAlign {
+    LEFT("left"), CENTER("center"), RIGHT("right");
+
+    final String value;
+
+    private HorizontalAlign(String value) {
+      this.value = value;
+    }
+  }
+
+  /** Vertical alignment for crop positioning. */
+  public enum VerticalAlign {
+    TOP("top"), MIDDLE("middle"), BOTTOM("bottom");
+
+    final String value;
+
+    private VerticalAlign(String value) {
+      this.value = value;
+    }
+  }
+
+  /** Orientation from where to get the pixel color for trim. */
+  public enum TrimPixelColor {
+    TOP_LEFT("top-left"), BOTTOM_RIGHT("bottom-right");
+
+    final String value;
+
+    private TrimPixelColor(String value) {
+      this.value = value;
+    }
+  }
+
+  /** Image formats supported by Thumbor. */
+  public enum ImageFormat {
+    GIF("gif"), JPEG("jpeg"), PNG("png"), WEBP("webp");
+
+    final String value;
+
+    private ImageFormat(String value) {
+      this.value = value;
+    }
+  }
+
   final String image;
   final String host;
   final String key;
@@ -57,9 +101,9 @@ public final class ThumborUrlBuilder {
   int cropBottom;
   int cropRight;
   int trimColorTolerance;
-  ThumborEnumReplacement cropHorizontalAlign;
-  ThumborVerticalEnumReplacement cropVerticalAlign;
-  ThumborEnumReplacement trimPixelColor;
+  HorizontalAlign cropHorizontalAlign;
+  VerticalAlign cropVerticalAlign;
+  TrimPixelColor trimPixelColor;
   List<String> filters;
 
   ThumborUrlBuilder(String host, String key, String image) {
@@ -169,7 +213,7 @@ public final class ThumborUrlBuilder {
    * @param align Horizontal alignment.
    * @throws IllegalStateException if image has not been marked for resize.
    */
-  public ThumborUrlBuilder align(ThumborEnumReplacement align) {
+  public ThumborUrlBuilder align(HorizontalAlign align) {
     if (!hasResize) {
       throw new IllegalStateException("Image must be resized first in order to align.");
     }
@@ -183,7 +227,7 @@ public final class ThumborUrlBuilder {
    * @param align Vertical alignment.
    * @throws IllegalStateException if image has not been marked for resize.
    */
-  public ThumborUrlBuilder align(ThumborVerticalEnumReplacement align) {
+  public ThumborUrlBuilder align(VerticalAlign align) {
     if (!hasResize) {
       throw new IllegalStateException("Image must be resized first in order to align.");
     }
@@ -198,7 +242,7 @@ public final class ThumborUrlBuilder {
    * @param halign Horizontal alignment.
    * @throws IllegalStateException if image has not been marked for resize.
    */
-  public ThumborUrlBuilder align(ThumborEnumReplacement valign, ThumborEnumReplacement halign) {
+  public ThumborUrlBuilder align(VerticalAlign valign, HorizontalAlign halign) {
     return align(valign).align(halign);
   }
 
@@ -226,7 +270,7 @@ public final class ThumborUrlBuilder {
    * Removing surrounding space in image. Get trim color from specified pixel.
    * @param value orientation from where to get the pixel color.
    */
-  public ThumborUrlBuilder trim(ThumborEnumReplacement value) {
+  public ThumborUrlBuilder trim(TrimPixelColor value) {
     return trim(value, 0);
   }
 
@@ -237,7 +281,7 @@ public final class ThumborUrlBuilder {
    * between the colors of the reference pixel and the surrounding pixels is used.
    * If the distance is within the tolerance they'll get trimmed.
    */
-  public ThumborUrlBuilder trim(ThumborEnumReplacement value, int colorTolerance) {
+  public ThumborUrlBuilder trim(TrimPixelColor value, int colorTolerance) {
     if (colorTolerance < 0 || colorTolerance > 442) {
       throw new IllegalArgumentException("Color tolerance must be between 0 and 442.");
     }
@@ -360,7 +404,7 @@ public final class ThumborUrlBuilder {
     if (isTrim) {
       builder.append(PART_TRIM);
       if (trimPixelColor != null) {
-        builder.append(":").append(trimPixelColor.getValue());
+        builder.append(":").append(trimPixelColor.value);
         if (trimColorTolerance > 0) {
           builder.append(":").append(trimColorTolerance);
         }
@@ -370,7 +414,7 @@ public final class ThumborUrlBuilder {
 
     if (hasCrop) {
       builder.append(cropLeft).append("x").append(cropTop) //
-          .append(":").append(cropRight).append("x").append(cropBottom);
+              .append(":").append(cropRight).append("x").append(cropBottom);
 
       builder.append("/");
     }
@@ -400,10 +444,10 @@ public final class ThumborUrlBuilder {
         builder.append("/").append(PART_SMART);
       } else {
         if (cropHorizontalAlign != null) {
-          builder.append("/").append(cropHorizontalAlign.getValue());
+          builder.append("/").append(cropHorizontalAlign.value);
         }
         if (cropVerticalAlign != null) {
-          builder.append("/").append(cropVerticalAlign.getValue());
+          builder.append("/").append(cropVerticalAlign.value);
         }
       }
       builder.append("/");
@@ -539,10 +583,10 @@ public final class ThumborUrlBuilder {
     final int g = (color & 0xFF00) >>> 8;
     final int b = color & 0xFF;
     return builder.append(",") //
-        .append(r).append(",") //
-        .append(g).append(",") //
-        .append(b).append(")") //
-        .toString();
+            .append(r).append(",") //
+            .append(g).append(",") //
+            .append(b).append(")") //
+            .toString();
   }
 
   /**
@@ -671,13 +715,13 @@ public final class ThumborUrlBuilder {
   /**
    * Specify the output format of the image.
    *
-   * @see ThumborEnumReplacement
+   * @see ImageFormat
    */
-  public static String format(ThumborEnumReplacement format) {
+  public static String format(ImageFormat format) {
     if (format == null) {
       throw new IllegalArgumentException("You must specify an image format.");
     }
-    return FILTER_FORMAT + "(" + format.getValue() + ")";
+    return FILTER_FORMAT + "(" + format.value + ")";
   }
 
   /**
