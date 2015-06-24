@@ -15,15 +15,10 @@ typedef NS_ENUM(NSUInteger, PXRHorizontalAlign) {
   PXRHorizontalAlign_RIGHT = 2,
 };
 
-/**
- @brief Horizontal alignment for crop positioning.
- */
 @interface PXRHorizontalAlignEnum : JavaLangEnum < NSCopying > {
  @public
   NSString *value_;
 }
-
-#pragma mark Package-Private
 
 + (IOSObjectArray *)values;
 FOUNDATION_EXPORT IOSObjectArray *PXRHorizontalAlignEnum_values();
@@ -35,6 +30,7 @@ FOUNDATION_EXPORT PXRHorizontalAlignEnum *PXRHorizontalAlignEnum_valueOfWithNSSt
 
 @end
 
+FOUNDATION_EXPORT BOOL PXRHorizontalAlignEnum_initialized;
 J2OBJC_STATIC_INIT(PXRHorizontalAlignEnum)
 
 FOUNDATION_EXPORT PXRHorizontalAlignEnum *PXRHorizontalAlignEnum_values_[];
@@ -50,8 +46,8 @@ J2OBJC_ENUM_CONSTANT_GETTER(PXRHorizontalAlignEnum, RIGHT)
 
 J2OBJC_FIELD_SETTER(PXRHorizontalAlignEnum, value_, NSString *)
 
-J2OBJC_TYPE_LITERAL_HEADER(PXRHorizontalAlignEnum)
-
 typedef PXRHorizontalAlignEnum ComSquareupPollexorHorizontalAlignEnum;
+
+J2OBJC_TYPE_LITERAL_HEADER(PXRHorizontalAlignEnum)
 
 #endif // _PXRHorizontalAlign_H_

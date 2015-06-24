@@ -15,15 +15,10 @@ typedef NS_ENUM(NSUInteger, PXRVerticalAlign) {
   PXRVerticalAlign_BOTTOM = 2,
 };
 
-/**
- @brief Vertical alignment for crop positioning.
- */
 @interface PXRVerticalAlignEnum : JavaLangEnum < NSCopying > {
  @public
   NSString *value_;
 }
-
-#pragma mark Package-Private
 
 + (IOSObjectArray *)values;
 FOUNDATION_EXPORT IOSObjectArray *PXRVerticalAlignEnum_values();
@@ -35,6 +30,7 @@ FOUNDATION_EXPORT PXRVerticalAlignEnum *PXRVerticalAlignEnum_valueOfWithNSString
 
 @end
 
+FOUNDATION_EXPORT BOOL PXRVerticalAlignEnum_initialized;
 J2OBJC_STATIC_INIT(PXRVerticalAlignEnum)
 
 FOUNDATION_EXPORT PXRVerticalAlignEnum *PXRVerticalAlignEnum_values_[];
@@ -50,8 +46,8 @@ J2OBJC_ENUM_CONSTANT_GETTER(PXRVerticalAlignEnum, BOTTOM)
 
 J2OBJC_FIELD_SETTER(PXRVerticalAlignEnum, value_, NSString *)
 
-J2OBJC_TYPE_LITERAL_HEADER(PXRVerticalAlignEnum)
-
 typedef PXRVerticalAlignEnum ComSquareupPollexorVerticalAlignEnum;
+
+J2OBJC_TYPE_LITERAL_HEADER(PXRVerticalAlignEnum)
 
 #endif // _PXRVerticalAlign_H_

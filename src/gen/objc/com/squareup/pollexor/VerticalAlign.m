@@ -3,25 +3,18 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/VerticalAlign.java
 //
 
-
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/VerticalAlign.h"
-#include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 
 @interface PXRVerticalAlignEnum ()
-
 - (instancetype)initWithNSString:(NSString *)value
                     withNSString:(NSString *)__name
                          withInt:(jint)__ordinal;
 @end
 
-__attribute__((unused)) static void PXRVerticalAlignEnum_initWithNSString_withNSString_withInt_(PXRVerticalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal);
-
-__attribute__((unused)) static PXRVerticalAlignEnum *new_PXRVerticalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
-
-J2OBJC_INITIALIZED_DEFN(PXRVerticalAlignEnum)
+BOOL PXRVerticalAlignEnum_initialized = NO;
 
 PXRVerticalAlignEnum *PXRVerticalAlignEnum_values_[3];
 
@@ -30,12 +23,14 @@ PXRVerticalAlignEnum *PXRVerticalAlignEnum_values_[3];
 - (instancetype)initWithNSString:(NSString *)value
                     withNSString:(NSString *)__name
                          withInt:(jint)__ordinal {
-  PXRVerticalAlignEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  if (self = [super initWithNSString:__name withInt:__ordinal]) {
+    PXRVerticalAlignEnum_set_value_(self, value);
+  }
   return self;
 }
 
 IOSObjectArray *PXRVerticalAlignEnum_values() {
-  PXRVerticalAlignEnum_initialize();
+  PXRVerticalAlignEnum_init();
   return [IOSObjectArray arrayWithObjects:PXRVerticalAlignEnum_values_ count:3 type:PXRVerticalAlignEnum_class_()];
 }
 + (IOSObjectArray *)values {
@@ -47,7 +42,7 @@ IOSObjectArray *PXRVerticalAlignEnum_values() {
 }
 
 PXRVerticalAlignEnum *PXRVerticalAlignEnum_valueOfWithNSString_(NSString *name) {
-  PXRVerticalAlignEnum_initialize();
+  PXRVerticalAlignEnum_init();
   for (int i = 0; i < 3; i++) {
     PXRVerticalAlignEnum *e = PXRVerticalAlignEnum_values_[i];
     if ([name isEqual:[e name]]) {
@@ -73,30 +68,19 @@ PXRVerticalAlignEnum *PXRVerticalAlignEnum_valueOfWithNSString_(NSString *name) 
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "VerticalAlign", NULL, 0x2, NULL, NULL },
+    { "initWithNSString:withNSString:withInt:", "VerticalAlign", NULL, 0x2, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "TOP", "TOP", 0x4019, "Lcom.squareup.pollexor.VerticalAlign;", &PXRVerticalAlignEnum_TOP, NULL,  },
-    { "MIDDLE", "MIDDLE", 0x4019, "Lcom.squareup.pollexor.VerticalAlign;", &PXRVerticalAlignEnum_MIDDLE, NULL,  },
-    { "BOTTOM", "BOTTOM", 0x4019, "Lcom.squareup.pollexor.VerticalAlign;", &PXRVerticalAlignEnum_BOTTOM, NULL,  },
-    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
+    { "TOP", "TOP", 0x4019, "Lcom.squareup.pollexor.VerticalAlign;", &PXRVerticalAlignEnum_TOP,  },
+    { "MIDDLE", "MIDDLE", 0x4019, "Lcom.squareup.pollexor.VerticalAlign;", &PXRVerticalAlignEnum_MIDDLE,  },
+    { "BOTTOM", "BOTTOM", 0x4019, "Lcom.squareup.pollexor.VerticalAlign;", &PXRVerticalAlignEnum_BOTTOM,  },
+    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL,  },
   };
   static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.VerticalAlign;"};
-  static const J2ObjcClassInfo _PXRVerticalAlignEnum = { 2, "VerticalAlign", "com.squareup.pollexor", NULL, 0x4011, 1, methods, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/VerticalAlign;>;" };
+  static const J2ObjcClassInfo _PXRVerticalAlignEnum = { 1, "VerticalAlign", "com.squareup.pollexor", NULL, 0x4011, 1, methods, 4, fields, 1, superclass_type_args};
   return &_PXRVerticalAlignEnum;
 }
 
 @end
-
-void PXRVerticalAlignEnum_initWithNSString_withNSString_withInt_(PXRVerticalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal) {
-  JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  PXRVerticalAlignEnum_set_value_(self, value);
-}
-
-PXRVerticalAlignEnum *new_PXRVerticalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
-  PXRVerticalAlignEnum *self = [PXRVerticalAlignEnum alloc];
-  PXRVerticalAlignEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
-  return self;
-}
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRVerticalAlignEnum)

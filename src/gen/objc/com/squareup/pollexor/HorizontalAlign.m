@@ -3,25 +3,18 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/HorizontalAlign.java
 //
 
-
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/HorizontalAlign.h"
-#include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 
 @interface PXRHorizontalAlignEnum ()
-
 - (instancetype)initWithNSString:(NSString *)value
                     withNSString:(NSString *)__name
                          withInt:(jint)__ordinal;
 @end
 
-__attribute__((unused)) static void PXRHorizontalAlignEnum_initWithNSString_withNSString_withInt_(PXRHorizontalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal);
-
-__attribute__((unused)) static PXRHorizontalAlignEnum *new_PXRHorizontalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
-
-J2OBJC_INITIALIZED_DEFN(PXRHorizontalAlignEnum)
+BOOL PXRHorizontalAlignEnum_initialized = NO;
 
 PXRHorizontalAlignEnum *PXRHorizontalAlignEnum_values_[3];
 
@@ -30,12 +23,14 @@ PXRHorizontalAlignEnum *PXRHorizontalAlignEnum_values_[3];
 - (instancetype)initWithNSString:(NSString *)value
                     withNSString:(NSString *)__name
                          withInt:(jint)__ordinal {
-  PXRHorizontalAlignEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  if (self = [super initWithNSString:__name withInt:__ordinal]) {
+    PXRHorizontalAlignEnum_set_value_(self, value);
+  }
   return self;
 }
 
 IOSObjectArray *PXRHorizontalAlignEnum_values() {
-  PXRHorizontalAlignEnum_initialize();
+  PXRHorizontalAlignEnum_init();
   return [IOSObjectArray arrayWithObjects:PXRHorizontalAlignEnum_values_ count:3 type:PXRHorizontalAlignEnum_class_()];
 }
 + (IOSObjectArray *)values {
@@ -47,7 +42,7 @@ IOSObjectArray *PXRHorizontalAlignEnum_values() {
 }
 
 PXRHorizontalAlignEnum *PXRHorizontalAlignEnum_valueOfWithNSString_(NSString *name) {
-  PXRHorizontalAlignEnum_initialize();
+  PXRHorizontalAlignEnum_init();
   for (int i = 0; i < 3; i++) {
     PXRHorizontalAlignEnum *e = PXRHorizontalAlignEnum_values_[i];
     if ([name isEqual:[e name]]) {
@@ -73,30 +68,19 @@ PXRHorizontalAlignEnum *PXRHorizontalAlignEnum_valueOfWithNSString_(NSString *na
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "HorizontalAlign", NULL, 0x2, NULL, NULL },
+    { "initWithNSString:withNSString:withInt:", "HorizontalAlign", NULL, 0x2, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "LEFT", "LEFT", 0x4019, "Lcom.squareup.pollexor.HorizontalAlign;", &PXRHorizontalAlignEnum_LEFT, NULL,  },
-    { "CENTER", "CENTER", 0x4019, "Lcom.squareup.pollexor.HorizontalAlign;", &PXRHorizontalAlignEnum_CENTER, NULL,  },
-    { "RIGHT", "RIGHT", 0x4019, "Lcom.squareup.pollexor.HorizontalAlign;", &PXRHorizontalAlignEnum_RIGHT, NULL,  },
-    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
+    { "LEFT", "LEFT", 0x4019, "Lcom.squareup.pollexor.HorizontalAlign;", &PXRHorizontalAlignEnum_LEFT,  },
+    { "CENTER", "CENTER", 0x4019, "Lcom.squareup.pollexor.HorizontalAlign;", &PXRHorizontalAlignEnum_CENTER,  },
+    { "RIGHT", "RIGHT", 0x4019, "Lcom.squareup.pollexor.HorizontalAlign;", &PXRHorizontalAlignEnum_RIGHT,  },
+    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL,  },
   };
   static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.HorizontalAlign;"};
-  static const J2ObjcClassInfo _PXRHorizontalAlignEnum = { 2, "HorizontalAlign", "com.squareup.pollexor", NULL, 0x4011, 1, methods, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/HorizontalAlign;>;" };
+  static const J2ObjcClassInfo _PXRHorizontalAlignEnum = { 1, "HorizontalAlign", "com.squareup.pollexor", NULL, 0x4011, 1, methods, 4, fields, 1, superclass_type_args};
   return &_PXRHorizontalAlignEnum;
 }
 
 @end
-
-void PXRHorizontalAlignEnum_initWithNSString_withNSString_withInt_(PXRHorizontalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal) {
-  JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  PXRHorizontalAlignEnum_set_value_(self, value);
-}
-
-PXRHorizontalAlignEnum *new_PXRHorizontalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
-  PXRHorizontalAlignEnum *self = [PXRHorizontalAlignEnum alloc];
-  PXRHorizontalAlignEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
-  return self;
-}
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRHorizontalAlignEnum)

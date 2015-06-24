@@ -3,7 +3,6 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ThumborUrlBuilder.java
 //
 
-
 #include "IOSClass.h"
 #include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
@@ -22,81 +21,44 @@
 #include "java/util/ArrayList.h"
 #include "java/util/List.h"
 
-static NSString *PXRThumborUrlBuilder_PREFIX_UNSAFE_ = @"unsafe/";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, PREFIX_UNSAFE_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_PREFIX_META_ = @"meta/";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, PREFIX_META_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_PART_SMART_ = @"smart";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, PART_SMART_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_PART_TRIM_ = @"trim";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, PART_TRIM_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_PART_FIT_IN_ = @"fit-in";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, PART_FIT_IN_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_PART_FILTERS_ = @"filters";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, PART_FILTERS_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_BRIGHTNESS_ = @"brightness";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_BRIGHTNESS_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_CONTRAST_ = @"contrast";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_CONTRAST_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_NOISE_ = @"noise";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_NOISE_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_QUALITY_ = @"quality";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_QUALITY_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_RGB_ = @"rgb";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_RGB_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_ROUND_CORNER_ = @"round_corner";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROUND_CORNER_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_WATERMARK_ = @"watermark";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_WATERMARK_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_SHARPEN_ = @"sharpen";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_SHARPEN_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_FILL_ = @"fill";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_FILL_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_FORMAT_ = @"format";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_FORMAT_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_FRAME_ = @"frame";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_FRAME_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_STRIP_ICC_ = @"strip_icc";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_STRIP_ICC_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_GRAYSCALE_ = @"grayscale";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_GRAYSCALE_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_EQUALIZE_ = @"equalize";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_EQUALIZE_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_BLUR_ = @"blur";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_BLUR_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_NO_UPSCALE_ = @"no_upscale";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_NO_UPSCALE_, NSString *)
-
-static NSString *PXRThumborUrlBuilder_FILTER_ROTATE_ = @"rotate";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
+@interface PXRThumborUrlBuilder () {
+}
+@end
 
 @implementation PXRThumborUrlBuilder
+
+NSString * PXRThumborUrlBuilder_PREFIX_UNSAFE_ = @"unsafe/";
+NSString * PXRThumborUrlBuilder_PREFIX_META_ = @"meta/";
+NSString * PXRThumborUrlBuilder_PART_SMART_ = @"smart";
+NSString * PXRThumborUrlBuilder_PART_TRIM_ = @"trim";
+NSString * PXRThumborUrlBuilder_PART_FIT_IN_ = @"fit-in";
+NSString * PXRThumborUrlBuilder_PART_FILTERS_ = @"filters";
+NSString * PXRThumborUrlBuilder_FILTER_BRIGHTNESS_ = @"brightness";
+NSString * PXRThumborUrlBuilder_FILTER_CONTRAST_ = @"contrast";
+NSString * PXRThumborUrlBuilder_FILTER_NOISE_ = @"noise";
+NSString * PXRThumborUrlBuilder_FILTER_QUALITY_ = @"quality";
+NSString * PXRThumborUrlBuilder_FILTER_RGB_ = @"rgb";
+NSString * PXRThumborUrlBuilder_FILTER_ROUND_CORNER_ = @"round_corner";
+NSString * PXRThumborUrlBuilder_FILTER_WATERMARK_ = @"watermark";
+NSString * PXRThumborUrlBuilder_FILTER_SHARPEN_ = @"sharpen";
+NSString * PXRThumborUrlBuilder_FILTER_FILL_ = @"fill";
+NSString * PXRThumborUrlBuilder_FILTER_FORMAT_ = @"format";
+NSString * PXRThumborUrlBuilder_FILTER_FRAME_ = @"frame";
+NSString * PXRThumborUrlBuilder_FILTER_STRIP_ICC_ = @"strip_icc";
+NSString * PXRThumborUrlBuilder_FILTER_GRAYSCALE_ = @"grayscale";
+NSString * PXRThumborUrlBuilder_FILTER_EQUALIZE_ = @"equalize";
+NSString * PXRThumborUrlBuilder_FILTER_BLUR_ = @"blur";
+NSString * PXRThumborUrlBuilder_FILTER_NO_UPSCALE_ = @"no_upscale";
+NSString * PXRThumborUrlBuilder_FILTER_ROTATE_ = @"rotate";
 
 - (instancetype)initWithNSString:(NSString *)host
                     withNSString:(NSString *)key
                     withNSString:(NSString *)image {
-  PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(self, host, key, image);
+  if (self = [super init]) {
+    PXRThumborUrlBuilder_set_host_(self, host);
+    PXRThumborUrlBuilder_set_key_(self, key);
+    PXRThumborUrlBuilder_set_image_(self, image);
+  }
   return self;
 }
 
@@ -471,124 +433,136 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
   [super dealloc];
 }
 
+- (void)copyAllFieldsTo:(PXRThumborUrlBuilder *)other {
+  [super copyAllFieldsTo:other];
+  PXRThumborUrlBuilder_set_image_(other, image_);
+  PXRThumborUrlBuilder_set_host_(other, host_);
+  PXRThumborUrlBuilder_set_key_(other, key_);
+  other->hasCrop_ = hasCrop_;
+  other->hasResize_ = hasResize_;
+  other->isSmart_ = isSmart_;
+  other->isTrim_ = isTrim_;
+  other->flipHorizontally__ = flipHorizontally__;
+  other->flipVertically__ = flipVertically__;
+  other->fitIn__ = fitIn__;
+  other->resizeWidth_ = resizeWidth_;
+  other->resizeHeight_ = resizeHeight_;
+  other->cropTop_ = cropTop_;
+  other->cropLeft_ = cropLeft_;
+  other->cropBottom_ = cropBottom_;
+  other->cropRight_ = cropRight_;
+  other->trimColorTolerance_ = trimColorTolerance_;
+  PXRThumborUrlBuilder_set_cropHorizontalAlign_(other, cropHorizontalAlign_);
+  PXRThumborUrlBuilder_set_cropVerticalAlign_(other, cropVerticalAlign_);
+  PXRThumborUrlBuilder_set_trimPixelColor_(other, trimPixelColor_);
+  PXRThumborUrlBuilder_set_filters_(other, filters_);
+}
+
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withNSString:", "ThumborUrlBuilder", NULL, 0x0, NULL, NULL },
-    { "resizeWithInt:withInt:", "resize", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "flipHorizontally", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "flipVertically", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "fitIn", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "cropWithInt:withInt:withInt:withInt:", "crop", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "alignWithPXRHorizontalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "alignWithPXRVerticalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "alignWithPXRVerticalAlignEnum:withPXRHorizontalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "smart", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "trim", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "trimWithPXRTrimPixelColorEnum:", "trim", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "trimWithPXRTrimPixelColorEnum:withInt:", "trim", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "filterWithNSStringArray:", "filter", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x81, NULL, NULL },
-    { "toUrl", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "toUrlUnsafe", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "toUrlSafe", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "toMeta", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "toMetaUnsafe", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "toMetaSafe", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "description", "toString", "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "assembleConfigWithBoolean:", "assembleConfig", "Ljava.lang.StringBuilder;", 0x0, NULL, NULL },
-    { "brightnessWithInt:", "brightness", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "contrastWithInt:", "contrast", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "noiseWithInt:", "noise", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "qualityWithInt:", "quality", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "rgbWithInt:withInt:withInt:", "rgb", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "roundCornerWithInt:", "roundCorner", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "roundCornerWithInt:withInt:", "roundCorner", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "roundCornerWithInt:withInt:withInt:", "roundCorner", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "watermarkWithNSString:", "watermark", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "watermarkWithPXRThumborUrlBuilder:", "watermark", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "watermarkWithNSString:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "watermarkWithPXRThumborUrlBuilder:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "watermarkWithNSString:withInt:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "watermarkWithPXRThumborUrlBuilder:withInt:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "sharpenWithFloat:withFloat:withBoolean:", "sharpen", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "fillWithInt:", "fill", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "formatWithPXRImageFormatEnum:", "format", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "frameWithNSString:", "frame", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "stripicc", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "grayscale", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "equalize", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "blurWithInt:", "blur", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "blurWithInt:withInt:", "blur", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "noUpscale", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "rotateWithInt:", "rotate", "Ljava.lang.String;", 0x9, NULL, NULL },
+    { "initWithNSString:withNSString:withNSString:", "ThumborUrlBuilder", NULL, 0x0, NULL },
+    { "resizeWithInt:withInt:", "resize", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "flipHorizontally", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "flipVertically", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "fitIn", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "cropWithInt:withInt:withInt:withInt:", "crop", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "alignWithPXRHorizontalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "alignWithPXRVerticalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "alignWithPXRVerticalAlignEnum:withPXRHorizontalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "smart", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "trim", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "trimWithPXRTrimPixelColorEnum:", "trim", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "trimWithPXRTrimPixelColorEnum:withInt:", "trim", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "filterWithNSStringArray:", "filter", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x81, NULL },
+    { "toUrl", NULL, "Ljava.lang.String;", 0x1, NULL },
+    { "toUrlUnsafe", NULL, "Ljava.lang.String;", 0x1, NULL },
+    { "toUrlSafe", NULL, "Ljava.lang.String;", 0x1, NULL },
+    { "toMeta", NULL, "Ljava.lang.String;", 0x1, NULL },
+    { "toMetaUnsafe", NULL, "Ljava.lang.String;", 0x1, NULL },
+    { "toMetaSafe", NULL, "Ljava.lang.String;", 0x1, NULL },
+    { "description", "toString", "Ljava.lang.String;", 0x1, NULL },
+    { "assembleConfigWithBoolean:", "assembleConfig", "Ljava.lang.StringBuilder;", 0x0, NULL },
+    { "brightnessWithInt:", "brightness", "Ljava.lang.String;", 0x9, NULL },
+    { "contrastWithInt:", "contrast", "Ljava.lang.String;", 0x9, NULL },
+    { "noiseWithInt:", "noise", "Ljava.lang.String;", 0x9, NULL },
+    { "qualityWithInt:", "quality", "Ljava.lang.String;", 0x9, NULL },
+    { "rgbWithInt:withInt:withInt:", "rgb", "Ljava.lang.String;", 0x9, NULL },
+    { "roundCornerWithInt:", "roundCorner", "Ljava.lang.String;", 0x9, NULL },
+    { "roundCornerWithInt:withInt:", "roundCorner", "Ljava.lang.String;", 0x9, NULL },
+    { "roundCornerWithInt:withInt:withInt:", "roundCorner", "Ljava.lang.String;", 0x9, NULL },
+    { "watermarkWithNSString:", "watermark", "Ljava.lang.String;", 0x9, NULL },
+    { "watermarkWithPXRThumborUrlBuilder:", "watermark", "Ljava.lang.String;", 0x9, NULL },
+    { "watermarkWithNSString:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL },
+    { "watermarkWithPXRThumborUrlBuilder:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL },
+    { "watermarkWithNSString:withInt:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL },
+    { "watermarkWithPXRThumborUrlBuilder:withInt:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL },
+    { "sharpenWithFloat:withFloat:withBoolean:", "sharpen", "Ljava.lang.String;", 0x9, NULL },
+    { "fillWithInt:", "fill", "Ljava.lang.String;", 0x9, NULL },
+    { "formatWithPXRImageFormatEnum:", "format", "Ljava.lang.String;", 0x9, NULL },
+    { "frameWithNSString:", "frame", "Ljava.lang.String;", 0x9, NULL },
+    { "stripicc", NULL, "Ljava.lang.String;", 0x9, NULL },
+    { "grayscale", NULL, "Ljava.lang.String;", 0x9, NULL },
+    { "equalize", NULL, "Ljava.lang.String;", 0x9, NULL },
+    { "blurWithInt:", "blur", "Ljava.lang.String;", 0x9, NULL },
+    { "blurWithInt:withInt:", "blur", "Ljava.lang.String;", 0x9, NULL },
+    { "noUpscale", NULL, "Ljava.lang.String;", 0x9, NULL },
+    { "rotateWithInt:", "rotate", "Ljava.lang.String;", 0x9, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "PREFIX_UNSAFE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PREFIX_UNSAFE_, NULL,  },
-    { "PREFIX_META_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PREFIX_META_, NULL,  },
-    { "PART_SMART_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PART_SMART_, NULL,  },
-    { "PART_TRIM_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PART_TRIM_, NULL,  },
-    { "PART_FIT_IN_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PART_FIT_IN_, NULL,  },
-    { "PART_FILTERS_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PART_FILTERS_, NULL,  },
-    { "FILTER_BRIGHTNESS_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_BRIGHTNESS_, NULL,  },
-    { "FILTER_CONTRAST_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_CONTRAST_, NULL,  },
-    { "FILTER_NOISE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_NOISE_, NULL,  },
-    { "FILTER_QUALITY_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_QUALITY_, NULL,  },
-    { "FILTER_RGB_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_RGB_, NULL,  },
-    { "FILTER_ROUND_CORNER_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_ROUND_CORNER_, NULL,  },
-    { "FILTER_WATERMARK_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_WATERMARK_, NULL,  },
-    { "FILTER_SHARPEN_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_SHARPEN_, NULL,  },
-    { "FILTER_FILL_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_FILL_, NULL,  },
-    { "FILTER_FORMAT_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_FORMAT_, NULL,  },
-    { "FILTER_FRAME_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_FRAME_, NULL,  },
-    { "FILTER_STRIP_ICC_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_STRIP_ICC_, NULL,  },
-    { "FILTER_GRAYSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_GRAYSCALE_, NULL,  },
-    { "FILTER_EQUALIZE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_EQUALIZE_, NULL,  },
-    { "FILTER_BLUR_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_BLUR_, NULL,  },
-    { "FILTER_NO_UPSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_NO_UPSCALE_, NULL,  },
-    { "FILTER_ROTATE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_ROTATE_, NULL,  },
-    { "ORIGINAL_SIZE_", NULL, 0x19, "I", NULL, NULL, .constantValue.asInt = PXRThumborUrlBuilder_ORIGINAL_SIZE },
-    { "image_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
-    { "host_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
-    { "key_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
-    { "hasCrop_", NULL, 0x0, "Z", NULL, NULL,  },
-    { "hasResize_", NULL, 0x0, "Z", NULL, NULL,  },
-    { "isSmart_", NULL, 0x0, "Z", NULL, NULL,  },
-    { "isTrim_", NULL, 0x0, "Z", NULL, NULL,  },
-    { "flipHorizontally__", "flipHorizontally", 0x0, "Z", NULL, NULL,  },
-    { "flipVertically__", "flipVertically", 0x0, "Z", NULL, NULL,  },
-    { "fitIn__", "fitIn", 0x0, "Z", NULL, NULL,  },
-    { "resizeWidth_", NULL, 0x0, "I", NULL, NULL,  },
-    { "resizeHeight_", NULL, 0x0, "I", NULL, NULL,  },
-    { "cropTop_", NULL, 0x0, "I", NULL, NULL,  },
-    { "cropLeft_", NULL, 0x0, "I", NULL, NULL,  },
-    { "cropBottom_", NULL, 0x0, "I", NULL, NULL,  },
-    { "cropRight_", NULL, 0x0, "I", NULL, NULL,  },
-    { "trimColorTolerance_", NULL, 0x0, "I", NULL, NULL,  },
-    { "cropHorizontalAlign_", NULL, 0x0, "Lcom.squareup.pollexor.HorizontalAlign;", NULL, NULL,  },
-    { "cropVerticalAlign_", NULL, 0x0, "Lcom.squareup.pollexor.VerticalAlign;", NULL, NULL,  },
-    { "trimPixelColor_", NULL, 0x0, "Lcom.squareup.pollexor.TrimPixelColor;", NULL, NULL,  },
-    { "filters_", NULL, 0x0, "Ljava.util.List;", NULL, "Ljava/util/List<Ljava/lang/String;>;",  },
+    { "PREFIX_UNSAFE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PREFIX_UNSAFE_,  },
+    { "PREFIX_META_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PREFIX_META_,  },
+    { "PART_SMART_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PART_SMART_,  },
+    { "PART_TRIM_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PART_TRIM_,  },
+    { "PART_FIT_IN_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PART_FIT_IN_,  },
+    { "PART_FILTERS_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PART_FILTERS_,  },
+    { "FILTER_BRIGHTNESS_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_BRIGHTNESS_,  },
+    { "FILTER_CONTRAST_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_CONTRAST_,  },
+    { "FILTER_NOISE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_NOISE_,  },
+    { "FILTER_QUALITY_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_QUALITY_,  },
+    { "FILTER_RGB_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_RGB_,  },
+    { "FILTER_ROUND_CORNER_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_ROUND_CORNER_,  },
+    { "FILTER_WATERMARK_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_WATERMARK_,  },
+    { "FILTER_SHARPEN_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_SHARPEN_,  },
+    { "FILTER_FILL_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_FILL_,  },
+    { "FILTER_FORMAT_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_FORMAT_,  },
+    { "FILTER_FRAME_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_FRAME_,  },
+    { "FILTER_STRIP_ICC_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_STRIP_ICC_,  },
+    { "FILTER_GRAYSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_GRAYSCALE_,  },
+    { "FILTER_EQUALIZE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_EQUALIZE_,  },
+    { "FILTER_BLUR_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_BLUR_,  },
+    { "FILTER_NO_UPSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_NO_UPSCALE_,  },
+    { "FILTER_ROTATE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_ROTATE_,  },
+    { "ORIGINAL_SIZE_", NULL, 0x19, "I", NULL, .constantValue.asInt = PXRThumborUrlBuilder_ORIGINAL_SIZE },
+    { "image_", NULL, 0x10, "Ljava.lang.String;", NULL,  },
+    { "host_", NULL, 0x10, "Ljava.lang.String;", NULL,  },
+    { "key_", NULL, 0x10, "Ljava.lang.String;", NULL,  },
+    { "hasCrop_", NULL, 0x0, "Z", NULL,  },
+    { "hasResize_", NULL, 0x0, "Z", NULL,  },
+    { "isSmart_", NULL, 0x0, "Z", NULL,  },
+    { "isTrim_", NULL, 0x0, "Z", NULL,  },
+    { "flipHorizontally__", "flipHorizontally", 0x0, "Z", NULL,  },
+    { "flipVertically__", "flipVertically", 0x0, "Z", NULL,  },
+    { "fitIn__", "fitIn", 0x0, "Z", NULL,  },
+    { "resizeWidth_", NULL, 0x0, "I", NULL,  },
+    { "resizeHeight_", NULL, 0x0, "I", NULL,  },
+    { "cropTop_", NULL, 0x0, "I", NULL,  },
+    { "cropLeft_", NULL, 0x0, "I", NULL,  },
+    { "cropBottom_", NULL, 0x0, "I", NULL,  },
+    { "cropRight_", NULL, 0x0, "I", NULL,  },
+    { "trimColorTolerance_", NULL, 0x0, "I", NULL,  },
+    { "cropHorizontalAlign_", NULL, 0x0, "Lcom.squareup.pollexor.HorizontalAlign;", NULL,  },
+    { "cropVerticalAlign_", NULL, 0x0, "Lcom.squareup.pollexor.VerticalAlign;", NULL,  },
+    { "trimPixelColor_", NULL, 0x0, "Lcom.squareup.pollexor.TrimPixelColor;", NULL,  },
+    { "filters_", NULL, 0x0, "Ljava.util.List;", NULL,  },
   };
-  static const J2ObjcClassInfo _PXRThumborUrlBuilder = { 2, "ThumborUrlBuilder", "com.squareup.pollexor", NULL, 0x11, 47, methods, 45, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const J2ObjcClassInfo _PXRThumborUrlBuilder = { 1, "ThumborUrlBuilder", "com.squareup.pollexor", NULL, 0x11, 47, methods, 45, fields, 0, NULL};
   return &_PXRThumborUrlBuilder;
 }
 
 @end
 
-void PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(PXRThumborUrlBuilder *self, NSString *host, NSString *key, NSString *image) {
-  NSObject_init(self);
-  PXRThumborUrlBuilder_set_host_(self, host);
-  PXRThumborUrlBuilder_set_key_(self, key);
-  PXRThumborUrlBuilder_set_image_(self, image);
-}
-
-PXRThumborUrlBuilder *new_PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(NSString *host, NSString *key, NSString *image) {
-  PXRThumborUrlBuilder *self = [PXRThumborUrlBuilder alloc];
-  PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(self, host, key, image);
-  return self;
-}
-
 NSString *PXRThumborUrlBuilder_brightnessWithInt_(jint amount) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (amount < -100 || amount > 100) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between -100 and 100, inclusive."] autorelease];
   }
@@ -596,7 +570,7 @@ NSString *PXRThumborUrlBuilder_brightnessWithInt_(jint amount) {
 }
 
 NSString *PXRThumborUrlBuilder_contrastWithInt_(jint amount) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (amount < -100 || amount > 100) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between -100 and 100, inclusive."] autorelease];
   }
@@ -604,7 +578,7 @@ NSString *PXRThumborUrlBuilder_contrastWithInt_(jint amount) {
 }
 
 NSString *PXRThumborUrlBuilder_noiseWithInt_(jint amount) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (amount < 0 || amount > 100) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between 0 and 100, inclusive"] autorelease];
   }
@@ -612,7 +586,7 @@ NSString *PXRThumborUrlBuilder_noiseWithInt_(jint amount) {
 }
 
 NSString *PXRThumborUrlBuilder_qualityWithInt_(jint amount) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (amount < 0 || amount > 100) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Amount must be between 0 and 100, inclusive."] autorelease];
   }
@@ -620,7 +594,7 @@ NSString *PXRThumborUrlBuilder_qualityWithInt_(jint amount) {
 }
 
 NSString *PXRThumborUrlBuilder_rgbWithInt_withInt_withInt_(jint r, jint g, jint b) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (r < -100 || r > 100) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Red value must be between -100 and 100, inclusive."] autorelease];
   }
@@ -634,17 +608,17 @@ NSString *PXRThumborUrlBuilder_rgbWithInt_withInt_withInt_(jint r, jint g, jint 
 }
 
 NSString *PXRThumborUrlBuilder_roundCornerWithInt_(jint radius) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return PXRThumborUrlBuilder_roundCornerWithInt_withInt_(radius, (jint) 0xFFFFFF);
 }
 
 NSString *PXRThumborUrlBuilder_roundCornerWithInt_withInt_(jint radius, jint color) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return PXRThumborUrlBuilder_roundCornerWithInt_withInt_withInt_(radius, 0, color);
 }
 
 NSString *PXRThumborUrlBuilder_roundCornerWithInt_withInt_withInt_(jint radiusInner, jint radiusOuter, jint color) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (radiusInner < 1) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Radius must be greater than zero."] autorelease];
   }
@@ -662,22 +636,22 @@ NSString *PXRThumborUrlBuilder_roundCornerWithInt_withInt_withInt_(jint radiusIn
 }
 
 NSString *PXRThumborUrlBuilder_watermarkWithNSString_(NSString *imageUrl) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_(imageUrl, 0, 0);
 }
 
 NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_(PXRThumborUrlBuilder *image) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt_(image, 0, 0);
 }
 
 NSString *PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_(NSString *imageUrl, jint x, jint y) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_(imageUrl, x, y, 0);
 }
 
 NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt_(PXRThumborUrlBuilder *image, jint x, jint y) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (image == nil) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image must not be null."] autorelease];
   }
@@ -685,7 +659,7 @@ NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt
 }
 
 NSString *PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_(NSString *imageUrl, jint x, jint y, jint transparency) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (imageUrl == nil || ((jint) [imageUrl length]) == 0) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image URL must not be blank."] autorelease];
   }
@@ -696,7 +670,7 @@ NSString *PXRThumborUrlBuilder_watermarkWithNSString_withInt_withInt_withInt_(NS
 }
 
 NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt_withInt_(PXRThumborUrlBuilder *image, jint x, jint y, jint transparency) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (image == nil) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image must not be null."] autorelease];
   }
@@ -704,18 +678,18 @@ NSString *PXRThumborUrlBuilder_watermarkWithPXRThumborUrlBuilder_withInt_withInt
 }
 
 NSString *PXRThumborUrlBuilder_sharpenWithFloat_withFloat_withBoolean_(jfloat amount, jfloat radius, jboolean luminanceOnly) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return JreStrcat("$CFCFCZC", PXRThumborUrlBuilder_FILTER_SHARPEN_, '(', amount, ',', radius, ',', luminanceOnly, ')');
 }
 
 NSString *PXRThumborUrlBuilder_fillWithInt_(jint color) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   NSString *colorCode = JavaLangInteger_toHexStringWithInt_(color & (jint) 0xFFFFFF);
   return JreStrcat("$C$C", PXRThumborUrlBuilder_FILTER_FILL_, '(', colorCode, ')');
 }
 
 NSString *PXRThumborUrlBuilder_formatWithPXRImageFormatEnum_(PXRImageFormatEnum *format) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (format == nil) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"You must specify an image format."] autorelease];
   }
@@ -723,7 +697,7 @@ NSString *PXRThumborUrlBuilder_formatWithPXRImageFormatEnum_(PXRImageFormatEnum 
 }
 
 NSString *PXRThumborUrlBuilder_frameWithNSString_(NSString *imageUrl) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (imageUrl == nil || ((jint) [imageUrl length]) == 0) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Image URL must not be blank."] autorelease];
   }
@@ -731,27 +705,27 @@ NSString *PXRThumborUrlBuilder_frameWithNSString_(NSString *imageUrl) {
 }
 
 NSString *PXRThumborUrlBuilder_stripicc() {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return JreStrcat("$$", PXRThumborUrlBuilder_FILTER_STRIP_ICC_, @"()");
 }
 
 NSString *PXRThumborUrlBuilder_grayscale() {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return JreStrcat("$$", PXRThumborUrlBuilder_FILTER_GRAYSCALE_, @"()");
 }
 
 NSString *PXRThumborUrlBuilder_equalize() {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return JreStrcat("$$", PXRThumborUrlBuilder_FILTER_EQUALIZE_, @"()");
 }
 
 NSString *PXRThumborUrlBuilder_blurWithInt_(jint radius) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return PXRThumborUrlBuilder_blurWithInt_withInt_(radius, 0);
 }
 
 NSString *PXRThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (radius < 1) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Radius must be greater than zero."] autorelease];
   }
@@ -765,12 +739,12 @@ NSString *PXRThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma) {
 }
 
 NSString *PXRThumborUrlBuilder_noUpscale() {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   return JreStrcat("$$", PXRThumborUrlBuilder_FILTER_NO_UPSCALE_, @"()");
 }
 
 NSString *PXRThumborUrlBuilder_rotateWithInt_(jint angle) {
-  PXRThumborUrlBuilder_initialize();
+  PXRThumborUrlBuilder_init();
   if (angle % 90 != 0) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Angle must be multiple of 90\u00b0"] autorelease];
   }

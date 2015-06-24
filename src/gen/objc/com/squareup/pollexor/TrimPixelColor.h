@@ -14,15 +14,10 @@ typedef NS_ENUM(NSUInteger, PXRTrimPixelColor) {
   PXRTrimPixelColor_BOTTOM_RIGHT = 1,
 };
 
-/**
- @brief Orientation from where to get the pixel color for trim.
- */
 @interface PXRTrimPixelColorEnum : JavaLangEnum < NSCopying > {
  @public
   NSString *value_;
 }
-
-#pragma mark Package-Private
 
 + (IOSObjectArray *)values;
 FOUNDATION_EXPORT IOSObjectArray *PXRTrimPixelColorEnum_values();
@@ -34,6 +29,7 @@ FOUNDATION_EXPORT PXRTrimPixelColorEnum *PXRTrimPixelColorEnum_valueOfWithNSStri
 
 @end
 
+FOUNDATION_EXPORT BOOL PXRTrimPixelColorEnum_initialized;
 J2OBJC_STATIC_INIT(PXRTrimPixelColorEnum)
 
 FOUNDATION_EXPORT PXRTrimPixelColorEnum *PXRTrimPixelColorEnum_values_[];
@@ -46,8 +42,8 @@ J2OBJC_ENUM_CONSTANT_GETTER(PXRTrimPixelColorEnum, BOTTOM_RIGHT)
 
 J2OBJC_FIELD_SETTER(PXRTrimPixelColorEnum, value_, NSString *)
 
-J2OBJC_TYPE_LITERAL_HEADER(PXRTrimPixelColorEnum)
-
 typedef PXRTrimPixelColorEnum ComSquareupPollexorTrimPixelColorEnum;
+
+J2OBJC_TYPE_LITERAL_HEADER(PXRTrimPixelColorEnum)
 
 #endif // _PXRTrimPixelColor_H_

@@ -3,25 +3,18 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/TrimPixelColor.java
 //
 
-
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/TrimPixelColor.h"
-#include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 
 @interface PXRTrimPixelColorEnum ()
-
 - (instancetype)initWithNSString:(NSString *)value
                     withNSString:(NSString *)__name
                          withInt:(jint)__ordinal;
 @end
 
-__attribute__((unused)) static void PXRTrimPixelColorEnum_initWithNSString_withNSString_withInt_(PXRTrimPixelColorEnum *self, NSString *value, NSString *__name, jint __ordinal);
-
-__attribute__((unused)) static PXRTrimPixelColorEnum *new_PXRTrimPixelColorEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
-
-J2OBJC_INITIALIZED_DEFN(PXRTrimPixelColorEnum)
+BOOL PXRTrimPixelColorEnum_initialized = NO;
 
 PXRTrimPixelColorEnum *PXRTrimPixelColorEnum_values_[2];
 
@@ -30,12 +23,14 @@ PXRTrimPixelColorEnum *PXRTrimPixelColorEnum_values_[2];
 - (instancetype)initWithNSString:(NSString *)value
                     withNSString:(NSString *)__name
                          withInt:(jint)__ordinal {
-  PXRTrimPixelColorEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  if (self = [super initWithNSString:__name withInt:__ordinal]) {
+    PXRTrimPixelColorEnum_set_value_(self, value);
+  }
   return self;
 }
 
 IOSObjectArray *PXRTrimPixelColorEnum_values() {
-  PXRTrimPixelColorEnum_initialize();
+  PXRTrimPixelColorEnum_init();
   return [IOSObjectArray arrayWithObjects:PXRTrimPixelColorEnum_values_ count:2 type:PXRTrimPixelColorEnum_class_()];
 }
 + (IOSObjectArray *)values {
@@ -47,7 +42,7 @@ IOSObjectArray *PXRTrimPixelColorEnum_values() {
 }
 
 PXRTrimPixelColorEnum *PXRTrimPixelColorEnum_valueOfWithNSString_(NSString *name) {
-  PXRTrimPixelColorEnum_initialize();
+  PXRTrimPixelColorEnum_init();
   for (int i = 0; i < 2; i++) {
     PXRTrimPixelColorEnum *e = PXRTrimPixelColorEnum_values_[i];
     if ([name isEqual:[e name]]) {
@@ -72,29 +67,18 @@ PXRTrimPixelColorEnum *PXRTrimPixelColorEnum_valueOfWithNSString_(NSString *name
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "TrimPixelColor", NULL, 0x2, NULL, NULL },
+    { "initWithNSString:withNSString:withInt:", "TrimPixelColor", NULL, 0x2, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "TOP_LEFT", "TOP_LEFT", 0x4019, "Lcom.squareup.pollexor.TrimPixelColor;", &PXRTrimPixelColorEnum_TOP_LEFT, NULL,  },
-    { "BOTTOM_RIGHT", "BOTTOM_RIGHT", 0x4019, "Lcom.squareup.pollexor.TrimPixelColor;", &PXRTrimPixelColorEnum_BOTTOM_RIGHT, NULL,  },
-    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
+    { "TOP_LEFT", "TOP_LEFT", 0x4019, "Lcom.squareup.pollexor.TrimPixelColor;", &PXRTrimPixelColorEnum_TOP_LEFT,  },
+    { "BOTTOM_RIGHT", "BOTTOM_RIGHT", 0x4019, "Lcom.squareup.pollexor.TrimPixelColor;", &PXRTrimPixelColorEnum_BOTTOM_RIGHT,  },
+    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL,  },
   };
   static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.TrimPixelColor;"};
-  static const J2ObjcClassInfo _PXRTrimPixelColorEnum = { 2, "TrimPixelColor", "com.squareup.pollexor", NULL, 0x4011, 1, methods, 3, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/TrimPixelColor;>;" };
+  static const J2ObjcClassInfo _PXRTrimPixelColorEnum = { 1, "TrimPixelColor", "com.squareup.pollexor", NULL, 0x4011, 1, methods, 3, fields, 1, superclass_type_args};
   return &_PXRTrimPixelColorEnum;
 }
 
 @end
-
-void PXRTrimPixelColorEnum_initWithNSString_withNSString_withInt_(PXRTrimPixelColorEnum *self, NSString *value, NSString *__name, jint __ordinal) {
-  JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  PXRTrimPixelColorEnum_set_value_(self, value);
-}
-
-PXRTrimPixelColorEnum *new_PXRTrimPixelColorEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
-  PXRTrimPixelColorEnum *self = [PXRTrimPixelColorEnum alloc];
-  PXRTrimPixelColorEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
-  return self;
-}
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRTrimPixelColorEnum)

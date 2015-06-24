@@ -16,15 +16,10 @@ typedef NS_ENUM(NSUInteger, PXRImageFormat) {
   PXRImageFormat_WEBP = 3,
 };
 
-/**
- @brief /\** Image formats supported by Thumbor.
- */
 @interface PXRImageFormatEnum : JavaLangEnum < NSCopying > {
  @public
   NSString *value_;
 }
-
-#pragma mark Package-Private
 
 + (IOSObjectArray *)values;
 FOUNDATION_EXPORT IOSObjectArray *PXRImageFormatEnum_values();
@@ -36,6 +31,7 @@ FOUNDATION_EXPORT PXRImageFormatEnum *PXRImageFormatEnum_valueOfWithNSString_(NS
 
 @end
 
+FOUNDATION_EXPORT BOOL PXRImageFormatEnum_initialized;
 J2OBJC_STATIC_INIT(PXRImageFormatEnum)
 
 FOUNDATION_EXPORT PXRImageFormatEnum *PXRImageFormatEnum_values_[];
@@ -54,8 +50,8 @@ J2OBJC_ENUM_CONSTANT_GETTER(PXRImageFormatEnum, WEBP)
 
 J2OBJC_FIELD_SETTER(PXRImageFormatEnum, value_, NSString *)
 
-J2OBJC_TYPE_LITERAL_HEADER(PXRImageFormatEnum)
-
 typedef PXRImageFormatEnum ComSquareupPollexorImageFormatEnum;
+
+J2OBJC_TYPE_LITERAL_HEADER(PXRImageFormatEnum)
 
 #endif // _PXRImageFormat_H_

@@ -11,13 +11,13 @@
 
 #include "J2ObjC_header.h"
 
+#define PXRUtilities_BASE64_UPPER_BOUND 1610612733
+
 /**
  @brief Utility methods for ThumborUrlBuilder .
  */
 @interface PXRUtilities : NSObject {
 }
-
-#pragma mark Public
 
 /**
  @brief Base64 encodes a byte array.
@@ -26,35 +26,6 @@
  @throws IllegalArgumentException if <code>bytes</code> is null or exceeds 3/4ths of <code>Integer.MAX_VALUE</code> .
  */
 + (NSString *)base64EncodeWithByteArray:(IOSByteArray *)bytes;
-
-#pragma mark Package-Private
-
-/**
- @brief Encrypt a string with HMAC-SHA1 using the specified key.
- @param message Input string.
- @param key Encryption key.
- @return Encrypted output.
- */
-+ (IOSByteArray *)hmacSha1WithJavaLangStringBuilder:(JavaLangStringBuilder *)message
-                                       withNSString:(NSString *)key;
-
-/**
- @brief Create an MD5 hash of a string.
- @param input Input string.
- @return Hash of input.
- @throws IllegalArgumentException if <code>input</code> is blank.
- */
-+ (NSString *)md5WithNSString:(NSString *)input;
-
-/**
- @brief Normalize a string to a desired length by repeatedly appending itself and/or truncating.
- @param string Input string.
- @param desiredLength Desired length of string.
- @return Output string which is guaranteed to have a length equal to the desired length argument.
- @throws IllegalArgumentException if <code>string</code> is blank or <code>desiredLength</code> is not greater than 0.
- */
-+ (NSString *)normalizeStringWithNSString:(NSString *)string
-                                  withInt:(jint)desiredLength;
 
 /**
  @brief Pad a StringBuilder to a desired multiple on the right using a specified character.
@@ -67,9 +38,38 @@
                                        withChar:(jchar)padding
                                         withInt:(jint)multipleOf;
 
+/**
+ @brief Normalize a string to a desired length by repeatedly appending itself and/or truncating.
+ @param string Input string.
+ @param desiredLength Desired length of string.
+ @return Output string which is guaranteed to have a length equal to the desired length argument.
+ @throws IllegalArgumentException if <code>string</code> is blank or <code>desiredLength</code> is not greater than 0.
+ */
++ (NSString *)normalizeStringWithNSString:(NSString *)string
+                                  withInt:(jint)desiredLength;
+
+/**
+ @brief Create an MD5 hash of a string.
+ @param input Input string.
+ @return Hash of input.
+ @throws IllegalArgumentException if <code>input</code> is blank.
+ */
++ (NSString *)md5WithNSString:(NSString *)input;
+
+/**
+ @brief Encrypt a string with HMAC-SHA1 using the specified key.
+ @param message Input string.
+ @param key Encryption key.
+ @return Encrypted output.
+ */
++ (IOSByteArray *)hmacSha1WithJavaLangStringBuilder:(JavaLangStringBuilder *)message
+                                       withNSString:(NSString *)key;
+
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(PXRUtilities)
+
+CF_EXTERN_C_BEGIN
 
 FOUNDATION_EXPORT NSString *PXRUtilities_base64EncodeWithByteArray_(IOSByteArray *bytes);
 
@@ -81,8 +81,14 @@ FOUNDATION_EXPORT NSString *PXRUtilities_md5WithNSString_(NSString *input);
 
 FOUNDATION_EXPORT IOSByteArray *PXRUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *message, NSString *key);
 
-J2OBJC_TYPE_LITERAL_HEADER(PXRUtilities)
+FOUNDATION_EXPORT NSString *PXRUtilities_BASE64_CHARS_;
+J2OBJC_STATIC_FIELD_GETTER(PXRUtilities, BASE64_CHARS_, NSString *)
+
+J2OBJC_STATIC_FIELD_GETTER(PXRUtilities, BASE64_UPPER_BOUND, jint)
+CF_EXTERN_C_END
 
 typedef PXRUtilities ComSquareupPollexorUtilities;
+
+J2OBJC_TYPE_LITERAL_HEADER(PXRUtilities)
 
 #endif // _PXRUtilities_H_

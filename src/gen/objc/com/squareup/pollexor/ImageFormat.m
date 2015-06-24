@@ -3,25 +3,18 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/ImageFormat.java
 //
 
-
 #include "IOSClass.h"
 #include "J2ObjC_source.h"
 #include "com/squareup/pollexor/ImageFormat.h"
-#include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 
 @interface PXRImageFormatEnum ()
-
 - (instancetype)initWithNSString:(NSString *)value
                     withNSString:(NSString *)__name
                          withInt:(jint)__ordinal;
 @end
 
-__attribute__((unused)) static void PXRImageFormatEnum_initWithNSString_withNSString_withInt_(PXRImageFormatEnum *self, NSString *value, NSString *__name, jint __ordinal);
-
-__attribute__((unused)) static PXRImageFormatEnum *new_PXRImageFormatEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
-
-J2OBJC_INITIALIZED_DEFN(PXRImageFormatEnum)
+BOOL PXRImageFormatEnum_initialized = NO;
 
 PXRImageFormatEnum *PXRImageFormatEnum_values_[4];
 
@@ -30,12 +23,14 @@ PXRImageFormatEnum *PXRImageFormatEnum_values_[4];
 - (instancetype)initWithNSString:(NSString *)value
                     withNSString:(NSString *)__name
                          withInt:(jint)__ordinal {
-  PXRImageFormatEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  if (self = [super initWithNSString:__name withInt:__ordinal]) {
+    PXRImageFormatEnum_set_value_(self, value);
+  }
   return self;
 }
 
 IOSObjectArray *PXRImageFormatEnum_values() {
-  PXRImageFormatEnum_initialize();
+  PXRImageFormatEnum_init();
   return [IOSObjectArray arrayWithObjects:PXRImageFormatEnum_values_ count:4 type:PXRImageFormatEnum_class_()];
 }
 + (IOSObjectArray *)values {
@@ -47,7 +42,7 @@ IOSObjectArray *PXRImageFormatEnum_values() {
 }
 
 PXRImageFormatEnum *PXRImageFormatEnum_valueOfWithNSString_(NSString *name) {
-  PXRImageFormatEnum_initialize();
+  PXRImageFormatEnum_init();
   for (int i = 0; i < 4; i++) {
     PXRImageFormatEnum *e = PXRImageFormatEnum_values_[i];
     if ([name isEqual:[e name]]) {
@@ -74,31 +69,20 @@ PXRImageFormatEnum *PXRImageFormatEnum_valueOfWithNSString_(NSString *name) {
 
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "initWithNSString:withNSString:withInt:", "ImageFormat", NULL, 0x2, NULL, NULL },
+    { "initWithNSString:withNSString:withInt:", "ImageFormat", NULL, 0x2, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "GIF", "GIF", 0x4019, "Lcom.squareup.pollexor.ImageFormat;", &PXRImageFormatEnum_GIF, NULL,  },
-    { "JPEG", "JPEG", 0x4019, "Lcom.squareup.pollexor.ImageFormat;", &PXRImageFormatEnum_JPEG, NULL,  },
-    { "PNG", "PNG", 0x4019, "Lcom.squareup.pollexor.ImageFormat;", &PXRImageFormatEnum_PNG, NULL,  },
-    { "WEBP", "WEBP", 0x4019, "Lcom.squareup.pollexor.ImageFormat;", &PXRImageFormatEnum_WEBP, NULL,  },
-    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
+    { "GIF", "GIF", 0x4019, "Lcom.squareup.pollexor.ImageFormat;", &PXRImageFormatEnum_GIF,  },
+    { "JPEG", "JPEG", 0x4019, "Lcom.squareup.pollexor.ImageFormat;", &PXRImageFormatEnum_JPEG,  },
+    { "PNG", "PNG", 0x4019, "Lcom.squareup.pollexor.ImageFormat;", &PXRImageFormatEnum_PNG,  },
+    { "WEBP", "WEBP", 0x4019, "Lcom.squareup.pollexor.ImageFormat;", &PXRImageFormatEnum_WEBP,  },
+    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL,  },
   };
   static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ImageFormat;"};
-  static const J2ObjcClassInfo _PXRImageFormatEnum = { 2, "ImageFormat", "com.squareup.pollexor", NULL, 0x4011, 1, methods, 5, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ImageFormat;>;" };
+  static const J2ObjcClassInfo _PXRImageFormatEnum = { 1, "ImageFormat", "com.squareup.pollexor", NULL, 0x4011, 1, methods, 5, fields, 1, superclass_type_args};
   return &_PXRImageFormatEnum;
 }
 
 @end
-
-void PXRImageFormatEnum_initWithNSString_withNSString_withInt_(PXRImageFormatEnum *self, NSString *value, NSString *__name, jint __ordinal) {
-  JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
-  PXRImageFormatEnum_set_value_(self, value);
-}
-
-PXRImageFormatEnum *new_PXRImageFormatEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
-  PXRImageFormatEnum *self = [PXRImageFormatEnum alloc];
-  PXRImageFormatEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
-  return self;
-}
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRImageFormatEnum)
