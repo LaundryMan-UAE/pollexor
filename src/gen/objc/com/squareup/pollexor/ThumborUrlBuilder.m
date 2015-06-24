@@ -8,11 +8,10 @@
 #include "IOSObjectArray.h"
 #include "IOSPrimitiveArray.h"
 #include "J2ObjC_source.h"
-#include "com/squareup/pollexor/ThumborEnumReplacement.h"
 #include "com/squareup/pollexor/ThumborUrlBuilder.h"
-#include "com/squareup/pollexor/ThumborVerticalEnumReplacement.h"
 #include "com/squareup/pollexor/Utilities.h"
 #include "java/lang/CharSequence.h"
+#include "java/lang/Enum.h"
 #include "java/lang/IllegalArgumentException.h"
 #include "java/lang/IllegalStateException.h"
 #include "java/lang/Integer.h"
@@ -83,11 +82,49 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_EQUALIZE_, NSString *)
 static NSString *PXRThumborUrlBuilder_FILTER_BLUR_ = @"blur";
 J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_BLUR_, NSString *)
 
-static NSString *PXRThumborUrlBuilder_FILTER_NO_UPSCALE_ = @"no_upscale";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_NO_UPSCALE_, NSString *)
+@interface PXRThumborUrlBuilder_HorizontalAlignEnum ()
 
-static NSString *PXRThumborUrlBuilder_FILTER_ROTATE_ = @"rotate";
-J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
+- (instancetype)initWithNSString:(NSString *)value
+                    withNSString:(NSString *)__name
+                         withInt:(jint)__ordinal;
+@end
+
+__attribute__((unused)) static void PXRThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(PXRThumborUrlBuilder_HorizontalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal);
+
+__attribute__((unused)) static PXRThumborUrlBuilder_HorizontalAlignEnum *new_PXRThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+
+@interface PXRThumborUrlBuilder_VerticalAlignEnum ()
+
+- (instancetype)initWithNSString:(NSString *)value
+                    withNSString:(NSString *)__name
+                         withInt:(jint)__ordinal;
+@end
+
+__attribute__((unused)) static void PXRThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(PXRThumborUrlBuilder_VerticalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal);
+
+__attribute__((unused)) static PXRThumborUrlBuilder_VerticalAlignEnum *new_PXRThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+
+@interface PXRThumborUrlBuilder_TrimPixelColorEnum ()
+
+- (instancetype)initWithNSString:(NSString *)value
+                    withNSString:(NSString *)__name
+                         withInt:(jint)__ordinal;
+@end
+
+__attribute__((unused)) static void PXRThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(PXRThumborUrlBuilder_TrimPixelColorEnum *self, NSString *value, NSString *__name, jint __ordinal);
+
+__attribute__((unused)) static PXRThumborUrlBuilder_TrimPixelColorEnum *new_PXRThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
+
+@interface PXRThumborUrlBuilder_ImageFormatEnum ()
+
+- (instancetype)initWithNSString:(NSString *)value
+                    withNSString:(NSString *)__name
+                         withInt:(jint)__ordinal;
+@end
+
+__attribute__((unused)) static void PXRThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(PXRThumborUrlBuilder_ImageFormatEnum *self, NSString *value, NSString *__name, jint __ordinal);
+
+__attribute__((unused)) static PXRThumborUrlBuilder_ImageFormatEnum *new_PXRThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) NS_RETURNS_RETAINED;
 
 @implementation PXRThumborUrlBuilder
 
@@ -163,7 +200,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
   return self;
 }
 
-- (PXRThumborUrlBuilder *)alignWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)align {
+- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_HorizontalAlignEnum:(PXRThumborUrlBuilder_HorizontalAlignEnum *)align {
   if (!hasResize_) {
     @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to align."] autorelease];
   }
@@ -171,7 +208,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
   return self;
 }
 
-- (PXRThumborUrlBuilder *)alignWithPXRThumborVerticalEnumReplacement:(PXRThumborVerticalEnumReplacement *)align {
+- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_VerticalAlignEnum:(PXRThumborUrlBuilder_VerticalAlignEnum *)align {
   if (!hasResize_) {
     @throw [[[JavaLangIllegalStateException alloc] initWithNSString:@"Image must be resized first in order to align."] autorelease];
   }
@@ -179,9 +216,9 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
   return self;
 }
 
-- (PXRThumborUrlBuilder *)alignWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)valign
-                               withPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)halign {
-  return [((PXRThumborUrlBuilder *) nil_chk([self alignWithPXRThumborEnumReplacement:valign])) alignWithPXRThumborEnumReplacement:halign];
+- (PXRThumborUrlBuilder *)alignWithPXRThumborUrlBuilder_VerticalAlignEnum:(PXRThumborUrlBuilder_VerticalAlignEnum *)valign
+                             withPXRThumborUrlBuilder_HorizontalAlignEnum:(PXRThumborUrlBuilder_HorizontalAlignEnum *)halign {
+  return [((PXRThumborUrlBuilder *) nil_chk([self alignWithPXRThumborUrlBuilder_VerticalAlignEnum:valign])) alignWithPXRThumborUrlBuilder_HorizontalAlignEnum:halign];
 }
 
 - (PXRThumborUrlBuilder *)smart {
@@ -193,15 +230,15 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
 }
 
 - (PXRThumborUrlBuilder *)trim {
-  return [self trimWithPXRThumborEnumReplacement:nil];
+  return [self trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:nil];
 }
 
-- (PXRThumborUrlBuilder *)trimWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)value {
-  return [self trimWithPXRThumborEnumReplacement:value withInt:0];
+- (PXRThumborUrlBuilder *)trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:(PXRThumborUrlBuilder_TrimPixelColorEnum *)value {
+  return [self trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:value withInt:0];
 }
 
-- (PXRThumborUrlBuilder *)trimWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)value
-                                                    withInt:(jint)colorTolerance {
+- (PXRThumborUrlBuilder *)trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:(PXRThumborUrlBuilder_TrimPixelColorEnum *)value
+                                                                  withInt:(jint)colorTolerance {
   if (colorTolerance < 0 || colorTolerance > 442) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Color tolerance must be between 0 and 442."] autorelease];
   }
@@ -282,7 +319,7 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
   if (isTrim_) {
     [builder appendWithNSString:PXRThumborUrlBuilder_PART_TRIM_];
     if (trimPixelColor_ != nil) {
-      [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:@":"])) appendWithNSString:[trimPixelColor_ getValue]];
+      [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:@":"])) appendWithNSString:trimPixelColor_->value_];
       if (trimColorTolerance_ > 0) {
         [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:@":"])) appendWithInt:trimColorTolerance_];
       }
@@ -321,10 +358,10 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     }
     else {
       if (cropHorizontalAlign_ != nil) {
-        [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:@"/"])) appendWithNSString:[cropHorizontalAlign_ getValue]];
+        [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:@"/"])) appendWithNSString:cropHorizontalAlign_->value_];
       }
       if (cropVerticalAlign_ != nil) {
-        [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:@"/"])) appendWithNSString:[cropVerticalAlign_ getValue]];
+        [((JavaLangStringBuilder *) nil_chk([builder appendWithNSString:@"/"])) appendWithNSString:cropVerticalAlign_->value_];
       }
     }
     [builder appendWithNSString:@"/"];
@@ -421,8 +458,8 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
   return PXRThumborUrlBuilder_fillWithInt_(color);
 }
 
-+ (NSString *)formatWithPXRThumborEnumReplacement:(PXRThumborEnumReplacement *)format {
-  return PXRThumborUrlBuilder_formatWithPXRThumborEnumReplacement_(format);
++ (NSString *)formatWithPXRThumborUrlBuilder_ImageFormatEnum:(PXRThumborUrlBuilder_ImageFormatEnum *)format {
+  return PXRThumborUrlBuilder_formatWithPXRThumborUrlBuilder_ImageFormatEnum_(format);
 }
 
 + (NSString *)frameWithNSString:(NSString *)imageUrl {
@@ -450,14 +487,6 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
   return PXRThumborUrlBuilder_blurWithInt_withInt_(radius, sigma);
 }
 
-+ (NSString *)noUpscale {
-  return PXRThumborUrlBuilder_noUpscale();
-}
-
-+ (NSString *)rotateWithInt:(jint)angle {
-  return PXRThumborUrlBuilder_rotateWithInt_(angle);
-}
-
 - (void)dealloc {
   RELEASE_(image_);
   RELEASE_(host_);
@@ -477,13 +506,13 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     { "flipVertically", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
     { "fitIn", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
     { "cropWithInt:withInt:withInt:withInt:", "crop", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "alignWithPXRThumborEnumReplacement:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "alignWithPXRThumborVerticalEnumReplacement:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "alignWithPXRThumborEnumReplacement:withPXRThumborEnumReplacement:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
+    { "alignWithPXRThumborUrlBuilder_HorizontalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
+    { "alignWithPXRThumborUrlBuilder_VerticalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
+    { "alignWithPXRThumborUrlBuilder_VerticalAlignEnum:withPXRThumborUrlBuilder_HorizontalAlignEnum:", "align", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
     { "smart", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
     { "trim", NULL, "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "trimWithPXRThumborEnumReplacement:", "trim", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
-    { "trimWithPXRThumborEnumReplacement:withInt:", "trim", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
+    { "trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:", "trim", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
+    { "trimWithPXRThumborUrlBuilder_TrimPixelColorEnum:withInt:", "trim", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
     { "filterWithNSStringArray:", "filter", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x81, NULL, NULL },
     { "toUrl", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
     { "toUrlUnsafe", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
@@ -509,15 +538,13 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     { "watermarkWithPXRThumborUrlBuilder:withInt:withInt:withInt:", "watermark", "Ljava.lang.String;", 0x9, NULL, NULL },
     { "sharpenWithFloat:withFloat:withBoolean:", "sharpen", "Ljava.lang.String;", 0x9, NULL, NULL },
     { "fillWithInt:", "fill", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "formatWithPXRThumborEnumReplacement:", "format", "Ljava.lang.String;", 0x9, NULL, NULL },
+    { "formatWithPXRThumborUrlBuilder_ImageFormatEnum:", "format", "Ljava.lang.String;", 0x9, NULL, NULL },
     { "frameWithNSString:", "frame", "Ljava.lang.String;", 0x9, NULL, NULL },
     { "stripicc", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
     { "grayscale", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
     { "equalize", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
     { "blurWithInt:", "blur", "Ljava.lang.String;", 0x9, NULL, NULL },
     { "blurWithInt:withInt:", "blur", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "noUpscale", NULL, "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "rotateWithInt:", "rotate", "Ljava.lang.String;", 0x9, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
     { "PREFIX_UNSAFE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_PREFIX_UNSAFE_, NULL,  },
@@ -541,8 +568,6 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     { "FILTER_GRAYSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_GRAYSCALE_, NULL,  },
     { "FILTER_EQUALIZE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_EQUALIZE_, NULL,  },
     { "FILTER_BLUR_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_BLUR_, NULL,  },
-    { "FILTER_NO_UPSCALE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_NO_UPSCALE_, NULL,  },
-    { "FILTER_ROTATE_", NULL, 0x1a, "Ljava.lang.String;", &PXRThumborUrlBuilder_FILTER_ROTATE_, NULL,  },
     { "ORIGINAL_SIZE_", NULL, 0x19, "I", NULL, NULL, .constantValue.asInt = PXRThumborUrlBuilder_ORIGINAL_SIZE },
     { "image_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
     { "host_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
@@ -561,12 +586,13 @@ J2OBJC_STATIC_FIELD_GETTER(PXRThumborUrlBuilder, FILTER_ROTATE_, NSString *)
     { "cropBottom_", NULL, 0x0, "I", NULL, NULL,  },
     { "cropRight_", NULL, 0x0, "I", NULL, NULL,  },
     { "trimColorTolerance_", NULL, 0x0, "I", NULL, NULL,  },
-    { "cropHorizontalAlign_", NULL, 0x0, "Lcom.squareup.pollexor.ThumborEnumReplacement;", NULL, NULL,  },
-    { "cropVerticalAlign_", NULL, 0x0, "Lcom.squareup.pollexor.ThumborVerticalEnumReplacement;", NULL, NULL,  },
-    { "trimPixelColor_", NULL, 0x0, "Lcom.squareup.pollexor.ThumborEnumReplacement;", NULL, NULL,  },
+    { "cropHorizontalAlign_", NULL, 0x0, "Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;", NULL, NULL,  },
+    { "cropVerticalAlign_", NULL, 0x0, "Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;", NULL, NULL,  },
+    { "trimPixelColor_", NULL, 0x0, "Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;", NULL, NULL,  },
     { "filters_", NULL, 0x0, "Ljava.util.List;", NULL, "Ljava/util/List<Ljava/lang/String;>;",  },
   };
-  static const J2ObjcClassInfo _PXRThumborUrlBuilder = { 2, "ThumborUrlBuilder", "com.squareup.pollexor", NULL, 0x11, 47, methods, 45, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const char *inner_classes[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;", "Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;", "Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;", "Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;"};
+  static const J2ObjcClassInfo _PXRThumborUrlBuilder = { 2, "ThumborUrlBuilder", "com.squareup.pollexor", NULL, 0x11, 45, methods, 43, fields, 0, NULL, 4, inner_classes, NULL, NULL };
   return &_PXRThumborUrlBuilder;
 }
 
@@ -712,12 +738,12 @@ NSString *PXRThumborUrlBuilder_fillWithInt_(jint color) {
   return JreStrcat("$C$C", PXRThumborUrlBuilder_FILTER_FILL_, '(', colorCode, ')');
 }
 
-NSString *PXRThumborUrlBuilder_formatWithPXRThumborEnumReplacement_(PXRThumborEnumReplacement *format) {
+NSString *PXRThumborUrlBuilder_formatWithPXRThumborUrlBuilder_ImageFormatEnum_(PXRThumborUrlBuilder_ImageFormatEnum *format) {
   PXRThumborUrlBuilder_initialize();
   if (format == nil) {
     @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"You must specify an image format."] autorelease];
   }
-  return JreStrcat("$C$C", PXRThumborUrlBuilder_FILTER_FORMAT_, '(', [((PXRThumborEnumReplacement *) nil_chk(format)) getValue], ')');
+  return JreStrcat("$C$C", PXRThumborUrlBuilder_FILTER_FORMAT_, '(', ((PXRThumborUrlBuilder_ImageFormatEnum *) nil_chk(format))->value_, ')');
 }
 
 NSString *PXRThumborUrlBuilder_frameWithNSString_(NSString *imageUrl) {
@@ -762,17 +788,324 @@ NSString *PXRThumborUrlBuilder_blurWithInt_withInt_(jint radius, jint sigma) {
   return JreStrcat("$CICIC", PXRThumborUrlBuilder_FILTER_BLUR_, '(', radius, ',', sigma, ')');
 }
 
-NSString *PXRThumborUrlBuilder_noUpscale() {
-  PXRThumborUrlBuilder_initialize();
-  return JreStrcat("$$", PXRThumborUrlBuilder_FILTER_NO_UPSCALE_, @"()");
-}
-
-NSString *PXRThumborUrlBuilder_rotateWithInt_(jint angle) {
-  PXRThumborUrlBuilder_initialize();
-  if (angle % 90 != 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Angle must be multiple of 90\u00b0"] autorelease];
-  }
-  return JreStrcat("$CIC", PXRThumborUrlBuilder_FILTER_ROTATE_, '(', angle, ')');
-}
-
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumborUrlBuilder)
+
+J2OBJC_INITIALIZED_DEFN(PXRThumborUrlBuilder_HorizontalAlignEnum)
+
+PXRThumborUrlBuilder_HorizontalAlignEnum *PXRThumborUrlBuilder_HorizontalAlignEnum_values_[3];
+
+@implementation PXRThumborUrlBuilder_HorizontalAlignEnum
+
+- (instancetype)initWithNSString:(NSString *)value
+                    withNSString:(NSString *)__name
+                         withInt:(jint)__ordinal {
+  PXRThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  return self;
+}
+
+IOSObjectArray *PXRThumborUrlBuilder_HorizontalAlignEnum_values() {
+  PXRThumborUrlBuilder_HorizontalAlignEnum_initialize();
+  return [IOSObjectArray arrayWithObjects:PXRThumborUrlBuilder_HorizontalAlignEnum_values_ count:3 type:PXRThumborUrlBuilder_HorizontalAlignEnum_class_()];
+}
++ (IOSObjectArray *)values {
+  return PXRThumborUrlBuilder_HorizontalAlignEnum_values();
+}
+
++ (PXRThumborUrlBuilder_HorizontalAlignEnum *)valueOfWithNSString:(NSString *)name {
+  return PXRThumborUrlBuilder_HorizontalAlignEnum_valueOfWithNSString_(name);
+}
+
+PXRThumborUrlBuilder_HorizontalAlignEnum *PXRThumborUrlBuilder_HorizontalAlignEnum_valueOfWithNSString_(NSString *name) {
+  PXRThumborUrlBuilder_HorizontalAlignEnum_initialize();
+  for (int i = 0; i < 3; i++) {
+    PXRThumborUrlBuilder_HorizontalAlignEnum *e = PXRThumborUrlBuilder_HorizontalAlignEnum_values_[i];
+    if ([name isEqual:[e name]]) {
+      return e;
+    }
+  }
+  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
+  return nil;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+  return [self retain];
+}
+
++ (void)initialize {
+  if (self == [PXRThumborUrlBuilder_HorizontalAlignEnum class]) {
+    PXRThumborUrlBuilder_HorizontalAlignEnum_LEFT = [[PXRThumborUrlBuilder_HorizontalAlignEnum alloc] initWithNSString:@"left" withNSString:@"LEFT" withInt:0];
+    PXRThumborUrlBuilder_HorizontalAlignEnum_CENTER = [[PXRThumborUrlBuilder_HorizontalAlignEnum alloc] initWithNSString:@"center" withNSString:@"CENTER" withInt:1];
+    PXRThumborUrlBuilder_HorizontalAlignEnum_RIGHT = [[PXRThumborUrlBuilder_HorizontalAlignEnum alloc] initWithNSString:@"right" withNSString:@"RIGHT" withInt:2];
+    J2OBJC_SET_INITIALIZED(PXRThumborUrlBuilder_HorizontalAlignEnum)
+  }
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static const J2ObjcMethodInfo methods[] = {
+    { "initWithNSString:withNSString:withInt:", "HorizontalAlign", NULL, 0x2, NULL, NULL },
+  };
+  static const J2ObjcFieldInfo fields[] = {
+    { "LEFT", "LEFT", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;", &PXRThumborUrlBuilder_HorizontalAlignEnum_LEFT, NULL,  },
+    { "CENTER", "CENTER", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;", &PXRThumborUrlBuilder_HorizontalAlignEnum_CENTER, NULL,  },
+    { "RIGHT", "RIGHT", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;", &PXRThumborUrlBuilder_HorizontalAlignEnum_RIGHT, NULL,  },
+    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
+  };
+  static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$HorizontalAlign;"};
+  static const J2ObjcClassInfo _PXRThumborUrlBuilder_HorizontalAlignEnum = { 2, "HorizontalAlign", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 1, methods, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$HorizontalAlign;>;" };
+  return &_PXRThumborUrlBuilder_HorizontalAlignEnum;
+}
+
+@end
+
+void PXRThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(PXRThumborUrlBuilder_HorizontalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal) {
+  JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
+  PXRThumborUrlBuilder_HorizontalAlignEnum_set_value_(self, value);
+}
+
+PXRThumborUrlBuilder_HorizontalAlignEnum *new_PXRThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
+  PXRThumborUrlBuilder_HorizontalAlignEnum *self = [PXRThumborUrlBuilder_HorizontalAlignEnum alloc];
+  PXRThumborUrlBuilder_HorizontalAlignEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  return self;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumborUrlBuilder_HorizontalAlignEnum)
+
+J2OBJC_INITIALIZED_DEFN(PXRThumborUrlBuilder_VerticalAlignEnum)
+
+PXRThumborUrlBuilder_VerticalAlignEnum *PXRThumborUrlBuilder_VerticalAlignEnum_values_[3];
+
+@implementation PXRThumborUrlBuilder_VerticalAlignEnum
+
+- (instancetype)initWithNSString:(NSString *)value
+                    withNSString:(NSString *)__name
+                         withInt:(jint)__ordinal {
+  PXRThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  return self;
+}
+
+IOSObjectArray *PXRThumborUrlBuilder_VerticalAlignEnum_values() {
+  PXRThumborUrlBuilder_VerticalAlignEnum_initialize();
+  return [IOSObjectArray arrayWithObjects:PXRThumborUrlBuilder_VerticalAlignEnum_values_ count:3 type:PXRThumborUrlBuilder_VerticalAlignEnum_class_()];
+}
++ (IOSObjectArray *)values {
+  return PXRThumborUrlBuilder_VerticalAlignEnum_values();
+}
+
++ (PXRThumborUrlBuilder_VerticalAlignEnum *)valueOfWithNSString:(NSString *)name {
+  return PXRThumborUrlBuilder_VerticalAlignEnum_valueOfWithNSString_(name);
+}
+
+PXRThumborUrlBuilder_VerticalAlignEnum *PXRThumborUrlBuilder_VerticalAlignEnum_valueOfWithNSString_(NSString *name) {
+  PXRThumborUrlBuilder_VerticalAlignEnum_initialize();
+  for (int i = 0; i < 3; i++) {
+    PXRThumborUrlBuilder_VerticalAlignEnum *e = PXRThumborUrlBuilder_VerticalAlignEnum_values_[i];
+    if ([name isEqual:[e name]]) {
+      return e;
+    }
+  }
+  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
+  return nil;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+  return [self retain];
+}
+
++ (void)initialize {
+  if (self == [PXRThumborUrlBuilder_VerticalAlignEnum class]) {
+    PXRThumborUrlBuilder_VerticalAlignEnum_TOP = [[PXRThumborUrlBuilder_VerticalAlignEnum alloc] initWithNSString:@"top" withNSString:@"TOP" withInt:0];
+    PXRThumborUrlBuilder_VerticalAlignEnum_MIDDLE = [[PXRThumborUrlBuilder_VerticalAlignEnum alloc] initWithNSString:@"middle" withNSString:@"MIDDLE" withInt:1];
+    PXRThumborUrlBuilder_VerticalAlignEnum_BOTTOM = [[PXRThumborUrlBuilder_VerticalAlignEnum alloc] initWithNSString:@"bottom" withNSString:@"BOTTOM" withInt:2];
+    J2OBJC_SET_INITIALIZED(PXRThumborUrlBuilder_VerticalAlignEnum)
+  }
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static const J2ObjcMethodInfo methods[] = {
+    { "initWithNSString:withNSString:withInt:", "VerticalAlign", NULL, 0x2, NULL, NULL },
+  };
+  static const J2ObjcFieldInfo fields[] = {
+    { "TOP", "TOP", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;", &PXRThumborUrlBuilder_VerticalAlignEnum_TOP, NULL,  },
+    { "MIDDLE", "MIDDLE", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;", &PXRThumborUrlBuilder_VerticalAlignEnum_MIDDLE, NULL,  },
+    { "BOTTOM", "BOTTOM", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;", &PXRThumborUrlBuilder_VerticalAlignEnum_BOTTOM, NULL,  },
+    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
+  };
+  static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$VerticalAlign;"};
+  static const J2ObjcClassInfo _PXRThumborUrlBuilder_VerticalAlignEnum = { 2, "VerticalAlign", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 1, methods, 4, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$VerticalAlign;>;" };
+  return &_PXRThumborUrlBuilder_VerticalAlignEnum;
+}
+
+@end
+
+void PXRThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(PXRThumborUrlBuilder_VerticalAlignEnum *self, NSString *value, NSString *__name, jint __ordinal) {
+  JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
+  PXRThumborUrlBuilder_VerticalAlignEnum_set_value_(self, value);
+}
+
+PXRThumborUrlBuilder_VerticalAlignEnum *new_PXRThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
+  PXRThumborUrlBuilder_VerticalAlignEnum *self = [PXRThumborUrlBuilder_VerticalAlignEnum alloc];
+  PXRThumborUrlBuilder_VerticalAlignEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  return self;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumborUrlBuilder_VerticalAlignEnum)
+
+J2OBJC_INITIALIZED_DEFN(PXRThumborUrlBuilder_TrimPixelColorEnum)
+
+PXRThumborUrlBuilder_TrimPixelColorEnum *PXRThumborUrlBuilder_TrimPixelColorEnum_values_[2];
+
+@implementation PXRThumborUrlBuilder_TrimPixelColorEnum
+
+- (instancetype)initWithNSString:(NSString *)value
+                    withNSString:(NSString *)__name
+                         withInt:(jint)__ordinal {
+  PXRThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  return self;
+}
+
+IOSObjectArray *PXRThumborUrlBuilder_TrimPixelColorEnum_values() {
+  PXRThumborUrlBuilder_TrimPixelColorEnum_initialize();
+  return [IOSObjectArray arrayWithObjects:PXRThumborUrlBuilder_TrimPixelColorEnum_values_ count:2 type:PXRThumborUrlBuilder_TrimPixelColorEnum_class_()];
+}
++ (IOSObjectArray *)values {
+  return PXRThumborUrlBuilder_TrimPixelColorEnum_values();
+}
+
++ (PXRThumborUrlBuilder_TrimPixelColorEnum *)valueOfWithNSString:(NSString *)name {
+  return PXRThumborUrlBuilder_TrimPixelColorEnum_valueOfWithNSString_(name);
+}
+
+PXRThumborUrlBuilder_TrimPixelColorEnum *PXRThumborUrlBuilder_TrimPixelColorEnum_valueOfWithNSString_(NSString *name) {
+  PXRThumborUrlBuilder_TrimPixelColorEnum_initialize();
+  for (int i = 0; i < 2; i++) {
+    PXRThumborUrlBuilder_TrimPixelColorEnum *e = PXRThumborUrlBuilder_TrimPixelColorEnum_values_[i];
+    if ([name isEqual:[e name]]) {
+      return e;
+    }
+  }
+  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
+  return nil;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+  return [self retain];
+}
+
++ (void)initialize {
+  if (self == [PXRThumborUrlBuilder_TrimPixelColorEnum class]) {
+    PXRThumborUrlBuilder_TrimPixelColorEnum_TOP_LEFT = [[PXRThumborUrlBuilder_TrimPixelColorEnum alloc] initWithNSString:@"top-left" withNSString:@"TOP_LEFT" withInt:0];
+    PXRThumborUrlBuilder_TrimPixelColorEnum_BOTTOM_RIGHT = [[PXRThumborUrlBuilder_TrimPixelColorEnum alloc] initWithNSString:@"bottom-right" withNSString:@"BOTTOM_RIGHT" withInt:1];
+    J2OBJC_SET_INITIALIZED(PXRThumborUrlBuilder_TrimPixelColorEnum)
+  }
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static const J2ObjcMethodInfo methods[] = {
+    { "initWithNSString:withNSString:withInt:", "TrimPixelColor", NULL, 0x2, NULL, NULL },
+  };
+  static const J2ObjcFieldInfo fields[] = {
+    { "TOP_LEFT", "TOP_LEFT", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;", &PXRThumborUrlBuilder_TrimPixelColorEnum_TOP_LEFT, NULL,  },
+    { "BOTTOM_RIGHT", "BOTTOM_RIGHT", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;", &PXRThumborUrlBuilder_TrimPixelColorEnum_BOTTOM_RIGHT, NULL,  },
+    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
+  };
+  static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$TrimPixelColor;"};
+  static const J2ObjcClassInfo _PXRThumborUrlBuilder_TrimPixelColorEnum = { 2, "TrimPixelColor", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 1, methods, 3, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$TrimPixelColor;>;" };
+  return &_PXRThumborUrlBuilder_TrimPixelColorEnum;
+}
+
+@end
+
+void PXRThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(PXRThumborUrlBuilder_TrimPixelColorEnum *self, NSString *value, NSString *__name, jint __ordinal) {
+  JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
+  PXRThumborUrlBuilder_TrimPixelColorEnum_set_value_(self, value);
+}
+
+PXRThumborUrlBuilder_TrimPixelColorEnum *new_PXRThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
+  PXRThumborUrlBuilder_TrimPixelColorEnum *self = [PXRThumborUrlBuilder_TrimPixelColorEnum alloc];
+  PXRThumborUrlBuilder_TrimPixelColorEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  return self;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumborUrlBuilder_TrimPixelColorEnum)
+
+J2OBJC_INITIALIZED_DEFN(PXRThumborUrlBuilder_ImageFormatEnum)
+
+PXRThumborUrlBuilder_ImageFormatEnum *PXRThumborUrlBuilder_ImageFormatEnum_values_[4];
+
+@implementation PXRThumborUrlBuilder_ImageFormatEnum
+
+- (instancetype)initWithNSString:(NSString *)value
+                    withNSString:(NSString *)__name
+                         withInt:(jint)__ordinal {
+  PXRThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  return self;
+}
+
+IOSObjectArray *PXRThumborUrlBuilder_ImageFormatEnum_values() {
+  PXRThumborUrlBuilder_ImageFormatEnum_initialize();
+  return [IOSObjectArray arrayWithObjects:PXRThumborUrlBuilder_ImageFormatEnum_values_ count:4 type:PXRThumborUrlBuilder_ImageFormatEnum_class_()];
+}
++ (IOSObjectArray *)values {
+  return PXRThumborUrlBuilder_ImageFormatEnum_values();
+}
+
++ (PXRThumborUrlBuilder_ImageFormatEnum *)valueOfWithNSString:(NSString *)name {
+  return PXRThumborUrlBuilder_ImageFormatEnum_valueOfWithNSString_(name);
+}
+
+PXRThumborUrlBuilder_ImageFormatEnum *PXRThumborUrlBuilder_ImageFormatEnum_valueOfWithNSString_(NSString *name) {
+  PXRThumborUrlBuilder_ImageFormatEnum_initialize();
+  for (int i = 0; i < 4; i++) {
+    PXRThumborUrlBuilder_ImageFormatEnum *e = PXRThumborUrlBuilder_ImageFormatEnum_values_[i];
+    if ([name isEqual:[e name]]) {
+      return e;
+    }
+  }
+  @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:name] autorelease];
+  return nil;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+  return [self retain];
+}
+
++ (void)initialize {
+  if (self == [PXRThumborUrlBuilder_ImageFormatEnum class]) {
+    PXRThumborUrlBuilder_ImageFormatEnum_GIF = [[PXRThumborUrlBuilder_ImageFormatEnum alloc] initWithNSString:@"gif" withNSString:@"GIF" withInt:0];
+    PXRThumborUrlBuilder_ImageFormatEnum_JPEG = [[PXRThumborUrlBuilder_ImageFormatEnum alloc] initWithNSString:@"jpeg" withNSString:@"JPEG" withInt:1];
+    PXRThumborUrlBuilder_ImageFormatEnum_PNG = [[PXRThumborUrlBuilder_ImageFormatEnum alloc] initWithNSString:@"png" withNSString:@"PNG" withInt:2];
+    PXRThumborUrlBuilder_ImageFormatEnum_WEBP = [[PXRThumborUrlBuilder_ImageFormatEnum alloc] initWithNSString:@"webp" withNSString:@"WEBP" withInt:3];
+    J2OBJC_SET_INITIALIZED(PXRThumborUrlBuilder_ImageFormatEnum)
+  }
+}
+
++ (const J2ObjcClassInfo *)__metadata {
+  static const J2ObjcMethodInfo methods[] = {
+    { "initWithNSString:withNSString:withInt:", "ImageFormat", NULL, 0x2, NULL, NULL },
+  };
+  static const J2ObjcFieldInfo fields[] = {
+    { "GIF", "GIF", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;", &PXRThumborUrlBuilder_ImageFormatEnum_GIF, NULL,  },
+    { "JPEG", "JPEG", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;", &PXRThumborUrlBuilder_ImageFormatEnum_JPEG, NULL,  },
+    { "PNG", "PNG", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;", &PXRThumborUrlBuilder_ImageFormatEnum_PNG, NULL,  },
+    { "WEBP", "WEBP", 0x4019, "Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;", &PXRThumborUrlBuilder_ImageFormatEnum_WEBP, NULL,  },
+    { "value_", NULL, 0x10, "Ljava.lang.String;", NULL, NULL,  },
+  };
+  static const char *superclass_type_args[] = {"Lcom.squareup.pollexor.ThumborUrlBuilder$ImageFormat;"};
+  static const J2ObjcClassInfo _PXRThumborUrlBuilder_ImageFormatEnum = { 2, "ImageFormat", "com.squareup.pollexor", "ThumborUrlBuilder", 0x4019, 1, methods, 5, fields, 1, superclass_type_args, 0, NULL, NULL, "Ljava/lang/Enum<Lcom/squareup/pollexor/ThumborUrlBuilder$ImageFormat;>;" };
+  return &_PXRThumborUrlBuilder_ImageFormatEnum;
+}
+
+@end
+
+void PXRThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(PXRThumborUrlBuilder_ImageFormatEnum *self, NSString *value, NSString *__name, jint __ordinal) {
+  JavaLangEnum_initWithNSString_withInt_(self, __name, __ordinal);
+  PXRThumborUrlBuilder_ImageFormatEnum_set_value_(self, value);
+}
+
+PXRThumborUrlBuilder_ImageFormatEnum *new_PXRThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(NSString *value, NSString *__name, jint __ordinal) {
+  PXRThumborUrlBuilder_ImageFormatEnum *self = [PXRThumborUrlBuilder_ImageFormatEnum alloc];
+  PXRThumborUrlBuilder_ImageFormatEnum_initWithNSString_withNSString_withInt_(self, value, __name, __ordinal);
+  return self;
+}
+
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumborUrlBuilder_ImageFormatEnum)
