@@ -14,12 +14,18 @@
   NSString *host_;
   NSString *key_;
 }
+
 - (instancetype)initWithNSString:(NSString *)host
                     withNSString:(NSString *)key;
+
 @end
 
 J2OBJC_FIELD_SETTER(PXRThumbor, host_, NSString *)
 J2OBJC_FIELD_SETTER(PXRThumbor, key_, NSString *)
+
+__attribute__((unused)) static void PXRThumbor_initWithNSString_withNSString_(PXRThumbor *self, NSString *host, NSString *key);
+
+__attribute__((unused)) static PXRThumbor *new_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) NS_RETURNS_RETAINED;
 
 @implementation PXRThumbor
 
@@ -34,16 +40,7 @@ J2OBJC_FIELD_SETTER(PXRThumbor, key_, NSString *)
 
 - (instancetype)initWithNSString:(NSString *)host
                     withNSString:(NSString *)key {
-  if (self = [super init]) {
-    if (host == nil || ((jint) [host length]) == 0) {
-      @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Host must not be blank."] autorelease];
-    }
-    if (![((NSString *) nil_chk(host)) hasSuffix:@"/"]) {
-      host = JreStrcat("$C", host, '/');
-    }
-    PXRThumbor_set_host_(self, host);
-    PXRThumbor_set_key_(self, key);
-  }
+  PXRThumbor_initWithNSString_withNSString_(self, host, key);
   return self;
 }
 
@@ -57,9 +54,9 @@ J2OBJC_FIELD_SETTER(PXRThumbor, key_, NSString *)
 
 - (PXRThumborUrlBuilder *)buildImageWithNSString:(NSString *)image {
   if (image == nil || ((jint) [image length]) == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Invalid image."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Invalid image.") autorelease];
   }
-  return [[[PXRThumborUrlBuilder alloc] initWithNSString:host_ withNSString:key_ withNSString:image] autorelease];
+  return [new_PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(host_, key_, image) autorelease];
 }
 
 - (void)dealloc {
@@ -68,42 +65,54 @@ J2OBJC_FIELD_SETTER(PXRThumbor, key_, NSString *)
   [super dealloc];
 }
 
-- (void)copyAllFieldsTo:(PXRThumbor *)other {
-  [super copyAllFieldsTo:other];
-  PXRThumbor_set_host_(other, host_);
-  PXRThumbor_set_key_(other, key_);
-}
-
 + (const J2ObjcClassInfo *)__metadata {
   static const J2ObjcMethodInfo methods[] = {
-    { "createWithNSString:", "create", "Lcom.squareup.pollexor.Thumbor;", 0x9, NULL },
-    { "createWithNSString:withNSString:", "create", "Lcom.squareup.pollexor.Thumbor;", 0x9, NULL },
-    { "initWithNSString:withNSString:", "Thumbor", NULL, 0x2, NULL },
-    { "getHost", NULL, "Ljava.lang.String;", 0x1, NULL },
-    { "getKey", NULL, "Ljava.lang.String;", 0x1, NULL },
-    { "buildImageWithNSString:", "buildImage", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL },
+    { "createWithNSString:", "create", "Lcom.squareup.pollexor.Thumbor;", 0x9, NULL, NULL },
+    { "createWithNSString:withNSString:", "create", "Lcom.squareup.pollexor.Thumbor;", 0x9, NULL, NULL },
+    { "initWithNSString:withNSString:", "Thumbor", NULL, 0x2, NULL, NULL },
+    { "getHost", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "getKey", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
+    { "buildImageWithNSString:", "buildImage", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
   };
   static const J2ObjcFieldInfo fields[] = {
-    { "host_", NULL, 0x12, "Ljava.lang.String;", NULL,  },
-    { "key_", NULL, 0x12, "Ljava.lang.String;", NULL,  },
+    { "host_", NULL, 0x12, "Ljava.lang.String;", NULL, NULL,  },
+    { "key_", NULL, 0x12, "Ljava.lang.String;", NULL, NULL,  },
   };
-  static const J2ObjcClassInfo _PXRThumbor = { 1, "Thumbor", "com.squareup.pollexor", NULL, 0x11, 6, methods, 2, fields, 0, NULL};
+  static const J2ObjcClassInfo _PXRThumbor = { 2, "Thumbor", "com.squareup.pollexor", NULL, 0x11, 6, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
   return &_PXRThumbor;
 }
 
 @end
 
 PXRThumbor *PXRThumbor_createWithNSString_(NSString *host) {
-  PXRThumbor_init();
-  return [[[PXRThumbor alloc] initWithNSString:host withNSString:nil] autorelease];
+  PXRThumbor_initialize();
+  return [new_PXRThumbor_initWithNSString_withNSString_(host, nil) autorelease];
 }
 
 PXRThumbor *PXRThumbor_createWithNSString_withNSString_(NSString *host, NSString *key) {
-  PXRThumbor_init();
+  PXRThumbor_initialize();
   if (key == nil || ((jint) [key length]) == 0) {
-    @throw [[[JavaLangIllegalArgumentException alloc] initWithNSString:@"Key must not be blank."] autorelease];
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Key must not be blank.") autorelease];
   }
-  return [[[PXRThumbor alloc] initWithNSString:host withNSString:key] autorelease];
+  return [new_PXRThumbor_initWithNSString_withNSString_(host, key) autorelease];
+}
+
+void PXRThumbor_initWithNSString_withNSString_(PXRThumbor *self, NSString *host, NSString *key) {
+  NSObject_init(self);
+  if (host == nil || ((jint) [host length]) == 0) {
+    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Host must not be blank.") autorelease];
+  }
+  if (![((NSString *) nil_chk(host)) hasSuffix:@"/"]) {
+    host = JreStrcat("$C", host, '/');
+  }
+  PXRThumbor_set_host_(self, host);
+  PXRThumbor_set_key_(self, key);
+}
+
+PXRThumbor *new_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
+  PXRThumbor *self = [PXRThumbor alloc];
+  PXRThumbor_initWithNSString_withNSString_(self, host, key);
+  return self;
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumbor)

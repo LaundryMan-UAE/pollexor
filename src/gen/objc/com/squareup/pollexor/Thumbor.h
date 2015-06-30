@@ -3,18 +3,24 @@
 //  source: /Users/marcussmith/HambroPerks/3rdParty/pollexor/src/main/java/com/squareup/pollexor/Thumbor.java
 //
 
-#ifndef _PXRThumbor_H_
-#define _PXRThumbor_H_
-
-@class PXRThumborUrlBuilder;
+#ifndef _ComSquareupPollexorThumbor_H_
+#define _ComSquareupPollexorThumbor_H_
 
 #include "J2ObjC_header.h"
+
+@class PXRThumborUrlBuilder;
 
 /**
  @brief Representation of a remote <a href="https://github.com/globocom/thumbor">thumbor</a> installation.
  */
-@interface PXRThumbor : NSObject {
-}
+@interface PXRThumbor : NSObject
+
+#pragma mark Public
+
+/**
+ @brief Begin building a url for this host with the specified image.
+ */
+- (PXRThumborUrlBuilder *)buildImageWithNSString:(NSString *)image;
 
 /**
  @brief Create a new instance for the specified host.
@@ -31,24 +37,16 @@
 
 - (NSString *)getKey;
 
-/**
- @brief Begin building a url for this host with the specified image.
- */
-- (PXRThumborUrlBuilder *)buildImageWithNSString:(NSString *)image;
-
 @end
 
 J2OBJC_EMPTY_STATIC_INIT(PXRThumbor)
 
-CF_EXTERN_C_BEGIN
-
 FOUNDATION_EXPORT PXRThumbor *PXRThumbor_createWithNSString_(NSString *host);
 
 FOUNDATION_EXPORT PXRThumbor *PXRThumbor_createWithNSString_withNSString_(NSString *host, NSString *key);
-CF_EXTERN_C_END
-
-typedef PXRThumbor ComSquareupPollexorThumbor;
 
 J2OBJC_TYPE_LITERAL_HEADER(PXRThumbor)
 
-#endif // _PXRThumbor_H_
+typedef PXRThumbor ComSquareupPollexorThumbor;
+
+#endif // _ComSquareupPollexorThumbor_H_
