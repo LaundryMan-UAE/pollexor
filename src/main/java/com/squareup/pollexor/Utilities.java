@@ -161,20 +161,20 @@ final class Utilities {
    * @return Encrypted output.
    */
   static native byte[] hmacSha1(StringBuilder message, String key)/*-[
-     NSString *data = [((JavaLangStringBuilder *) nil_chk(message)) description];
+    NSString *data = [NSString stringWithJavaLangStringBuilder:message];
 
-     const char *cKey  = [key cStringUsingEncoding:NSASCIIStringEncoding];
-     const char *cData = [data cStringUsingEncoding:NSASCIIStringEncoding];
+    NSStringEncoding encoding = NSUTF8StringEncoding;
+    const char *cstrInput = [data cStringUsingEncoding:encoding];
+    NSUInteger inputLength = [data lengthOfBytesUsingEncoding:encoding];
+    const char *cstrKey = [key cStringUsingEncoding:encoding];
+    NSUInteger keyLength = [key lengthOfBytesUsingEncoding:encoding];
 
-     unsigned char cHMAC[CC_SHA256_DIGEST_LENGTH];
+    unsigned char chmac[CC_SHA1_DIGEST_LENGTH];
+    CCHmac(kCCHmacAlgSHA1, cstrKey, keyLength, cstrInput, inputLength, &chmac);
 
-     CCHmac(kCCHmacAlgSHA256, cKey, strlen(cKey), cData, strlen(cData), cHMAC);
+    NSData *encoded = [[[NSData alloc] initWithBytes:chmac length:sizeof(chmac)] autorelease];
 
-     NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC
-     length:sizeof(cHMAC)];
-
-     NSString *base64Hash = [HMAC base64EncodedStringWithOptions:nil];
-
-     return [((NSString *) nil_chk(base64Hash)) getBytes];
+    return  [IOSByteArray arrayWithBytes:encoded.bytes count:encoded.length];
   ]-*/;
+
 }
