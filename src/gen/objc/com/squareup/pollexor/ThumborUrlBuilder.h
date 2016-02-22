@@ -473,6 +473,8 @@ FOUNDATION_EXPORT void PXRThumborUrlBuilder_initWithNSString_withNSString_withNS
 
 FOUNDATION_EXPORT PXRThumborUrlBuilder *new_PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(NSString *host, NSString *key, NSString *image) NS_RETURNS_RETAINED;
 
+FOUNDATION_EXPORT PXRThumborUrlBuilder *create_PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(NSString *host, NSString *key, NSString *image);
+
 FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_brightnessWithInt_(jint amount);
 
 FOUNDATION_EXPORT NSString *PXRThumborUrlBuilder_contrastWithInt_(jint amount);

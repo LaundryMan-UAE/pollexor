@@ -27,6 +27,8 @@ __attribute__((unused)) static void PXRThumbor_initWithNSString_withNSString_(PX
 
 __attribute__((unused)) static PXRThumbor *new_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) NS_RETURNS_RETAINED;
 
+__attribute__((unused)) static PXRThumbor *create_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key);
+
 @implementation PXRThumbor
 
 + (PXRThumbor *)createWithNSString:(NSString *)host {
@@ -111,6 +113,12 @@ void PXRThumbor_initWithNSString_withNSString_(PXRThumbor *self, NSString *host,
 
 PXRThumbor *new_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
   PXRThumbor *self = [PXRThumbor alloc];
+  PXRThumbor_initWithNSString_withNSString_(self, host, key);
+  return self;
+}
+
+PXRThumbor *create_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
+  PXRThumbor *self = [[PXRThumbor alloc] autorelease];
   PXRThumbor_initWithNSString_withNSString_(self, host, key);
   return self;
 }

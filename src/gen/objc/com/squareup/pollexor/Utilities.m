@@ -33,6 +33,8 @@ __attribute__((unused)) static void PXRUtilities_init(PXRUtilities *self);
 
 __attribute__((unused)) static PXRUtilities *new_PXRUtilities_init() NS_RETURNS_RETAINED;
 
+__attribute__((unused)) static PXRUtilities *create_PXRUtilities_init();
+
 @implementation PXRUtilities
 
 J2OBJC_IGNORE_DESIGNATED_BEGIN
@@ -91,6 +93,12 @@ void PXRUtilities_init(PXRUtilities *self) {
 
 PXRUtilities *new_PXRUtilities_init() {
   PXRUtilities *self = [PXRUtilities alloc];
+  PXRUtilities_init(self);
+  return self;
+}
+
+PXRUtilities *create_PXRUtilities_init() {
+  PXRUtilities *self = [[PXRUtilities alloc] autorelease];
   PXRUtilities_init(self);
   return self;
 }
@@ -186,7 +194,7 @@ NSString *PXRUtilities_md5WithNSString_(NSString *input) {
     return [hexString description];
   }
   @catch (JavaLangException *e) {
-    @throw [new_JavaLangRuntimeException_initWithJavaLangThrowable_(e) autorelease];
+    @throw [new_JavaLangRuntimeException_initWithNSException_(e) autorelease];
   }
 }
 
