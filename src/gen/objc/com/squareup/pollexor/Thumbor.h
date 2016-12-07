@@ -5,15 +5,15 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("ComSquareupPollexorThumbor_INCLUDE_ALL")
-#ifdef ComSquareupPollexorThumbor_RESTRICT
-#define ComSquareupPollexorThumbor_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_ComSquareupPollexorThumbor")
+#ifdef RESTRICT_ComSquareupPollexorThumbor
+#define INCLUDE_ALL_ComSquareupPollexorThumbor 0
 #else
-#define ComSquareupPollexorThumbor_INCLUDE_ALL 1
+#define INCLUDE_ALL_ComSquareupPollexorThumbor 1
 #endif
-#undef ComSquareupPollexorThumbor_RESTRICT
+#undef RESTRICT_ComSquareupPollexorThumbor
 
-#if !defined (PXRThumbor_) && (ComSquareupPollexorThumbor_INCLUDE_ALL || defined(PXRThumbor_INCLUDE))
+#if !defined (PXRThumbor_) && (INCLUDE_ALL_ComSquareupPollexorThumbor || defined(INCLUDE_PXRThumbor))
 #define PXRThumbor_
 
 @class PXRThumborUrlBuilder;
@@ -62,4 +62,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumbor)
 
 #endif
 
-#pragma pop_macro("ComSquareupPollexorThumbor_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_ComSquareupPollexorThumbor")

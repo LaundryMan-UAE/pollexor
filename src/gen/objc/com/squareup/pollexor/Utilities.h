@@ -5,15 +5,15 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("ComSquareupPollexorUtilities_INCLUDE_ALL")
-#ifdef ComSquareupPollexorUtilities_RESTRICT
-#define ComSquareupPollexorUtilities_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_ComSquareupPollexorUtilities")
+#ifdef RESTRICT_ComSquareupPollexorUtilities
+#define INCLUDE_ALL_ComSquareupPollexorUtilities 0
 #else
-#define ComSquareupPollexorUtilities_INCLUDE_ALL 1
+#define INCLUDE_ALL_ComSquareupPollexorUtilities 1
 #endif
-#undef ComSquareupPollexorUtilities_RESTRICT
+#undef RESTRICT_ComSquareupPollexorUtilities
 
-#if !defined (PXRUtilities_) && (ComSquareupPollexorUtilities_INCLUDE_ALL || defined(PXRUtilities_INCLUDE))
+#if !defined (PXRUtilities_) && (INCLUDE_ALL_ComSquareupPollexorUtilities || defined(INCLUDE_PXRUtilities))
 #define PXRUtilities_
 
 @class IOSByteArray;
@@ -98,4 +98,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRUtilities)
 
 #endif
 
-#pragma pop_macro("ComSquareupPollexorUtilities_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_ComSquareupPollexorUtilities")

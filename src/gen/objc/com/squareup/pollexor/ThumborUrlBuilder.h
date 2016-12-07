@@ -5,15 +5,15 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL")
-#ifdef ComSquareupPollexorThumborUrlBuilder_RESTRICT
-#define ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL 0
+#pragma push_macro("INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder")
+#ifdef RESTRICT_ComSquareupPollexorThumborUrlBuilder
+#define INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder 0
 #else
-#define ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL 1
+#define INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder 1
 #endif
-#undef ComSquareupPollexorThumborUrlBuilder_RESTRICT
+#undef RESTRICT_ComSquareupPollexorThumborUrlBuilder
 
-#if !defined (PXRThumborUrlBuilder_) && (ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL || defined(PXRThumborUrlBuilder_INCLUDE))
+#if !defined (PXRThumborUrlBuilder_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_PXRThumborUrlBuilder))
 #define PXRThumborUrlBuilder_
 
 @class IOSObjectArray;
@@ -531,12 +531,14 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder)
 
 #endif
 
-#if !defined (PXRThumborUrlBuilder_HorizontalAlign_) && (ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL || defined(PXRThumborUrlBuilder_HorizontalAlign_INCLUDE))
+#if !defined (PXRThumborUrlBuilder_HorizontalAlign_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_PXRThumborUrlBuilder_HorizontalAlign))
 #define PXRThumborUrlBuilder_HorizontalAlign_
 
-#define JavaLangEnum_RESTRICT 1
-#define JavaLangEnum_INCLUDE 1
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
+
+@class IOSObjectArray;
 
 typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_HorizontalAlign_Enum) {
   PXRThumborUrlBuilder_HorizontalAlign_Enum_LEFT = 0,
@@ -552,11 +554,13 @@ typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_HorizontalAlign_Enum) {
   NSString *value_;
 }
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (PXRThumborUrlBuilder_HorizontalAlign *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
-+ (PXRThumborUrlBuilder_HorizontalAlign *)valueOfWithNSString:(NSString *)name;
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -588,12 +592,14 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_HorizontalAlign)
 
 #endif
 
-#if !defined (PXRThumborUrlBuilder_VerticalAlign_) && (ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL || defined(PXRThumborUrlBuilder_VerticalAlign_INCLUDE))
+#if !defined (PXRThumborUrlBuilder_VerticalAlign_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_PXRThumborUrlBuilder_VerticalAlign))
 #define PXRThumborUrlBuilder_VerticalAlign_
 
-#define JavaLangEnum_RESTRICT 1
-#define JavaLangEnum_INCLUDE 1
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
+
+@class IOSObjectArray;
 
 typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_VerticalAlign_Enum) {
   PXRThumborUrlBuilder_VerticalAlign_Enum_TOP = 0,
@@ -609,11 +615,13 @@ typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_VerticalAlign_Enum) {
   NSString *value_;
 }
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (PXRThumborUrlBuilder_VerticalAlign *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
-+ (PXRThumborUrlBuilder_VerticalAlign *)valueOfWithNSString:(NSString *)name;
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -645,12 +653,14 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_VerticalAlign)
 
 #endif
 
-#if !defined (PXRThumborUrlBuilder_TrimPixelColor_) && (ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL || defined(PXRThumborUrlBuilder_TrimPixelColor_INCLUDE))
+#if !defined (PXRThumborUrlBuilder_TrimPixelColor_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_PXRThumborUrlBuilder_TrimPixelColor))
 #define PXRThumborUrlBuilder_TrimPixelColor_
 
-#define JavaLangEnum_RESTRICT 1
-#define JavaLangEnum_INCLUDE 1
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
+
+@class IOSObjectArray;
 
 typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_TrimPixelColor_Enum) {
   PXRThumborUrlBuilder_TrimPixelColor_Enum_TOP_LEFT = 0,
@@ -665,11 +675,13 @@ typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_TrimPixelColor_Enum) {
   NSString *value_;
 }
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (PXRThumborUrlBuilder_TrimPixelColor *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
-+ (PXRThumborUrlBuilder_TrimPixelColor *)valueOfWithNSString:(NSString *)name;
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -698,12 +710,14 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_TrimPixelColor)
 
 #endif
 
-#if !defined (PXRThumborUrlBuilder_ImageFormat_) && (ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL || defined(PXRThumborUrlBuilder_ImageFormat_INCLUDE))
+#if !defined (PXRThumborUrlBuilder_ImageFormat_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_PXRThumborUrlBuilder_ImageFormat))
 #define PXRThumborUrlBuilder_ImageFormat_
 
-#define JavaLangEnum_RESTRICT 1
-#define JavaLangEnum_INCLUDE 1
+#define RESTRICT_JavaLangEnum 1
+#define INCLUDE_JavaLangEnum 1
 #include "java/lang/Enum.h"
+
+@class IOSObjectArray;
 
 typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_ImageFormat_Enum) {
   PXRThumborUrlBuilder_ImageFormat_Enum_GIF = 0,
@@ -720,11 +734,13 @@ typedef NS_ENUM(NSUInteger, PXRThumborUrlBuilder_ImageFormat_Enum) {
   NSString *value_;
 }
 
-#pragma mark Package-Private
+#pragma mark Public
+
++ (PXRThumborUrlBuilder_ImageFormat *)valueOfWithNSString:(NSString *)name;
 
 + (IOSObjectArray *)values;
 
-+ (PXRThumborUrlBuilder_ImageFormat *)valueOfWithNSString:(NSString *)name;
+#pragma mark Package-Private
 
 - (id)copyWithZone:(NSZone *)zone;
 
@@ -759,4 +775,4 @@ J2OBJC_TYPE_LITERAL_HEADER(PXRThumborUrlBuilder_ImageFormat)
 
 #endif
 
-#pragma pop_macro("ComSquareupPollexorThumborUrlBuilder_INCLUDE_ALL")
+#pragma pop_macro("INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder")

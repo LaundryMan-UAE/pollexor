@@ -6,10 +6,12 @@ version = '1.0'
 repositories {
     mavenCentral()
 }
+
+
 sourceSets {
     main {
         java {
-            srcDirs = ['main/java']
+            srcDirs = ['main/java/com/squareup/pollexor']
         }
     }
 }
@@ -19,11 +21,18 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
+task testPaths{
+    String someString = "$sourceSets.main.allJava"
+    println "$someString"
+}
+
+
 task cycleFinder(type:Exec) {
     inputs.files sourceSets.main.allJava
     executable "${J2OBJC_HOME}/cycle_finder"
-    args '-sourcepath', sourceSets.main.allJava.srcDirs // + configurations.runtime.allDependencies.dependencyProject.sourceSets.main.allJava.srcDirs.flatten()).join(':')
-    args '-classpath', "${J2OBJC_HOME}/lib/guava-14.0.1.jar:${J2OBJC_HOME}/lib/jsr305-2.0.2.jar"
+    args '-sourcepath', (sourceSets.main.allJava.srcDirs).join(':')
+    args '-w', "${J2OBJC_HOME}/cycle_whitelist.txt"
+    args '-classpath', "${J2OBJC_HOME}/lib/j2objc_guava.jar:${J2OBJC_HOME}/lib/jsr305-3.0.0.jar"
     args inputs.files
 }
 

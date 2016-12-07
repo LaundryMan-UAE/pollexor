@@ -56,9 +56,9 @@ __attribute__((unused)) static PXRThumbor *create_PXRThumbor_initWithNSString_wi
 
 - (PXRThumborUrlBuilder *)buildImageWithNSString:(NSString *)image {
   if (image == nil || ((jint) [image length]) == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Invalid image.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Invalid image.");
   }
-  return [new_PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(host_, key_, image) autorelease];
+  return create_PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(host_, key_, image);
 }
 
 - (void)dealloc {
@@ -68,19 +68,29 @@ __attribute__((unused)) static PXRThumbor *create_PXRThumbor_initWithNSString_wi
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "createWithNSString:", "create", "Lcom.squareup.pollexor.Thumbor;", 0x9, NULL, NULL },
-    { "createWithNSString:withNSString:", "create", "Lcom.squareup.pollexor.Thumbor;", 0x9, NULL, NULL },
-    { "initWithNSString:withNSString:", "Thumbor", NULL, 0x2, NULL, NULL },
-    { "getHost", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "getKey", NULL, "Ljava.lang.String;", 0x1, NULL, NULL },
-    { "buildImageWithNSString:", "buildImage", "Lcom.squareup.pollexor.ThumborUrlBuilder;", 0x1, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, "LPXRThumbor;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LPXRThumbor;", 0x9, 0, 2, -1, -1, -1, -1 },
+    { NULL, NULL, 0x2, -1, 2, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LPXRThumborUrlBuilder;", 0x1, 3, 1, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(createWithNSString:);
+  methods[1].selector = @selector(createWithNSString:withNSString:);
+  methods[2].selector = @selector(initWithNSString:withNSString:);
+  methods[3].selector = @selector(getHost);
+  methods[4].selector = @selector(getKey);
+  methods[5].selector = @selector(buildImageWithNSString:);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "host_", NULL, 0x12, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
-    { "key_", NULL, 0x12, "Ljava.lang.String;", NULL, NULL, .constantValue.asLong = 0 },
+    { "host_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
+    { "key_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _PXRThumbor = { 2, "Thumbor", "com.squareup.pollexor", NULL, 0x11, 6, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { "create", "LNSString;", "LNSString;LNSString;", "buildImage" };
+  static const J2ObjcClassInfo _PXRThumbor = { "Thumbor", "com.squareup.pollexor", ptrTable, methods, fields, 7, 0x11, 6, 2, -1, -1, -1, -1, -1 };
   return &_PXRThumbor;
 }
 
@@ -88,23 +98,23 @@ __attribute__((unused)) static PXRThumbor *create_PXRThumbor_initWithNSString_wi
 
 PXRThumbor *PXRThumbor_createWithNSString_(NSString *host) {
   PXRThumbor_initialize();
-  return [new_PXRThumbor_initWithNSString_withNSString_(host, nil) autorelease];
+  return create_PXRThumbor_initWithNSString_withNSString_(host, nil);
 }
 
 PXRThumbor *PXRThumbor_createWithNSString_withNSString_(NSString *host, NSString *key) {
   PXRThumbor_initialize();
   if (key == nil || ((jint) [key length]) == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Key must not be blank.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Key must not be blank.");
   }
-  return [new_PXRThumbor_initWithNSString_withNSString_(host, key) autorelease];
+  return create_PXRThumbor_initWithNSString_withNSString_(host, key);
 }
 
 void PXRThumbor_initWithNSString_withNSString_(PXRThumbor *self, NSString *host, NSString *key) {
   NSObject_init(self);
   if (host == nil || ((jint) [host length]) == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Host must not be blank.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Host must not be blank.");
   }
-  if (![((NSString *) nil_chk(host)) hasSuffix:@"/"]) {
+  if (![host hasSuffix:@"/"]) {
     JreStrAppend(&host, "$", @"/");
   }
   JreStrongAssign(&self->host_, host);
@@ -112,15 +122,11 @@ void PXRThumbor_initWithNSString_withNSString_(PXRThumbor *self, NSString *host,
 }
 
 PXRThumbor *new_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
-  PXRThumbor *self = [PXRThumbor alloc];
-  PXRThumbor_initWithNSString_withNSString_(self, host, key);
-  return self;
+  J2OBJC_NEW_IMPL(PXRThumbor, initWithNSString_withNSString_, host, key)
 }
 
 PXRThumbor *create_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
-  PXRThumbor *self = [[PXRThumbor alloc] autorelease];
-  PXRThumbor_initWithNSString_withNSString_(self, host, key);
-  return self;
+  J2OBJC_CREATE_IMPL(PXRThumbor, initWithNSString_withNSString_, host, key)
 }
 
 J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumbor)

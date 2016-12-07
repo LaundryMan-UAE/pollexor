@@ -69,19 +69,29 @@ J2OBJC_IGNORE_DESIGNATED_END
 }
 
 + (const J2ObjcClassInfo *)__metadata {
-  static const J2ObjcMethodInfo methods[] = {
-    { "init", "Utilities", NULL, 0x2, NULL, NULL },
-    { "base64EncodeWithByteArray:", "base64Encode", "Ljava.lang.String;", 0x9, NULL, NULL },
-    { "rightPadStringWithJavaLangStringBuilder:withChar:withInt:", "rightPadString", "V", 0x8, NULL, NULL },
-    { "normalizeStringWithNSString:withInt:", "normalizeString", "Ljava.lang.String;", 0x8, NULL, NULL },
-    { "md5WithNSString:", "md5", "Ljava.lang.String;", 0x8, NULL, NULL },
-    { "hmacSha1WithJavaLangStringBuilder:withNSString:", "hmacSha1", "[B", 0x108, NULL, NULL },
+  static J2ObjcMethodInfo methods[] = {
+    { NULL, NULL, 0x2, -1, -1, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "V", 0x8, 2, 3, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x8, 4, 5, -1, -1, -1, -1 },
+    { NULL, "LNSString;", 0x8, 6, 7, -1, -1, -1, -1 },
+    { NULL, "[B", 0x108, 8, 9, -1, -1, -1, -1 },
   };
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
+  methods[0].selector = @selector(init);
+  methods[1].selector = @selector(base64EncodeWithByteArray:);
+  methods[2].selector = @selector(rightPadStringWithJavaLangStringBuilder:withChar:withInt:);
+  methods[3].selector = @selector(normalizeStringWithNSString:withInt:);
+  methods[4].selector = @selector(md5WithNSString:);
+  methods[5].selector = @selector(hmacSha1WithJavaLangStringBuilder:withNSString:);
+  #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
-    { "BASE64_CHARS", "BASE64_CHARS", 0x1a, "Ljava.lang.String;", &PXRUtilities_BASE64_CHARS, NULL, .constantValue.asLong = 0 },
-    { "BASE64_UPPER_BOUND", "BASE64_UPPER_BOUND", 0x1a, "I", NULL, NULL, .constantValue.asInt = PXRUtilities_BASE64_UPPER_BOUND },
+    { "BASE64_CHARS", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 10, -1, -1 },
+    { "BASE64_UPPER_BOUND", "I", .constantValue.asInt = PXRUtilities_BASE64_UPPER_BOUND, 0x1a, -1, -1, -1, -1 },
   };
-  static const J2ObjcClassInfo _PXRUtilities = { 2, "Utilities", "com.squareup.pollexor", NULL, 0x10, 6, methods, 2, fields, 0, NULL, 0, NULL, NULL, NULL };
+  static const void *ptrTable[] = { "base64Encode", "[B", "rightPadString", "LJavaLangStringBuilder;CI", "normalizeString", "LNSString;I", "md5", "LNSString;", "hmacSha1", "LJavaLangStringBuilder;LNSString;", &PXRUtilities_BASE64_CHARS };
+  static const J2ObjcClassInfo _PXRUtilities = { "Utilities", "com.squareup.pollexor", ptrTable, methods, fields, 7, 0x10, 6, 2, -1, -1, -1, -1, -1 };
   return &_PXRUtilities;
 }
 
@@ -92,24 +102,20 @@ void PXRUtilities_init(PXRUtilities *self) {
 }
 
 PXRUtilities *new_PXRUtilities_init() {
-  PXRUtilities *self = [PXRUtilities alloc];
-  PXRUtilities_init(self);
-  return self;
+  J2OBJC_NEW_IMPL(PXRUtilities, init)
 }
 
 PXRUtilities *create_PXRUtilities_init() {
-  PXRUtilities *self = [[PXRUtilities alloc] autorelease];
-  PXRUtilities_init(self);
-  return self;
+  J2OBJC_CREATE_IMPL(PXRUtilities, init)
 }
 
 NSString *PXRUtilities_base64EncodeWithByteArray_(IOSByteArray *bytes) {
   PXRUtilities_initialize();
   if (bytes == nil) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Input bytes must not be null.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Input bytes must not be null.");
   }
-  if (((IOSByteArray *) nil_chk(bytes))->size_ >= PXRUtilities_BASE64_UPPER_BOUND) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$I", @"Input bytes length must not exceed ", PXRUtilities_BASE64_UPPER_BOUND)) autorelease];
+  if (bytes->size_ >= PXRUtilities_BASE64_UPPER_BOUND) {
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$I", @"Input bytes length must not exceed ", PXRUtilities_BASE64_UPPER_BOUND));
   }
   jint triples = bytes->size_ / 3;
   if (bytes->size_ % 3 != 0) {
@@ -138,12 +144,12 @@ NSString *PXRUtilities_base64EncodeWithByteArray_(IOSByteArray *bytes) {
 void PXRUtilities_rightPadStringWithJavaLangStringBuilder_withChar_withInt_(JavaLangStringBuilder *builder, jchar padding, jint multipleOf) {
   PXRUtilities_initialize();
   if (builder == nil) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Builder input must not be empty.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Builder input must not be empty.");
   }
   if (multipleOf < 2) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Multiple must be greater than one.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Multiple must be greater than one.");
   }
-  jint needed = multipleOf - ([((JavaLangStringBuilder *) nil_chk(builder)) length] % multipleOf);
+  jint needed = multipleOf - ([builder length] % multipleOf);
   if (needed < multipleOf) {
     for (jint i = needed; i > 0; i--) {
       [builder appendWithChar:padding];
@@ -154,16 +160,16 @@ void PXRUtilities_rightPadStringWithJavaLangStringBuilder_withChar_withInt_(Java
 NSString *PXRUtilities_normalizeStringWithNSString_withInt_(NSString *string, jint desiredLength) {
   PXRUtilities_initialize();
   if (string == nil || ((jint) [string length]) == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Must supply a non-null, non-empty string.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Must supply a non-null, non-empty string.");
   }
   if (desiredLength <= 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Desired length must be greater than zero.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Desired length must be greater than zero.");
   }
-  if (((jint) [((NSString *) nil_chk(string)) length]) >= desiredLength) {
+  if (((jint) [string length]) >= desiredLength) {
     return [string substring:0 endIndex:desiredLength];
   }
   else {
-    JavaLangStringBuilder *builder = [new_JavaLangStringBuilder_initWithNSString_(string) autorelease];
+    JavaLangStringBuilder *builder = create_JavaLangStringBuilder_initWithNSString_(string);
     while ([builder length] < desiredLength) {
       [builder appendWithNSString:string];
     }
@@ -174,14 +180,14 @@ NSString *PXRUtilities_normalizeStringWithNSString_withInt_(NSString *string, ji
 NSString *PXRUtilities_md5WithNSString_(NSString *input) {
   PXRUtilities_initialize();
   if (input == nil || ((jint) [input length]) == 0) {
-    @throw [new_JavaLangIllegalArgumentException_initWithNSString_(@"Input string must not be blank.") autorelease];
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Input string must not be blank.");
   }
   @try {
     JavaSecurityMessageDigest *algorithm = JavaSecurityMessageDigest_getInstanceWithNSString_(@"MD5");
     [((JavaSecurityMessageDigest *) nil_chk(algorithm)) reset];
-    [algorithm updateWithByteArray:[((NSString *) nil_chk(input)) getBytes]];
+    [algorithm updateWithByteArray:[input getBytes]];
     IOSByteArray *messageDigest = [algorithm digest];
-    JavaLangStringBuilder *hexString = [new_JavaLangStringBuilder_init() autorelease];
+    JavaLangStringBuilder *hexString = create_JavaLangStringBuilder_init();
     {
       IOSByteArray *a__ = messageDigest;
       jbyte const *b__ = ((IOSByteArray *) nil_chk(a__))->buffer_;
@@ -194,7 +200,7 @@ NSString *PXRUtilities_md5WithNSString_(NSString *input) {
     return [hexString description];
   }
   @catch (JavaLangException *e) {
-    @throw [new_JavaLangRuntimeException_initWithNSException_(e) autorelease];
+    @throw create_JavaLangRuntimeException_initWithNSException_(e);
   }
 }
 
