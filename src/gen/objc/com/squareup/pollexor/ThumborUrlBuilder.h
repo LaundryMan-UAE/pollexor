@@ -415,9 +415,9 @@
 
 #pragma mark Package-Private
 
-- (instancetype)initWithNSString:(NSString *)host
-                    withNSString:(NSString *)key
-                    withNSString:(NSString *)image;
+- (instancetype __nonnull)initWithNSString:(NSString *)host
+                              withNSString:(NSString *)key
+                              withNSString:(NSString *)image;
 
 /*!
  @brief Assemble the configuration section of the URL.
@@ -426,7 +426,7 @@
 
 // Disallowed inherited constructors, do not use.
 
-- (instancetype)init NS_UNAVAILABLE;
+- (instancetype __nonnull)init NS_UNAVAILABLE;
 
 @end
 

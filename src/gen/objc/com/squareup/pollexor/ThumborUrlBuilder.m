@@ -119,9 +119,9 @@ __attribute__((unused)) static void PXRThumborUrlBuilder_ImageFormat_initWithNSS
 
 @implementation PXRThumborUrlBuilder
 
-- (instancetype)initWithNSString:(NSString *)host
-                    withNSString:(NSString *)key
-                    withNSString:(NSString *)image {
+- (instancetype __nonnull)initWithNSString:(NSString *)host
+                              withNSString:(NSString *)key
+                              withNSString:(NSString *)image {
   PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(self, host, key, image);
   return self;
 }
@@ -726,11 +726,11 @@ PXRThumborUrlBuilder_HorizontalAlign *PXRThumborUrlBuilder_HorizontalAlign_value
     size_t allocSize = 3 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    (JreEnum(PXRThumborUrlBuilder_HorizontalAlign, LEFT) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_HorizontalAlign, LEFT) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_HorizontalAlign_initWithNSString_withNSString_withInt_(e, @"left", @"LEFT", 0);
-    (JreEnum(PXRThumborUrlBuilder_HorizontalAlign, CENTER) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_HorizontalAlign, CENTER) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_HorizontalAlign_initWithNSString_withNSString_withInt_(e, @"center", @"CENTER", 1);
-    (JreEnum(PXRThumborUrlBuilder_HorizontalAlign, RIGHT) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_HorizontalAlign, RIGHT) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_HorizontalAlign_initWithNSString_withNSString_withInt_(e, @"right", @"RIGHT", 2);
     J2OBJC_SET_INITIALIZED(PXRThumborUrlBuilder_HorizontalAlign)
   }
@@ -790,11 +790,11 @@ PXRThumborUrlBuilder_VerticalAlign *PXRThumborUrlBuilder_VerticalAlign_values_[3
     size_t allocSize = 3 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    (JreEnum(PXRThumborUrlBuilder_VerticalAlign, TOP) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_VerticalAlign, TOP) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_VerticalAlign_initWithNSString_withNSString_withInt_(e, @"top", @"TOP", 0);
-    (JreEnum(PXRThumborUrlBuilder_VerticalAlign, MIDDLE) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_VerticalAlign, MIDDLE) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_VerticalAlign_initWithNSString_withNSString_withInt_(e, @"middle", @"MIDDLE", 1);
-    (JreEnum(PXRThumborUrlBuilder_VerticalAlign, BOTTOM) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_VerticalAlign, BOTTOM) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_VerticalAlign_initWithNSString_withNSString_withInt_(e, @"bottom", @"BOTTOM", 2);
     J2OBJC_SET_INITIALIZED(PXRThumborUrlBuilder_VerticalAlign)
   }
@@ -854,9 +854,9 @@ PXRThumborUrlBuilder_TrimPixelColor *PXRThumborUrlBuilder_TrimPixelColor_values_
     size_t allocSize = 2 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    (JreEnum(PXRThumborUrlBuilder_TrimPixelColor, TOP_LEFT) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_TrimPixelColor, TOP_LEFT) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_TrimPixelColor_initWithNSString_withNSString_withInt_(e, @"top-left", @"TOP_LEFT", 0);
-    (JreEnum(PXRThumborUrlBuilder_TrimPixelColor, BOTTOM_RIGHT) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_TrimPixelColor, BOTTOM_RIGHT) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_TrimPixelColor_initWithNSString_withNSString_withInt_(e, @"bottom-right", @"BOTTOM_RIGHT", 1);
     J2OBJC_SET_INITIALIZED(PXRThumborUrlBuilder_TrimPixelColor)
   }
@@ -916,13 +916,13 @@ PXRThumborUrlBuilder_ImageFormat *PXRThumborUrlBuilder_ImageFormat_values_[4];
     size_t allocSize = 4 * objSize;
     uintptr_t ptr = (uintptr_t)calloc(allocSize, 1);
     id e;
-    (JreEnum(PXRThumborUrlBuilder_ImageFormat, GIF) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_ImageFormat, GIF) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_ImageFormat_initWithNSString_withNSString_withInt_(e, @"gif", @"GIF", 0);
-    (JreEnum(PXRThumborUrlBuilder_ImageFormat, JPEG) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_ImageFormat, JPEG) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_ImageFormat_initWithNSString_withNSString_withInt_(e, @"jpeg", @"JPEG", 1);
-    (JreEnum(PXRThumborUrlBuilder_ImageFormat, PNG) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_ImageFormat, PNG) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_ImageFormat_initWithNSString_withNSString_withInt_(e, @"png", @"PNG", 2);
-    (JreEnum(PXRThumborUrlBuilder_ImageFormat, WEBP) = e = objc_constructInstance(self, (void *)ptr), ptr += objSize);
+    ((void) (JreEnum(PXRThumborUrlBuilder_ImageFormat, WEBP) = e = objc_constructInstance(self, (void *)ptr)), ptr += objSize);
     PXRThumborUrlBuilder_ImageFormat_initWithNSString_withNSString_withInt_(e, @"webp", @"WEBP", 3);
     J2OBJC_SET_INITIALIZED(PXRThumborUrlBuilder_ImageFormat)
   }
