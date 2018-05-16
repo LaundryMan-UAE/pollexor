@@ -161,7 +161,7 @@ final class Utilities {
    * @return Encrypted output.
    */
   static native byte[] hmacSha1(StringBuilder message, String key)/*-[
-    NSString *data = [NSString stringWithJavaLangStringBuilder:message];
+    NSString *data = [NSString java_stringWithJavaLangStringBuilder:message];
 
     NSStringEncoding encoding = NSUTF8StringEncoding;
     const char *cstrInput = [data cStringUsingEncoding:encoding];

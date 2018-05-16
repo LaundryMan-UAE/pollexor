@@ -166,7 +166,7 @@ NSString *PXRUtilities_md5WithNSString_(NSString *input) {
 
 IOSByteArray *PXRUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *message, NSString *key) {
   PXRUtilities_initialize();
-  NSString *data = [NSString stringWithJavaLangStringBuilder:message];
+  NSString *data = [NSString java_stringWithJavaLangStringBuilder:message];
   
   NSStringEncoding encoding = NSUTF8StringEncoding;
   const char *cstrInput = [data cStringUsingEncoding:encoding];
