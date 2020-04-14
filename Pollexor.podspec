@@ -12,19 +12,17 @@ Pod::Spec.new do |s|
   s.summary 	     = "Version 2.0.2 update translated via J2ObjC - no aes256 and native HmacSHA1 impl"
   s.homepage         = "http://square.github.io/pollexor/"
   s.license          = { :type => 'Apache License, Version 2.0', :file => 'LICENSE.txt' }
-
-  s.ios.deployment_target = '7.0'
-  s.osx.deployment_target = '10.7'
+  s.compiler_flags = '-Wno-nullability-completeness'
+  s.public_header_files = 'src/gen/objc/**/*.h'
+  s.platform         = :ios, '8.0'
   s.requires_arc = false
 
   s.source_files = 'src/gen/objc/**/*.{h,m}'
   s.exclude_files = 'src/gen/objc/*Test.{h,m}'
-  s.resources = 'src/main/resources/*'
 
-  s.public_header_files = 'src/gen/objc/**/*.h'
-  s.header_mappings_dir = 'src/gen/objc/**'
-  s.compiler_flags = '-Wno-nullability-completeness'
+  
+  s.header_mappings_dir = 'src/gen/objc'
 
-  s.xcconfig = { 'HEADER_SEARCH_PATHS' => "\"${PODS_ROOT}/J2ObjC/dist/include\"" }
+  s.xcconfig = { 'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/J2ObjC/dist/include" "${PODS_ROOT}/J2ObjC/dist/include/guava"' }
 
 end
