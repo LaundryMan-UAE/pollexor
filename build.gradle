@@ -28,7 +28,7 @@ task translateJava(type:Exec) {
 		}
 	}.flatten())
 
-	executable "${J2OBJC_HOME_LATEST}/j2objc"
+	executable "${J2OBJC_HOME}/j2objc"
 	args '--doc-comments'
 	args '--nullability'
 //    args '--strip-reflection' // Uncomment this line if the library does not use reflection, search the source for '.reflect'
