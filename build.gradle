@@ -29,6 +29,7 @@ task translateJava(type:Exec) {
 	}.flatten())
 
 	executable "${J2OBJC_HOME}/j2objc"
+	args '--prefixes', file('src/main/resources/prefixes.properties').path
 	args '--doc-comments'
 	args '--nullability'
 //    args '--strip-reflection' // Uncomment this line if the library does not use reflection, search the source for '.reflect'

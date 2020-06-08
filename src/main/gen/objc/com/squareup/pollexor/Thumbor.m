@@ -8,7 +8,7 @@
 #include "com/squareup/pollexor/ThumborUrlBuilder.h"
 #include "java/lang/IllegalArgumentException.h"
 
-@interface ComSquareupPollexorThumbor () {
+@interface PXRThumbor () {
  @public
   NSString *host_;
   NSString *key_;
@@ -19,29 +19,29 @@
 
 @end
 
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumbor, host_, NSString *)
-J2OBJC_FIELD_SETTER(ComSquareupPollexorThumbor, key_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumbor, host_, NSString *)
+J2OBJC_FIELD_SETTER(PXRThumbor, key_, NSString *)
 
-__attribute__((unused)) static void ComSquareupPollexorThumbor_initWithNSString_withNSString_(ComSquareupPollexorThumbor *self, NSString *host, NSString *key);
+__attribute__((unused)) static void PXRThumbor_initWithNSString_withNSString_(PXRThumbor *self, NSString *host, NSString *key);
 
-__attribute__((unused)) static ComSquareupPollexorThumbor *new_ComSquareupPollexorThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) NS_RETURNS_RETAINED;
+__attribute__((unused)) static PXRThumbor *new_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComSquareupPollexorThumbor *create_ComSquareupPollexorThumbor_initWithNSString_withNSString_(NSString *host, NSString *key);
+__attribute__((unused)) static PXRThumbor *create_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key);
 
-@implementation ComSquareupPollexorThumbor
+@implementation PXRThumbor
 
-+ (ComSquareupPollexorThumbor *)createWithNSString:(NSString *)host {
-  return ComSquareupPollexorThumbor_createWithNSString_(host);
++ (PXRThumbor *)createWithNSString:(NSString *)host {
+  return PXRThumbor_createWithNSString_(host);
 }
 
-+ (ComSquareupPollexorThumbor *)createWithNSString:(NSString *)host
-                                      withNSString:(NSString *)key {
-  return ComSquareupPollexorThumbor_createWithNSString_withNSString_(host, key);
++ (PXRThumbor *)createWithNSString:(NSString *)host
+                      withNSString:(NSString *)key {
+  return PXRThumbor_createWithNSString_withNSString_(host, key);
 }
 
 - (instancetype)initWithNSString:(NSString *)host
                     withNSString:(NSString *)key {
-  ComSquareupPollexorThumbor_initWithNSString_withNSString_(self, host, key);
+  PXRThumbor_initWithNSString_withNSString_(self, host, key);
   return self;
 }
 
@@ -53,11 +53,11 @@ __attribute__((unused)) static ComSquareupPollexorThumbor *create_ComSquareupPol
   return key_;
 }
 
-- (ComSquareupPollexorThumborUrlBuilder *)buildImageWithNSString:(NSString *)image {
+- (PXRThumborUrlBuilder *)buildImageWithNSString:(NSString *)image {
   if (image == nil || [image java_length] == 0) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Invalid image.");
   }
-  return create_ComSquareupPollexorThumborUrlBuilder_initWithNSString_withNSString_withNSString_(host_, key_, image);
+  return create_PXRThumborUrlBuilder_initWithNSString_withNSString_withNSString_(host_, key_, image);
 }
 
 - (void)dealloc {
@@ -68,12 +68,12 @@ __attribute__((unused)) static ComSquareupPollexorThumbor *create_ComSquareupPol
 
 + (const J2ObjcClassInfo *)__metadata {
   static J2ObjcMethodInfo methods[] = {
-    { NULL, "LComSquareupPollexorThumbor;", 0x9, 0, 1, -1, -1, -1, -1 },
-    { NULL, "LComSquareupPollexorThumbor;", 0x9, 0, 2, -1, -1, -1, -1 },
+    { NULL, "LPXRThumbor;", 0x9, 0, 1, -1, -1, -1, -1 },
+    { NULL, "LPXRThumbor;", 0x9, 0, 2, -1, -1, -1, -1 },
     { NULL, NULL, 0x2, -1, 2, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
     { NULL, "LNSString;", 0x1, -1, -1, -1, -1, -1, -1 },
-    { NULL, "LComSquareupPollexorThumborUrlBuilder;", 0x1, 3, 1, -1, -1, -1, -1 },
+    { NULL, "LPXRThumborUrlBuilder;", 0x1, 3, 1, -1, -1, -1, -1 },
   };
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wobjc-multiple-method-names"
@@ -90,26 +90,26 @@ __attribute__((unused)) static ComSquareupPollexorThumbor *create_ComSquareupPol
     { "key_", "LNSString;", .constantValue.asLong = 0, 0x12, -1, -1, -1, -1 },
   };
   static const void *ptrTable[] = { "create", "LNSString;", "LNSString;LNSString;", "buildImage" };
-  static const J2ObjcClassInfo _ComSquareupPollexorThumbor = { "Thumbor", "com.squareup.pollexor", ptrTable, methods, fields, 7, 0x11, 6, 2, -1, -1, -1, -1, -1 };
-  return &_ComSquareupPollexorThumbor;
+  static const J2ObjcClassInfo _PXRThumbor = { "Thumbor", "com.squareup.pollexor", ptrTable, methods, fields, 7, 0x11, 6, 2, -1, -1, -1, -1, -1 };
+  return &_PXRThumbor;
 }
 
 @end
 
-ComSquareupPollexorThumbor *ComSquareupPollexorThumbor_createWithNSString_(NSString *host) {
-  ComSquareupPollexorThumbor_initialize();
-  return create_ComSquareupPollexorThumbor_initWithNSString_withNSString_(host, nil);
+PXRThumbor *PXRThumbor_createWithNSString_(NSString *host) {
+  PXRThumbor_initialize();
+  return create_PXRThumbor_initWithNSString_withNSString_(host, nil);
 }
 
-ComSquareupPollexorThumbor *ComSquareupPollexorThumbor_createWithNSString_withNSString_(NSString *host, NSString *key) {
-  ComSquareupPollexorThumbor_initialize();
+PXRThumbor *PXRThumbor_createWithNSString_withNSString_(NSString *host, NSString *key) {
+  PXRThumbor_initialize();
   if (key == nil || [key java_length] == 0) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Key must not be blank.");
   }
-  return create_ComSquareupPollexorThumbor_initWithNSString_withNSString_(host, key);
+  return create_PXRThumbor_initWithNSString_withNSString_(host, key);
 }
 
-void ComSquareupPollexorThumbor_initWithNSString_withNSString_(ComSquareupPollexorThumbor *self, NSString *host, NSString *key) {
+void PXRThumbor_initWithNSString_withNSString_(PXRThumbor *self, NSString *host, NSString *key) {
   NSObject_init(self);
   if (host == nil || [host java_length] == 0) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Host must not be blank.");
@@ -121,12 +121,14 @@ void ComSquareupPollexorThumbor_initWithNSString_withNSString_(ComSquareupPollex
   JreStrongAssign(&self->key_, key);
 }
 
-ComSquareupPollexorThumbor *new_ComSquareupPollexorThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
-  J2OBJC_NEW_IMPL(ComSquareupPollexorThumbor, initWithNSString_withNSString_, host, key)
+PXRThumbor *new_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
+  J2OBJC_NEW_IMPL(PXRThumbor, initWithNSString_withNSString_, host, key)
 }
 
-ComSquareupPollexorThumbor *create_ComSquareupPollexorThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
-  J2OBJC_CREATE_IMPL(ComSquareupPollexorThumbor, initWithNSString_withNSString_, host, key)
+PXRThumbor *create_PXRThumbor_initWithNSString_withNSString_(NSString *host, NSString *key) {
+  J2OBJC_CREATE_IMPL(PXRThumbor, initWithNSString_withNSString_, host, key)
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComSquareupPollexorThumbor)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRThumbor)
+
+J2OBJC_NAME_MAPPING(PXRThumbor, "com.squareup.pollexor", "PXR")

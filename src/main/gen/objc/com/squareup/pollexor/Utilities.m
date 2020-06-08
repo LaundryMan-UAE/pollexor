@@ -15,55 +15,55 @@
 
 #import <CommonCrypto/CommonHMAC.h>
 
-@interface ComSquareupPollexorUtilities ()
+@interface PXRUtilities ()
 
 - (instancetype)initPackagePrivate;
 
 @end
 
-inline NSString *ComSquareupPollexorUtilities_get_BASE64_CHARS(void);
-static NSString *ComSquareupPollexorUtilities_BASE64_CHARS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
-J2OBJC_STATIC_FIELD_OBJ_FINAL(ComSquareupPollexorUtilities, BASE64_CHARS, NSString *)
+inline NSString *PXRUtilities_get_BASE64_CHARS(void);
+static NSString *PXRUtilities_BASE64_CHARS = @"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+J2OBJC_STATIC_FIELD_OBJ_FINAL(PXRUtilities, BASE64_CHARS, NSString *)
 
-inline jint ComSquareupPollexorUtilities_get_BASE64_UPPER_BOUND(void);
-#define ComSquareupPollexorUtilities_BASE64_UPPER_BOUND 1610612733
-J2OBJC_STATIC_FIELD_CONSTANT(ComSquareupPollexorUtilities, BASE64_UPPER_BOUND, jint)
+inline jint PXRUtilities_get_BASE64_UPPER_BOUND(void);
+#define PXRUtilities_BASE64_UPPER_BOUND 1610612733
+J2OBJC_STATIC_FIELD_CONSTANT(PXRUtilities, BASE64_UPPER_BOUND, jint)
 
-__attribute__((unused)) static void ComSquareupPollexorUtilities_initPackagePrivate(ComSquareupPollexorUtilities *self);
+__attribute__((unused)) static void PXRUtilities_initPackagePrivate(PXRUtilities *self);
 
-__attribute__((unused)) static ComSquareupPollexorUtilities *new_ComSquareupPollexorUtilities_initPackagePrivate(void) NS_RETURNS_RETAINED;
+__attribute__((unused)) static PXRUtilities *new_PXRUtilities_initPackagePrivate(void) NS_RETURNS_RETAINED;
 
-__attribute__((unused)) static ComSquareupPollexorUtilities *create_ComSquareupPollexorUtilities_initPackagePrivate(void);
+__attribute__((unused)) static PXRUtilities *create_PXRUtilities_initPackagePrivate(void);
 
-@implementation ComSquareupPollexorUtilities
+@implementation PXRUtilities
 
 - (instancetype)initPackagePrivate {
-  ComSquareupPollexorUtilities_initPackagePrivate(self);
+  PXRUtilities_initPackagePrivate(self);
   return self;
 }
 
 + (NSString *)base64EncodeWithByteArray:(IOSByteArray *)bytes {
-  return ComSquareupPollexorUtilities_base64EncodeWithByteArray_(bytes);
+  return PXRUtilities_base64EncodeWithByteArray_(bytes);
 }
 
 + (void)rightPadStringWithJavaLangStringBuilder:(JavaLangStringBuilder *)builder
                                        withChar:(jchar)padding
                                         withInt:(jint)multipleOf {
-  ComSquareupPollexorUtilities_rightPadStringWithJavaLangStringBuilder_withChar_withInt_(builder, padding, multipleOf);
+  PXRUtilities_rightPadStringWithJavaLangStringBuilder_withChar_withInt_(builder, padding, multipleOf);
 }
 
 + (NSString *)normalizeStringWithNSString:(NSString *)string
                                   withInt:(jint)desiredLength {
-  return ComSquareupPollexorUtilities_normalizeStringWithNSString_withInt_(string, desiredLength);
+  return PXRUtilities_normalizeStringWithNSString_withInt_(string, desiredLength);
 }
 
 + (NSString *)md5WithNSString:(NSString *)input {
-  return ComSquareupPollexorUtilities_md5WithNSString_(input);
+  return PXRUtilities_md5WithNSString_(input);
 }
 
 + (IOSByteArray *)hmacSha1WithJavaLangStringBuilder:(JavaLangStringBuilder *)message
                                        withNSString:(NSString *)key {
-  return ComSquareupPollexorUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(message, key);
+  return PXRUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(message, key);
 }
 
 + (const J2ObjcClassInfo *)__metadata {
@@ -87,34 +87,34 @@ __attribute__((unused)) static ComSquareupPollexorUtilities *create_ComSquareupP
   #pragma clang diagnostic pop
   static const J2ObjcFieldInfo fields[] = {
     { "BASE64_CHARS", "LNSString;", .constantValue.asLong = 0, 0x1a, -1, 10, -1, -1 },
-    { "BASE64_UPPER_BOUND", "I", .constantValue.asInt = ComSquareupPollexorUtilities_BASE64_UPPER_BOUND, 0x1a, -1, -1, -1, -1 },
+    { "BASE64_UPPER_BOUND", "I", .constantValue.asInt = PXRUtilities_BASE64_UPPER_BOUND, 0x1a, -1, -1, -1, -1 },
   };
-  static const void *ptrTable[] = { "base64Encode", "[B", "rightPadString", "LJavaLangStringBuilder;CI", "normalizeString", "LNSString;I", "md5", "LNSString;", "hmacSha1", "LJavaLangStringBuilder;LNSString;", &ComSquareupPollexorUtilities_BASE64_CHARS };
-  static const J2ObjcClassInfo _ComSquareupPollexorUtilities = { "Utilities", "com.squareup.pollexor", ptrTable, methods, fields, 7, 0x10, 6, 2, -1, -1, -1, -1, -1 };
-  return &_ComSquareupPollexorUtilities;
+  static const void *ptrTable[] = { "base64Encode", "[B", "rightPadString", "LJavaLangStringBuilder;CI", "normalizeString", "LNSString;I", "md5", "LNSString;", "hmacSha1", "LJavaLangStringBuilder;LNSString;", &PXRUtilities_BASE64_CHARS };
+  static const J2ObjcClassInfo _PXRUtilities = { "Utilities", "com.squareup.pollexor", ptrTable, methods, fields, 7, 0x10, 6, 2, -1, -1, -1, -1, -1 };
+  return &_PXRUtilities;
 }
 
 @end
 
-void ComSquareupPollexorUtilities_initPackagePrivate(ComSquareupPollexorUtilities *self) {
+void PXRUtilities_initPackagePrivate(PXRUtilities *self) {
   NSObject_init(self);
 }
 
-ComSquareupPollexorUtilities *new_ComSquareupPollexorUtilities_initPackagePrivate() {
-  J2OBJC_NEW_IMPL(ComSquareupPollexorUtilities, initPackagePrivate)
+PXRUtilities *new_PXRUtilities_initPackagePrivate() {
+  J2OBJC_NEW_IMPL(PXRUtilities, initPackagePrivate)
 }
 
-ComSquareupPollexorUtilities *create_ComSquareupPollexorUtilities_initPackagePrivate() {
-  J2OBJC_CREATE_IMPL(ComSquareupPollexorUtilities, initPackagePrivate)
+PXRUtilities *create_PXRUtilities_initPackagePrivate() {
+  J2OBJC_CREATE_IMPL(PXRUtilities, initPackagePrivate)
 }
 
-NSString *ComSquareupPollexorUtilities_base64EncodeWithByteArray_(IOSByteArray *bytes) {
-  ComSquareupPollexorUtilities_initialize();
+NSString *PXRUtilities_base64EncodeWithByteArray_(IOSByteArray *bytes) {
+  PXRUtilities_initialize();
   if (bytes == nil) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Input bytes must not be null.");
   }
-  if (bytes->size_ >= ComSquareupPollexorUtilities_BASE64_UPPER_BOUND) {
-    @throw create_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$I", @"Input bytes length must not exceed ", ComSquareupPollexorUtilities_BASE64_UPPER_BOUND));
+  if (bytes->size_ >= PXRUtilities_BASE64_UPPER_BOUND) {
+    @throw create_JavaLangIllegalArgumentException_initWithNSString_(JreStrcat("$I", @"Input bytes length must not exceed ", PXRUtilities_BASE64_UPPER_BOUND));
   }
   jint triples = JreIntDiv(bytes->size_, 3);
   if (JreIntMod(bytes->size_, 3) != 0) {
@@ -129,10 +129,10 @@ NSString *ComSquareupPollexorUtilities_base64EncodeWithByteArray_(IOSByteArray *
     if (in + 2 < bytes->size_) {
       triple |= (IOSByteArray_Get(bytes, in + 2) & (jint) 0xff);
     }
-    *IOSCharArray_GetRef(encoding, out) = [((NSString *) nil_chk(ComSquareupPollexorUtilities_BASE64_CHARS)) charAtWithInt:(JreRShift32(triple, 18)) & (jint) 0x3f];
-    *IOSCharArray_GetRef(encoding, out + 1) = [ComSquareupPollexorUtilities_BASE64_CHARS charAtWithInt:(JreRShift32(triple, 12)) & (jint) 0x3f];
-    *IOSCharArray_GetRef(encoding, out + 2) = [ComSquareupPollexorUtilities_BASE64_CHARS charAtWithInt:(JreRShift32(triple, 6)) & (jint) 0x3f];
-    *IOSCharArray_GetRef(encoding, out + 3) = [ComSquareupPollexorUtilities_BASE64_CHARS charAtWithInt:triple & (jint) 0x3f];
+    *IOSCharArray_GetRef(encoding, out) = [((NSString *) nil_chk(PXRUtilities_BASE64_CHARS)) charAtWithInt:(JreRShift32(triple, 18)) & (jint) 0x3f];
+    *IOSCharArray_GetRef(encoding, out + 1) = [PXRUtilities_BASE64_CHARS charAtWithInt:(JreRShift32(triple, 12)) & (jint) 0x3f];
+    *IOSCharArray_GetRef(encoding, out + 2) = [PXRUtilities_BASE64_CHARS charAtWithInt:(JreRShift32(triple, 6)) & (jint) 0x3f];
+    *IOSCharArray_GetRef(encoding, out + 3) = [PXRUtilities_BASE64_CHARS charAtWithInt:triple & (jint) 0x3f];
   }
   for (jint i = encoding->size_ - (triples * 3 - bytes->size_); i < encoding->size_; i++) {
     *IOSCharArray_GetRef(encoding, i) = '=';
@@ -140,8 +140,8 @@ NSString *ComSquareupPollexorUtilities_base64EncodeWithByteArray_(IOSByteArray *
   return NSString_java_valueOfChars_(encoding);
 }
 
-void ComSquareupPollexorUtilities_rightPadStringWithJavaLangStringBuilder_withChar_withInt_(JavaLangStringBuilder *builder, jchar padding, jint multipleOf) {
-  ComSquareupPollexorUtilities_initialize();
+void PXRUtilities_rightPadStringWithJavaLangStringBuilder_withChar_withInt_(JavaLangStringBuilder *builder, jchar padding, jint multipleOf) {
+  PXRUtilities_initialize();
   if (builder == nil) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Builder input must not be empty.");
   }
@@ -156,8 +156,8 @@ void ComSquareupPollexorUtilities_rightPadStringWithJavaLangStringBuilder_withCh
   }
 }
 
-NSString *ComSquareupPollexorUtilities_normalizeStringWithNSString_withInt_(NSString *string, jint desiredLength) {
-  ComSquareupPollexorUtilities_initialize();
+NSString *PXRUtilities_normalizeStringWithNSString_withInt_(NSString *string, jint desiredLength) {
+  PXRUtilities_initialize();
   if (string == nil || [string java_length] == 0) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Must supply a non-null, non-empty string.");
   }
@@ -176,8 +176,8 @@ NSString *ComSquareupPollexorUtilities_normalizeStringWithNSString_withInt_(NSSt
   }
 }
 
-NSString *ComSquareupPollexorUtilities_md5WithNSString_(NSString *input) {
-  ComSquareupPollexorUtilities_initialize();
+NSString *PXRUtilities_md5WithNSString_(NSString *input) {
+  PXRUtilities_initialize();
   if (input == nil || [input java_length] == 0) {
     @throw create_JavaLangIllegalArgumentException_initWithNSString_(@"Input string must not be blank.");
   }
@@ -203,8 +203,8 @@ NSString *ComSquareupPollexorUtilities_md5WithNSString_(NSString *input) {
   }
 }
 
-IOSByteArray *ComSquareupPollexorUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *message, NSString *key) {
-  ComSquareupPollexorUtilities_initialize();
+IOSByteArray *PXRUtilities_hmacSha1WithJavaLangStringBuilder_withNSString_(JavaLangStringBuilder *message, NSString *key) {
+  PXRUtilities_initialize();
   NSString *data = [NSString java_stringWithJavaLangStringBuilder:message];
   
   NSStringEncoding encoding = NSUTF8StringEncoding;
@@ -221,4 +221,4 @@ IOSByteArray *ComSquareupPollexorUtilities_hmacSha1WithJavaLangStringBuilder_wit
   return  [IOSByteArray arrayWithBytes:encoded.bytes count:encoded.length];
 }
 
-J2OBJC_CLASS_TYPE_LITERAL_SOURCE(ComSquareupPollexorUtilities)
+J2OBJC_CLASS_TYPE_LITERAL_SOURCE(PXRUtilities)
