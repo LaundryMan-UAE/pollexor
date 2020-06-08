@@ -31,6 +31,7 @@ task translateJava(type:Exec) {
 	executable "${J2OBJC_HOME}/j2objc"
 	args '--doc-comments'
 	args '--nullability'
+	args '--no-package-directories'
 //    args '--strip-reflection' // Uncomment this line if the library does not use reflection, search the source for '.reflect'
 	args '-d', file('src/main/gen/objc').path
 	args '-sourcepath', (sourceSets.main.allJava.srcDirs).join(':')

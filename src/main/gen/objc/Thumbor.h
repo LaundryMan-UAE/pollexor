@@ -5,13 +5,13 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("INCLUDE_ALL_ComSquareupPollexorThumbor")
-#ifdef RESTRICT_ComSquareupPollexorThumbor
-#define INCLUDE_ALL_ComSquareupPollexorThumbor 0
+#pragma push_macro("INCLUDE_ALL_Thumbor")
+#ifdef RESTRICT_Thumbor
+#define INCLUDE_ALL_Thumbor 0
 #else
-#define INCLUDE_ALL_ComSquareupPollexorThumbor 1
+#define INCLUDE_ALL_Thumbor 1
 #endif
-#undef RESTRICT_ComSquareupPollexorThumbor
+#undef RESTRICT_Thumbor
 
 #if __has_feature(nullability)
 #pragma clang diagnostic push
@@ -19,7 +19,7 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (ComSquareupPollexorThumbor_) && (INCLUDE_ALL_ComSquareupPollexorThumbor || defined(INCLUDE_ComSquareupPollexorThumbor))
+#if !defined (ComSquareupPollexorThumbor_) && (INCLUDE_ALL_Thumbor || defined(INCLUDE_ComSquareupPollexorThumbor))
 #define ComSquareupPollexorThumbor_
 
 @class ComSquareupPollexorThumborUrlBuilder;
@@ -74,4 +74,4 @@ J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumbor)
 #if __has_feature(nullability)
 #pragma clang diagnostic pop
 #endif
-#pragma pop_macro("INCLUDE_ALL_ComSquareupPollexorThumbor")
+#pragma pop_macro("INCLUDE_ALL_Thumbor")

@@ -4,8 +4,8 @@
 //
 
 #include "J2ObjC_source.h"
-#include "com/squareup/pollexor/Thumbor.h"
-#include "com/squareup/pollexor/ThumborUrlBuilder.h"
+#include "Thumbor.h"
+#include "ThumborUrlBuilder.h"
 #include "java/lang/IllegalArgumentException.h"
 
 @interface ComSquareupPollexorThumbor () {

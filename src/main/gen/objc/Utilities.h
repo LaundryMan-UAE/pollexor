@@ -5,13 +5,13 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("INCLUDE_ALL_ComSquareupPollexorUtilities")
-#ifdef RESTRICT_ComSquareupPollexorUtilities
-#define INCLUDE_ALL_ComSquareupPollexorUtilities 0
+#pragma push_macro("INCLUDE_ALL_Utilities")
+#ifdef RESTRICT_Utilities
+#define INCLUDE_ALL_Utilities 0
 #else
-#define INCLUDE_ALL_ComSquareupPollexorUtilities 1
+#define INCLUDE_ALL_Utilities 1
 #endif
-#undef RESTRICT_ComSquareupPollexorUtilities
+#undef RESTRICT_Utilities
 
 #if __has_feature(nullability)
 #pragma clang diagnostic push
@@ -19,7 +19,7 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (ComSquareupPollexorUtilities_) && (INCLUDE_ALL_ComSquareupPollexorUtilities || defined(INCLUDE_ComSquareupPollexorUtilities))
+#if !defined (ComSquareupPollexorUtilities_) && (INCLUDE_ALL_Utilities || defined(INCLUDE_ComSquareupPollexorUtilities))
 #define ComSquareupPollexorUtilities_
 
 @class IOSByteArray;
@@ -110,4 +110,4 @@ J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorUtilities)
 #if __has_feature(nullability)
 #pragma clang diagnostic pop
 #endif
-#pragma pop_macro("INCLUDE_ALL_ComSquareupPollexorUtilities")
+#pragma pop_macro("INCLUDE_ALL_Utilities")
