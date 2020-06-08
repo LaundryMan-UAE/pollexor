@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.name             = "Pollexor"
   s.version          = '2.0.2-J2ObjC' 
   s.author           = { "Marcus Smith" => "m_badenochsmith@yahoo.co.uk" }
-  s.source           = { :git => "https://github.com/LaundryMan-UAE/pollexor.git", :tag=>'2.0.2-J2Objc-2.6-3' }
+  s.source           = { :git => "https://github.com/LaundryMan-UAE/pollexor.git", :tag=>'2.0.2-J2Objc-2.6-4' }
   s.summary 	     = "Version 2.0.2 update translated via J2ObjC - no aes256 and native HmacSHA1 impl"
   s.homepage         = "http://square.github.io/pollexor/"
   s.license          = { :type => 'Apache License, Version 2.0', :file => 'LICENSE.txt' }
