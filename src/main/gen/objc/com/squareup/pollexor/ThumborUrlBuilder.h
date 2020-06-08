@@ -5,13 +5,13 @@
 
 #include "J2ObjC_header.h"
 
-#pragma push_macro("INCLUDE_ALL_ThumborUrlBuilder")
-#ifdef RESTRICT_ThumborUrlBuilder
-#define INCLUDE_ALL_ThumborUrlBuilder 0
+#pragma push_macro("INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder")
+#ifdef RESTRICT_ComSquareupPollexorThumborUrlBuilder
+#define INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder 0
 #else
-#define INCLUDE_ALL_ThumborUrlBuilder 1
+#define INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder 1
 #endif
-#undef RESTRICT_ThumborUrlBuilder
+#undef RESTRICT_ComSquareupPollexorThumborUrlBuilder
 
 #if __has_feature(nullability)
 #pragma clang diagnostic push
@@ -19,7 +19,7 @@
 #pragma GCC diagnostic ignored "-Wnullability-completeness"
 #endif
 
-#if !defined (ComSquareupPollexorThumborUrlBuilder_) && (INCLUDE_ALL_ThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder))
+#if !defined (ComSquareupPollexorThumborUrlBuilder_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder))
 #define ComSquareupPollexorThumborUrlBuilder_
 
 @class ComSquareupPollexorThumborUrlBuilder_HorizontalAlign;
@@ -508,7 +508,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder)
 
 #endif
 
-#if !defined (ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_) && (INCLUDE_ALL_ThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder_HorizontalAlign))
+#if !defined (ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder_HorizontalAlign))
 #define ComSquareupPollexorThumborUrlBuilder_HorizontalAlign_
 
 #define RESTRICT_JavaLangEnum 1
@@ -569,7 +569,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder_HorizontalAlign)
 
 #endif
 
-#if !defined (ComSquareupPollexorThumborUrlBuilder_VerticalAlign_) && (INCLUDE_ALL_ThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder_VerticalAlign))
+#if !defined (ComSquareupPollexorThumborUrlBuilder_VerticalAlign_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder_VerticalAlign))
 #define ComSquareupPollexorThumborUrlBuilder_VerticalAlign_
 
 #define RESTRICT_JavaLangEnum 1
@@ -630,7 +630,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder_VerticalAlign)
 
 #endif
 
-#if !defined (ComSquareupPollexorThumborUrlBuilder_TrimPixelColor_) && (INCLUDE_ALL_ThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder_TrimPixelColor))
+#if !defined (ComSquareupPollexorThumborUrlBuilder_TrimPixelColor_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder_TrimPixelColor))
 #define ComSquareupPollexorThumborUrlBuilder_TrimPixelColor_
 
 #define RESTRICT_JavaLangEnum 1
@@ -687,7 +687,7 @@ J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder_TrimPixelColor)
 
 #endif
 
-#if !defined (ComSquareupPollexorThumborUrlBuilder_ImageFormat_) && (INCLUDE_ALL_ThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder_ImageFormat))
+#if !defined (ComSquareupPollexorThumborUrlBuilder_ImageFormat_) && (INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder || defined(INCLUDE_ComSquareupPollexorThumborUrlBuilder_ImageFormat))
 #define ComSquareupPollexorThumborUrlBuilder_ImageFormat_
 
 #define RESTRICT_JavaLangEnum 1
@@ -756,4 +756,4 @@ J2OBJC_TYPE_LITERAL_HEADER(ComSquareupPollexorThumborUrlBuilder_ImageFormat)
 #if __has_feature(nullability)
 #pragma clang diagnostic pop
 #endif
-#pragma pop_macro("INCLUDE_ALL_ThumborUrlBuilder")
+#pragma pop_macro("INCLUDE_ALL_ComSquareupPollexorThumborUrlBuilder")

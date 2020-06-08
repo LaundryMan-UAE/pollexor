@@ -5,7 +5,7 @@
 
 #include "IOSPrimitiveArray.h"
 #include "J2ObjC_source.h"
-#include "Utilities.h"
+#include "com/squareup/pollexor/Utilities.h"
 #include "java/lang/Exception.h"
 #include "java/lang/IllegalArgumentException.h"
 #include "java/lang/Integer.h"
