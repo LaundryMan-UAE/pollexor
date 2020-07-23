@@ -15,7 +15,7 @@ Open Pollexor.podspec and replace the tag in the following line with the tag you
   s.source           = { :git => "https://github.com/LaundryMan-UAE/pollexor.git", :tag => "2.0.2-J2Objc-2.6-4" }
 </code>
 
-Once checked in and tagged (don't forget to publish the tag), copy the commit hash from the tagged commit and paste this into the customer-ios/Podfile entry for Protobuf-Javanano.
+Once checked in and tagged (don't forget to publish the tag), copy the commit hash from the tagged commit and paste this into the customer-ios/Podfile entry for pollexor.
 
 Pollexor - Java Thumbor client by Square
 ========================================
